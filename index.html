@@ -2,245 +2,311 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Capital Travel | Asesoría de Visas</title>
-<meta name="description" content="Asesoría profesional para visa americana, mundialista, renovación, Canadá y Reino Unido. Te acompañamos en todo el proceso.">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Capital Travel</title>
+<meta name="description" content="Asesoría de visas: Estados Unidos, mundialista, renovación, Canadá y Reino Unido.">
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Bebas+Neue&family=Barlow+Condensed:ital,wght@1,700;1,800&family=Bungee&family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Playfair+Display:ital,wght@0,600;0,800;1,600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#06090c;--bg2:#0d141a;--card:#101a22;--line:#1e2d38;--cyan:#2dafd3;--cyan2:#5fd0ef;--txt:#fff;--mut:#9fb2bd}
+/* Layout: marca oscura arriba, luego una "escena" a pantalla completa por visa, cada una con la estética de su país. */
+:root{
+  --bg:#05080b; --fg:#ffffff; --mut:#9fb2bd; --cyan:#2dafd3; --cyan2:#5fd0ef; --line:#1b2a34;
+  --f-brand:'Outfit',system-ui,sans-serif;
+}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Poppins,system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-brand);line-height:1.55;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1140px;margin:auto;padding:0 20px}
-nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(6,9,12,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
-nav img{height:46px;mix-blend-mode:lighten}
-nav ul{display:flex;gap:26px;list-style:none;font-size:.9rem;font-weight:500;color:var(--mut)}
-nav ul a:hover{color:var(--cyan2)}
-.btn{display:inline-block;background:var(--cyan);color:#001118;font-weight:700;padding:13px 26px;border-radius:50px;transition:.25s;border:0;cursor:pointer;font:inherit;font-weight:700}
-.btn:hover{background:var(--cyan2);transform:translateY(-2px);box-shadow:0 8px 28px rgba(45,175,211,.35)}
-.btn.ghost{background:transparent;color:#fff;border:1.5px solid var(--cyan)}
-.btn.ghost:hover{background:var(--cyan);color:#001118}
-.btn.sm{padding:9px 20px;font-size:.85rem}
-.hero{min-height:100vh;display:flex;align-items:center;position:relative;padding:110px 0 70px;background:radial-gradient(900px 500px at 80% 20%,rgba(45,175,211,.22),transparent 60%),radial-gradient(700px 400px at 0% 100%,rgba(45,175,211,.12),transparent 60%)}
-.hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
-.tag{display:inline-block;border:1px solid var(--cyan);color:var(--cyan2);padding:5px 16px;border-radius:50px;font-size:.8rem;font-weight:600;letter-spacing:.5px;margin-bottom:22px}
-h1{font-size:clamp(2.2rem,5.2vw,4rem);line-height:1.1;font-weight:800}
-h1 span,h2 span{color:var(--cyan)}
-.hero p{color:var(--mut);font-size:1.1rem;margin:22px 0 32px;max-width:540px}
-.cta{display:flex;gap:14px;flex-wrap:wrap}
-.stats{display:flex;gap:34px;margin-top:44px;flex-wrap:wrap}
-.stats b{display:block;font-size:1.8rem;color:var(--cyan2)}
-.stats small{color:var(--mut)}
-.plane{position:relative;display:flex;justify-content:center}
-.plane img{mix-blend-mode:lighten;width:min(380px,80%);filter:drop-shadow(0 0 60px rgba(45,175,211,.45));animation:float 5s ease-in-out infinite}
-@keyframes float{50%{transform:translateY(-16px) rotate(2deg)}}
-section{padding:90px 0}
-.head{text-align:center;margin-bottom:50px}
-h2{font-size:clamp(1.8rem,3.6vw,2.7rem);font-weight:800;line-height:1.2}
-.head p{color:var(--mut);margin-top:12px;max-width:620px;margin-inline:auto}
-.dest{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px}
-.dest div{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 22px;text-align:center;transition:.3s}
-.dest div:hover{border-color:var(--cyan);transform:translateY(-6px)}
-.dest i{font-style:normal;font-size:2.6rem;display:block;margin-bottom:8px}
-.dest h3{font-size:1.05rem}
-.dest p{color:var(--mut);font-size:.85rem}
-.alt{background:var(--bg2)}
-.tabs{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}
-.tab{background:var(--card);color:var(--mut);border:1px solid var(--line);padding:11px 22px;border-radius:50px;cursor:pointer;font:inherit;font-weight:600;font-size:.9rem;transition:.2s}
-.tab.on,.tab:hover{background:var(--cyan);color:#001118;border-color:var(--cyan)}
-.panel{display:none;grid-template-columns:1.1fr .9fr;gap:30px;background:var(--card);border:1px solid var(--line);border-radius:28px;padding:38px}
-.panel.on{display:grid;animation:fade .4s}
-@keyframes fade{from{opacity:0;transform:translateY(10px)}}
-.panel h3{font-size:1.6rem;margin-bottom:6px}
-.panel .sub{color:var(--cyan2);font-weight:600;margin-bottom:18px}
-.panel ul{list-style:none;margin-bottom:20px}
-.panel li{padding:7px 0 7px 30px;position:relative;color:#d7e3e9}
-.panel li:before{content:"✓";position:absolute;left:0;color:var(--cyan);font-weight:800}
-.note{background:rgba(45,175,211,.1);border-left:3px solid var(--cyan);padding:12px 16px;border-radius:8px;font-size:.85rem;color:var(--mut)}
-.calc{background:var(--bg);border:1px solid var(--line);border-radius:22px;padding:26px;align-self:start}
-.calc label{font-size:.85rem;color:var(--mut)}
-.pers{display:flex;align-items:center;gap:16px;margin:10px 0 18px}
-.pers button{width:40px;height:40px;border-radius:50%;border:1.5px solid var(--cyan);background:none;color:#fff;font-size:1.3rem;cursor:pointer}
-.pers button:hover{background:var(--cyan);color:#001118}
-.pers span{font-size:1.6rem;font-weight:700;min-width:30px;text-align:center}
+.wrap{max-width:1160px;margin:auto;padding-inline:20px}
+:focus-visible{outline:3px solid var(--cyan2);outline-offset:3px}
+
+/* ---------- barra ---------- */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(5,8,11,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:66px}
+.bar img{height:48px;width:auto;mix-blend-mode:lighten}
+.bar nav{display:flex;gap:22px;font-size:.88rem;font-weight:500;color:var(--mut)}
+.bar nav a:hover{color:var(--cyan2)}
+.btn{display:inline-block;background:var(--cyan);color:#00131b;font:700 .95rem var(--f-brand);padding:12px 24px;border-radius:50px;border:0;cursor:pointer;transition:.2s;text-align:center}
+.btn:hover{background:var(--cyan2);transform:translateY(-2px)}
+.btn.sm{padding:9px 18px;font-size:.85rem}
+.btn.ghost{background:none;color:#fff;border:1.5px solid var(--cyan)}
+.btn.ghost:hover{background:var(--cyan);color:#00131b}
+
+/* ---------- hero de marca ---------- */
+.hero{padding-block:64px 56px;background:radial-gradient(800px 420px at 85% 0,rgba(45,175,211,.2),transparent 65%)}
+.hero .top{display:grid;grid-template-columns:1.25fr .75fr;gap:32px;align-items:center}
+.hero .top>*{min-width:0}
+.tag{display:inline-block;border:1px solid var(--cyan);color:var(--cyan2);padding:4px 14px;border-radius:50px;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-size:clamp(2.2rem,5.4vw,4rem);line-height:1.06;font-weight:800;text-wrap:balance}
+.hero h1 em{font-style:normal;color:var(--cyan)}
+.hero .lead{color:var(--mut);font-size:1.08rem;margin:20px 0 28px;max-width:520px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.hero .logo{display:flex;justify-content:center}
+.hero .logo img{width:min(300px,70%);mix-blend-mode:lighten;filter:drop-shadow(0 0 50px rgba(45,175,211,.4))}
+.pick{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:48px}
+.pick a{display:flex;flex-direction:column;justify-content:flex-end;min-height:128px;padding:14px 16px;border-radius:14px;transition:.25s;position:relative;overflow:hidden}
+.pick a:hover{transform:translateY(-6px)}
+.pick small{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.pick b{font-size:1.05rem;line-height:1.15}
+.pick .p-usa{background:linear-gradient(180deg,transparent 60%,#b31942 60%),#0a2a5e;font-family:'Bebas Neue';letter-spacing:.04em}
+.pick .p-usa b{font-size:1.4rem;font-weight:400}
+.pick .p-col{background:linear-gradient(180deg,#fcd116 50%,#0b2d8c 50% 75%,#ce1126 75%);color:#0b1a4a;font-family:'Barlow Condensed';font-style:italic;font-weight:800}
+.pick .p-col small,.pick .p-col b{color:#fff;text-shadow:0 1px 3px #0009}
+.pick .p-col b{font-size:1.3rem}
+.pick .p-vegas{background:#0a0006;border:2px solid #ff2a6d;box-shadow:0 0 18px #ff2a6d77,inset 0 0 16px #ff2a6d44;font-family:'Bungee';color:#ffd6e4}
+.pick .p-vegas b{font-size:.95rem;text-shadow:0 0 8px #ff2a6d}
+.pick .p-can{background:#f4f7f9;color:#17202a;font-family:'Fraunces',serif;border-bottom:6px solid #d52b1e}
+.pick .p-uk{background:#0d1e57;color:#fff;font-family:'Playfair Display',serif;border-bottom:6px solid #c8102e}
+.pick .p-uk b{font-style:italic}
+
+/* ---------- escenas por país ---------- */
+.dest{position:relative;overflow:hidden;background:var(--sbg);color:var(--sfg);padding-block:84px;isolation:isolate}
+.dest .decor{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.dest .in{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.dest .in>*{min-width:0}
+.eye{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--sacc);margin-bottom:14px}
+.dest h2{font-family:var(--sfont);font-size:clamp(2.4rem,6vw,4.6rem);line-height:.98;text-wrap:balance;margin-bottom:12px}
+.dest .sub{font-weight:600;color:var(--sacc);margin-bottom:22px}
+.dest ul{list-style:none;margin-bottom:22px;display:grid;gap:4px}
+.dest li{padding:7px 0 7px 30px;position:relative;color:var(--sfg);opacity:.93}
+.dest li:before{content:var(--tick,"✓");position:absolute;left:0;color:var(--sacc);font-weight:800}
+.note{background:var(--snote);border-left:4px solid var(--sacc);padding:12px 16px;border-radius:8px;font-size:.88rem}
+.calc{background:var(--ccard);color:var(--cfg);border-radius:var(--crad,20px);padding:26px;box-shadow:var(--cshadow,0 20px 50px #0006);border:var(--cborder,0)}
+.calc label{font-size:.82rem;opacity:.75}
+.pers{display:flex;align-items:center;gap:16px;margin:8px 0 16px}
+.pers button{width:42px;height:42px;border-radius:50%;border:2px solid var(--cacc);background:none;color:var(--cfg);font-size:1.4rem;cursor:pointer;line-height:1}
+.pers button:hover{background:var(--cacc);color:var(--cacctxt)}
+.pers span{font:700 1.7rem var(--f-brand);min-width:34px;text-align:center;font-variant-numeric:tabular-nums}
 .opt{display:flex;gap:8px;margin-bottom:16px}
-.opt button{flex:1;padding:9px;border-radius:12px;border:1px solid var(--line);background:none;color:var(--mut);font:inherit;font-size:.82rem;cursor:pointer}
-.opt button.on{border-color:var(--cyan);color:#fff;background:rgba(45,175,211,.12)}
-.price{font-size:2.3rem;font-weight:800;color:var(--cyan2);line-height:1.1}
-.price small{display:block;font-size:.8rem;font-weight:500;color:var(--mut)}
-.total{margin:8px 0 18px;color:var(--mut);font-size:.9rem}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;counter-reset:s}
-.steps div{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;counter-increment:s;position:relative}
-.steps div:before{content:"0" counter(s);font-size:2.4rem;font-weight:800;color:var(--cyan);opacity:.9;display:block}
-.steps h3{margin:4px 0}
-.steps p{color:var(--mut);font-size:.9rem}
-.faq{max-width:780px;margin:auto}
-details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px;margin-bottom:12px}
-summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between}
+.opt button{flex:1;padding:9px 6px;border-radius:12px;border:1.5px solid color-mix(in srgb,var(--cfg) 30%,transparent);background:none;color:var(--cfg);font:600 .8rem var(--f-brand);cursor:pointer}
+.opt button.on{border-color:var(--cacc);background:color-mix(in srgb,var(--cacc) 18%,transparent)}
+.price{font-family:var(--sfont);font-size:clamp(2.4rem,5vw,3.3rem);line-height:1;color:var(--cacc);font-variant-numeric:tabular-nums}
+.price small{display:block;font:500 .8rem var(--f-brand);color:var(--cfg);opacity:.7;margin-top:6px}
+.total{margin:10px 0 18px;font-size:.92rem;opacity:.85;font-variant-numeric:tabular-nums;min-height:1.4em}
+.calc .go{display:block;width:100%;background:var(--cacc);color:var(--cacctxt);font:700 .98rem var(--f-brand);padding:14px;border-radius:var(--brad,50px);margin-bottom:10px;text-align:center;transition:.2s}
+.calc .go:hover{filter:brightness(1.1);transform:translateY(-2px)}
+.calc .cp{display:block;width:100%;background:none;border:1.5px dashed color-mix(in srgb,var(--cfg) 40%,transparent);color:var(--cfg);padding:10px;border-radius:12px;font:500 .82rem var(--f-brand);cursor:pointer}
+.calc .cp:hover{border-style:solid}
+.calc .hint{font-size:.78rem;opacity:.7;margin-top:8px;min-height:1.2em}
+
+/* Estados Unidos: azul marino, rayas, estrellas, tipografía de cartel */
+#usa{--sbg:#0a1f44;--sfg:#fff;--sacc:#ff5a73;--snote:#ffffff14;--sfont:'Bebas Neue',Impact,sans-serif;--ccard:#fff;--cfg:#0a1f44;--cacc:#b31942;--cacctxt:#fff;--tick:"★";--crad:6px;--brad:6px;--cshadow:12px 12px 0 #b31942}
+#usa h2{font-weight:400;letter-spacing:.02em}
+#usa .decor{background:
+  linear-gradient(90deg,#0a1f44 0,#0a1f44 55%,transparent 100%),
+  repeating-linear-gradient(0deg,#b31942 0 38px,#fff 38px 76px)}
+#usa .decor:after{content:"";position:absolute;left:0;top:0;width:min(46%,520px);height:calc(7*38px);background:#0a1f44 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='38'%3E%3Ctext x='4' y='26' font-size='22' fill='%23fff' opacity='.9'%3E%E2%98%85%3C/text%3E%3C/svg%3E");opacity:.16}
+
+/* Mundialista: colores de Colombia, cancha, cinta tricolor */
+#mundial{--sbg:#0a1a5c;--sfg:#fff;--sacc:#fcd116;--snote:#ffffff1a;--sfont:'Barlow Condensed',sans-serif;--ccard:#fcd116;--cfg:#0a1a5c;--cacc:#ce1126;--cacctxt:#fff;--tick:"⚽";--crad:4px;--brad:4px;--cshadow:0 0 0 4px #0a1a5c,0 0 0 8px #ce1126}
+#mundial h2{font-style:italic;font-weight:800;text-transform:uppercase;letter-spacing:.01em}
+#mundial .price{font-style:italic;font-weight:800}
+#mundial .decor{background:
+  linear-gradient(180deg,#fcd116 0 10px,#0b2d8c 10px 15px,#ce1126 15px 20px,transparent 20px),
+  repeating-linear-gradient(90deg,#0f2a85 0 90px,#0a1a5c 90px 180px)}
+#mundial .decor:before{content:"";position:absolute;right:-120px;top:50%;width:520px;height:520px;margin-top:-260px;border-radius:50%;border:6px solid #ffffff2e}
+#mundial .decor:after{content:"";position:absolute;right:139px;top:0;bottom:0;width:6px;background:#ffffff2e}
+
+/* Renovación: Las Vegas de noche, neón y bombillas */
+#vegas{--sbg:#0a0006;--sfg:#ffe9f1;--sacc:#ffb000;--snote:#ff2a6d1f;--sfont:'Bungee',sans-serif;--ccard:#14000c;--cfg:#ffe9f1;--cacc:#ff2a6d;--cacctxt:#fff;--tick:"♦";--cborder:2px solid #ff2a6d;--cshadow:0 0 30px #ff2a6d88,inset 0 0 30px #ff2a6d33;--crad:18px}
+#vegas h2{font-size:clamp(2rem,5vw,3.6rem);line-height:1.08;color:#fff;text-shadow:0 0 6px #fff,0 0 18px #ff2a6d,0 0 40px #ff2a6d}
+#vegas .price{text-shadow:0 0 14px #ff2a6d}
+#vegas .decor{background:radial-gradient(700px 400px at 80% 30%,#ff2a6d33,transparent 70%),radial-gradient(500px 300px at 10% 90%,#ffb00022,transparent 70%)}
+#vegas .decor:before,#vegas .decor:after{content:"";position:absolute;left:0;right:0;height:22px;background:radial-gradient(circle,#ffd36b 0 4px,transparent 5px) 0 50%/32px 22px repeat-x;filter:drop-shadow(0 0 6px #ffb000)}
+#vegas .decor:before{top:10px}#vegas .decor:after{bottom:10px}
+
+/* Canadá: nieve, hoja de maple, serif limpia */
+#canada{--sbg:#eef3f6;--sfg:#16212b;--sacc:#d52b1e;--snote:#d52b1e12;--sfont:'Fraunces',Georgia,serif;--ccard:#fff;--cfg:#16212b;--cacc:#d52b1e;--cacctxt:#fff;--tick:"❄";--cshadow:0 24px 60px #16212b22;--crad:28px}
+#canada h2{font-weight:700;letter-spacing:-.02em}
+#canada .decor{background:linear-gradient(180deg,#e3ecf2,#eef3f6 55%)}
+#canada .decor svg{position:absolute}
+#canada .leaf{right:-60px;top:40px;width:420px;opacity:.12;fill:#d52b1e}
+#canada .mts{left:0;right:0;bottom:0;width:100%;height:28%;opacity:.7}
+
+/* Reino Unido: azul real, Union Jack, serif clásica */
+#uk{--sbg:#0d1e57;--sfg:#fff;--sacc:#ff8a99;--snote:#ffffff14;--sfont:'Playfair Display',Georgia,serif;--ccard:#fff;--cfg:#0d1e57;--cacc:#c8102e;--cacctxt:#fff;--tick:"♛";--crad:2px;--brad:2px;--cshadow:0 0 0 6px #0d1e57,0 0 0 8px #c8102e}
+#uk h2{font-weight:800;font-style:italic}
+#uk .decor svg{position:absolute;right:-140px;top:-40px;width:760px;opacity:.18;transform:rotate(-8deg)}
+#uk .decor{background:linear-gradient(90deg,#0d1e57 40%,#0a1744)}
+
+/* ---------- confianza, preguntas, cierre ---------- */
+.how,.faq,.end{padding-block:76px}
+.how h2,.faq h2,.end h2{font-size:clamp(1.8rem,3.6vw,2.6rem);font-weight:800;line-height:1.15;text-wrap:balance}
+.how h2 em,.faq h2 em,.end h2 em{font-style:normal;color:var(--cyan)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:34px}
+.steps div{border:1px solid var(--line);border-radius:18px;padding:24px;background:#0b1319}
+.steps h3{font-size:1.05rem;margin-bottom:6px;color:var(--cyan2)}
+.steps p{color:var(--mut);font-size:.92rem}
+.faq .list{max-width:780px;margin-top:30px}
+details{border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px;background:#0b1319}
+summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
 summary:after{content:"+";color:var(--cyan);font-size:1.4rem;line-height:1}
 details[open] summary:after{content:"–"}
-details p{color:var(--mut);margin-top:12px;font-size:.93rem}
-.final{text-align:center;background:radial-gradient(600px 300px at 50% 0,rgba(45,175,211,.25),transparent 70%),var(--bg2)}
-.final p{color:var(--mut);margin:14px 0 28px}
-footer{border-top:1px solid var(--line);padding:40px 0;color:var(--mut);font-size:.85rem}
+details p{color:var(--mut);margin-top:10px;font-size:.93rem}
+.end{text-align:center;background:radial-gradient(600px 280px at 50% 0,rgba(45,175,211,.22),transparent 70%)}
+.end p{color:var(--mut);margin:12px 0 26px}
+footer{border-top:1px solid var(--line);padding-block:34px;color:var(--mut);font-size:.85rem}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-footer img{height:60px;mix-blend-mode:lighten}
-.wa{position:fixed;right:20px;bottom:20px;z-index:60;background:#25d366;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;box-shadow:0 6px 24px rgba(37,211,102,.5);transition:.2s}
-.wa:hover{transform:scale(1.1)}
-.wa svg{width:32px;fill:#fff}
-@media(max-width:860px){
-nav ul{display:none}
-.hero .wrap,.panel.on{grid-template-columns:1fr}
-.plane{order:-1}.plane img{width:200px}
-.hero{padding-top:100px}
-.panel{padding:24px}
-section{padding:64px 0}}
+footer img{height:64px;mix-blend-mode:lighten}
+.wa{position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:60;background:#25d366;width:58px;height:58px;border-radius:50%;display:grid;place-items:center;box-shadow:0 6px 24px rgba(37,211,102,.5);transition:.2s}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:30px;fill:#fff}
+
+@media(max-width:900px){
+  .bar nav{display:none}
+  .hero .top,.dest .in{grid-template-columns:1fr}
+  .hero .logo{order:-1}.hero .logo img{width:170px}
+  .pick{grid-template-columns:repeat(2,1fr)}
+  .dest{padding-block:60px}
+  #mundial .decor:before,#mundial .decor:after{opacity:.5}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
 
-<nav><div class="wrap">
-<a href="#inicio"><img src="assets/logo.png" alt="Capital Travel"></a>
-<ul><li><a href="#destinos">Destinos</a></li><li><a href="#paquetes">Paquetes</a></li><li><a href="#proceso">Proceso</a></li><li><a href="#faq">Preguntas</a></li></ul>
-<a class="btn sm wa-link" data-msg="Hola, quiero asesoría para mi visa">Escríbenos</a>
-</div></nav>
-
-<header class="hero" id="inicio"><div class="wrap">
-<div>
-<span class="tag">✈ ASESORÍA DE VISAS</span>
-<h1>Tu visa, <span>sin enredos.</span><br>Tu viaje, sin límites.</h1>
-<p>Te guiamos paso a paso: perfilamiento, formulario, citas y preparación de entrevista. Acompañamiento real desde el primer día.</p>
-<div class="cta">
-<a class="btn wa-link" data-msg="Hola, quiero asesoría para mi visa">Pide tu asesoría</a>
-<a class="btn ghost" href="#paquetes">Ver precios</a>
-</div>
-<div class="stats">
-<div><b>5</b><small>Tipos de visa</small></div>
-<div><b>100%</b><small>Acompañamiento</small></div>
-<div><b>Mundial 2026</b><small>Adelanto de cita</small></div>
-</div>
-</div>
-<div class="plane"><img src="assets/logo.png" alt="Capital Travel"></div>
+<header class="bar"><div class="wrap">
+  <a href="#top" aria-label="Capital Travel"><img src="assets/logo.png" alt="Capital Travel"></a>
+  <nav><a href="#usa">EE. UU.</a><a href="#mundial">Mundialista</a><a href="#vegas">Renovación</a><a href="#canada">Canadá</a><a href="#uk">Reino Unido</a></nav>
+  <a class="btn sm wa-link" href="https://wa.me/message/QGS2GCIP6GZ3B1" target="_blank" rel="noopener noreferrer">Escríbenos</a>
 </div></header>
 
-<section id="destinos"><div class="wrap">
-<div class="head"><h2>¿A dónde quieres <span>llegar?</span></h2><p>Asesoramos tu trámite de visa de turismo a los destinos más buscados.</p></div>
-<div class="dest">
-<div><i>🇺🇸</i><h3>Estados Unidos</h3><p>Primera vez, renovación y mundialista</p></div>
-<div><i>🇨🇦</i><h3>Canadá</h3><p>Visa de turismo</p></div>
-<div><i>🇬🇧</i><h3>Reino Unido</h3><p>Visa de turismo</p></div>
-</div></div></section>
-
-<section class="alt" id="paquetes"><div class="wrap">
-<div class="head"><h2>Elige tu <span>paquete</span></h2><p>Precios por persona en pesos colombianos. Entre más viajan, menos pagas.</p></div>
-<div class="tabs" id="tabs"></div>
-<div id="panels"></div>
+<main id="top">
+<section class="hero"><div class="wrap">
+  <div class="top">
+    <div>
+      <span class="tag">✈ Asesoría de visas</span>
+      <h1>Tu visa, <em>sin enredos.</em> Tu viaje, sin límites.</h1>
+      <p class="lead">Perfilamiento, formulario, pago consular, citas y preparación de entrevista. Te acompañamos en cada paso del trámite.</p>
+      <div class="cta">
+        <a class="btn wa-link" href="https://wa.me/message/QGS2GCIP6GZ3B1" target="_blank" rel="noopener noreferrer">Pedir asesoría por WhatsApp</a>
+        <a class="btn ghost" href="#usa">Ver paquetes y precios</a>
+      </div>
+    </div>
+    <div class="logo"><img src="assets/logo.png" alt=""></div>
+  </div>
+  <div class="pick" aria-label="Elige tu visa">
+    <a class="p-usa" href="#usa"><small>Estados Unidos</small><b>Primera vez</b></a>
+    <a class="p-col" href="#mundial"><small>Estados Unidos</small><b>Visa mundialista</b></a>
+    <a class="p-vegas" href="#vegas"><small>Estados Unidos</small><b>Renovación</b></a>
+    <a class="p-can" href="#canada"><small>Turismo</small><b>Canadá</b></a>
+    <a class="p-uk" href="#uk"><small>Turismo</small><b>Reino Unido</b></a>
+  </div>
 </div></section>
 
-<section id="proceso"><div class="wrap">
-<div class="head"><h2>Así <span>funciona</span></h2></div>
-<div class="steps">
-<div><h3>Escríbenos</h3><p>Cuéntanos a dónde viajas y escogemos el paquete ideal.</p></div>
-<div><h3>Perfilamiento</h3><p>Revisamos tu perfil y la documentación que necesitas.</p></div>
-<div><h3>Trámite</h3><p>Diligenciamos formulario, pago consular y agendamiento.</p></div>
-<div><h3>Preparación</h3><p>Te preparamos y resolvemos tus dudas antes de la cita.</p></div>
-</div></div></section>
+<div id="scenes"></div>
 
-<section class="alt" id="faq"><div class="wrap">
-<div class="head"><h2>Preguntas <span>frecuentes</span></h2></div>
-<div class="faq">
-<details><summary>¿El valor consular está incluido?</summary><p>No. El costo consular se paga aparte: 185 USD para EE. UU., 185 CAD para Canadá y 115 GBP (visa estándar 6 meses) para Reino Unido.</p></details>
-<details><summary>¿Los precios son por persona?</summary><p>Sí, todos los precios son por persona y bajan según el número de viajeros.</p></details>
-<details><summary>¿Incluye traducción oficial de documentos?</summary><p>No para Canadá y Reino Unido, pero contamos con un aliado para ese servicio.</p></details>
-<details><summary>¿Garantizan la aprobación de la visa?</summary><p>La decisión es exclusiva de la embajada o consulado. Nosotros te asesoramos y acompañamos para que tu solicitud sea lo más sólida posible.</p></details>
-<details><summary>¿Qué es la visa mundialista?</summary><p>Paquete para viajar al Mundial 2026 en EE. UU. con adelantamiento de cita incluido, además de 3 asesorías.</p></details>
-</div></div></section>
-
-<section class="final"><div class="wrap">
-<h2>Empieza hoy tu <span>trámite</span></h2>
-<p>Escríbenos por WhatsApp y te respondemos con todo el detalle.</p>
-<a class="btn wa-link" data-msg="Hola, quiero asesoría para mi visa">Hablar por WhatsApp</a>
+<section class="how"><div class="wrap">
+  <h2>Así trabajamos <em>contigo</em></h2>
+  <div class="steps">
+    <div><h3>Te escribimos</h3><p>Nos cuentas a dónde viajas y escogemos el paquete que te sirve.</p></div>
+    <div><h3>Revisamos tu perfil</h3><p>Perfilamiento y lista de documentos que necesitas.</p></div>
+    <div><h3>Hacemos el trámite</h3><p>Formulario oficial, pago consular y agendamiento de citas.</p></div>
+    <div><h3>Te preparamos</h3><p>Resolvemos tus dudas y practicamos antes de tu cita.</p></div>
+  </div>
 </div></section>
+
+<section class="faq"><div class="wrap">
+  <h2>Preguntas <em>frecuentes</em></h2>
+  <div class="list">
+    <details><summary>¿El valor consular está incluido?</summary><p>No. Se paga aparte: 185 USD para Estados Unidos, 185 CAD para Canadá y 115 GBP para la visa estándar de 6 meses del Reino Unido.</p></details>
+    <details><summary>¿Los precios son por persona?</summary><p>Sí. En los paquetes de Estados Unidos el precio baja según cuántas personas viajan juntas.</p></details>
+    <details><summary>¿Incluye traducción oficial de documentos?</summary><p>En Canadá y Reino Unido no está incluida, pero tenemos un aliado para ese servicio.</p></details>
+    <details><summary>¿Garantizan que me aprueben la visa?</summary><p>No. La decisión es solo de la embajada o consulado. Nosotros te asesoramos y acompañamos para que tu solicitud llegue bien preparada.</p></details>
+    <details><summary>¿Qué incluye la visa mundialista?</summary><p>3 asesorías, acompañamiento al proceso y el adelantamiento de cita 2026.</p></details>
+  </div>
+</div></section>
+
+<section class="end"><div class="wrap">
+  <h2>Empieza hoy tu <em>trámite</em></h2>
+  <p>Escríbenos por WhatsApp y te respondemos con todo el detalle.</p>
+  <a class="btn wa-link" href="https://wa.me/message/QGS2GCIP6GZ3B1" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
+</div></section>
+</main>
 
 <footer><div class="wrap">
-<img src="assets/logo.png" alt="Capital Travel">
-<div>Calle 40A #81A-115, Simón Bolívar, Laureles<br>NIT 1007241221-1 · RNT 152996</div>
+  <img src="assets/logo.png" alt="Capital Travel">
+  <div>Calle 40A #81A-115, Simón Bolívar, Laureles<br>NIT 1007241221-1 · RNT 152996</div>
 </div></footer>
 
-<a class="wa wa-link" data-msg="Hola, quiero asesoría para mi visa" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-1.9c1.8 1 3.7 1.5 5.7 1.5 6.900 0 12.600-5.600 12.600-12.500S22.900 3 16 3zm6.300 17.300c-.3.800-1.600 1.500-2.200 1.600-.6.100-1.300.100-2.100-.1-.5-.2-1.100-.4-1.900-.7-3.300-1.400-5.400-4.700-5.600-4.900-.2-.2-1.300-1.700-1.300-3.200s.8-2.300 1.100-2.600c.3-.3.600-.4.800-.4h.6c.2 0 .5-.1.700.5.300.6.900 2.100 1 2.300.1.100.1.300 0 .5-.1.200-.2.300-.3.500-.2.200-.3.400-.5.500-.2.200-.3.300-.1.700.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.500 1.500.3.200.5.100.7-.1.200-.2.800-.9 1-1.200.2-.3.400-.3.700-.2.300.1 1.800.9 2.100 1 .3.200.5.200.6.400.1.100.1.800-.2 1.600z"/></svg></a>
+<a class="wa" href="https://wa.me/message/QGS2GCIP6GZ3B1" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><svg viewBox="0 0 32 32"><path d="M16 3C9 3 3.4 8.6 3.4 15.5c0 2.3.6 4.4 1.7 6.3L3 29l7.4-1.9c1.8 1 3.7 1.5 5.7 1.5 6.9 0 12.6-5.6 12.6-12.5S22.9 3 16 3zm6.300 17.300c-.3.8-1.6 1.5-2.2 1.6-.6.100-1.300.100-2.100-.1-.5-.2-1.100-.4-1.900-.7-3.300-1.400-5.400-4.700-5.600-4.900-.2-.2-1.300-1.700-1.300-3.200s.8-2.300 1.100-2.600c.3-.3.600-.4.800-.4h.6c.2 0 .5-.1.700.5.300.6.900 2.100 1 2.300.1.100.1.300 0 .5-.1.200-.2.300-.3.500-.2.200-.3.400-.5.500-.2.200-.3.300-.1.700.2.300.8 1.300 1.700 2.100 1.200 1 2.100 1.300 2.500 1.500.3.200.5.100.7-.1.200-.2.800-.9 1-1.200.2-.3.400-.3.700-.2.300.1 1.800.9 2.100 1 .3.200.5.200.6.400.1.100.1.800-.2 1.600z"/></svg></a>
 
 <script>
-// ⚠️ CAMBIAR: número de WhatsApp con indicativo país (Colombia = 57), sin + ni espacios
-const WA = "573000000000";
-
-const wa = m => `https://wa.me/${WA}?text=${encodeURIComponent(m)}`;
+const WA_LINK = "https://wa.me/message/QGS2GCIP6GZ3B1";
 const cop = n => "$" + n.toLocaleString("es-CO");
 
-const P = [
- {id:"primera", tab:"🇺🇸 Visa Americana", title:"Visa americana primera vez (B1-B2)", sub:"Paquete 1 · 3 asesorías",
+const UJ = '<svg viewBox="0 0 60 30" aria-hidden="true"><clipPath id="ujs"><path d="M0,0v30h60v-30z"/></clipPath><clipPath id="ujt"><path d="M30,15h30v15zv15h-30zh-30v-15zv-15h30z"/></clipPath><g clip-path="url(#ujs)"><path d="M0,0v30h60v-30z" fill="#012169"/><path d="M0,0L60,30M60,0L0,30" stroke="#fff" stroke-width="6"/><path d="M0,0L60,30M60,0L0,30" clip-path="url(#ujt)" stroke="#C8102E" stroke-width="4"/><path d="M30,0v30M0,15h60" stroke="#fff" stroke-width="10"/><path d="M30,0v30M0,15h60" stroke="#C8102E" stroke-width="6"/></g></svg>';
+const LEAF = '<svg class="leaf" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0L58 18L70 12L66 38L80 28L84 36L98 34L90 56L96 62L72 82L76 92L54 88L54 100L46 100L46 88L24 92L28 82L4 62L10 56L2 34L16 36L20 28L34 38L30 12L42 18Z"/></svg>';
+const MTS = '<svg class="mts" viewBox="0 0 1200 300" preserveAspectRatio="none" aria-hidden="true"><path d="M0 300V190L140 80L230 170L350 40L520 210L640 110L780 220L930 60L1060 180L1200 100V300Z" fill="#c9d8e2"/><path d="M0 300V240L120 160L260 250L420 150L560 250L700 170L860 260L1000 170L1200 250V300Z" fill="#a9c0cf"/><path d="M350 40L310 85L350 75L385 90ZM930 60L890 105L930 95L965 110ZM140 80L105 120L140 112L170 122Z" fill="#fff"/></svg>';
+
+const S = [
+ {id:"usa", eye:"Estados Unidos · Paquete 1", title:"Visa americana primera vez", sub:"B1 · B2 — 3 asesorías",
   items:["Perfilamiento","Formulario DS-160, pago consular, agenda de citas y resolución de dudas","Actualización y preparación de entrevista","Acompañamiento al proceso","Guía para autogestionar adelanto de cita"],
-  note:"Valor consular: 185 USD (no incluido).", prices:[390000,390000,380000,370000,360000]},
- {id:"mundial", tab:"⚽ Visa Mundialista", title:"Visa mundialista", sub:"Paquete 2 · 3 asesorías",
+  note:"Los precios son por persona. El valor consular es de 185 USD (no incluido).", prices:[390000,390000,380000,370000,360000]},
+ {id:"mundial", eye:"Estados Unidos · Paquete 2", title:"Visa mundialista", sub:"3 asesorías + adelantamiento de cita 2026",
   items:["Perfilamiento","Formulario DS-160, pago consular, agenda de citas y resolución de dudas","Actualización y preparación de entrevista","Acompañamiento al proceso","Adelantamiento de cita 2026"],
-  note:"Valor consular: 185 USD (no incluido).", prices:[650000,600000,550000,500000]},
- {id:"renov", tab:"🔄 Renovación EE. UU.", title:"Renovación visa americana (B1-B2)", sub:"Paquete 3",
-  items:["Asesorías: diligenciar formulario, pago consular, agendamiento de citas y espacio abierto para dudas","Acompañamiento al proceso","Llevar documentos al CAS (solo paquete completo)"],
-  note:"Valor consular: 185 USD (no incluido).",
+  note:"Los precios son por persona. El valor consular es de 185 USD (no incluido).", prices:[650000,600000,550000,500000]},
+ {id:"vegas", eye:"Estados Unidos · Paquete 3", title:"Renovación visa americana", sub:"B1 · B2",
+  items:["Asesorías: diligenciar formulario, pago consular, agendamiento de citas y espacio abierto para dudas","Acompañamiento al proceso","Llevar documentos al CAS (solo en el paquete completo)"],
+  note:"Los precios son por persona. El valor consular es de 185 USD (no incluido).",
   opts:[{n:"Paquete completo",p:[380000,365000,350000,335000,320000]},{n:"Solo asesoría",p:[290000,290000,280000,270000,260000]}]},
- {id:"canada", tab:"🇨🇦 Canadá", title:"Visa de turismo Canadá", sub:"2 asesorías",
-  items:["Perfilamiento y documentación","Diligenciar formulario oficial, proceso de solicitud, adjuntar documentación y orientación","Acompañamiento constante al proceso","Entrega de documentos expedidos por la embajada"],
-  note:"Costo consular: 185 CAD. NO incluye traducción oficial de documentos (tenemos un aliado para esto).", prices:[450000]},
- {id:"uk", tab:"🇬🇧 Reino Unido", title:"Visa de turismo Reino Unido", sub:"2 asesorías",
-  items:["Perfilamiento y documentación","Diligenciar formulario oficial, proceso de solicitud, adjuntar documentación y orientación","Acompañamiento constante al proceso","Entrega de documentos expedidos por la embajada"],
-  note:"Costo consular visa estándar 6 meses: 115 GBP. NO incluye traducción oficial de documentos (tenemos un aliado para esto).", prices:[450000]}
+ {id:"canada", eye:"Turismo · Canadá", title:"Visa de turismo Canadá", sub:"2 asesorías",
+  items:["Perfilamiento y documentación","Diligenciar formulario oficial, proceso de la solicitud, adjuntar documentación y orientación","Acompañamiento constante al proceso","Entrega de documentos expedidos por la embajada"],
+  note:"El costo consular es de 185 CAD. No incluye traducción oficial de documentos (tenemos un aliado para esto).", prices:[450000], decor:LEAF+MTS},
+ {id:"uk", eye:"Turismo · Reino Unido", title:"Visa de turismo Reino Unido", sub:"2 asesorías",
+  items:["Perfilamiento y documentación","Diligenciar formulario oficial, proceso de la solicitud, adjuntar documentación y orientación","Acompañamiento constante al proceso","Entrega de documentos expedidos por la embajada"],
+  note:"El costo consular de la visa estándar por 6 meses es de 115 libras esterlinas. No incluye traducción oficial de documentos (tenemos un aliado para esto).", prices:[450000], decor:UJ}
 ];
 
-const tabs = document.getElementById("tabs"), panels = document.getElementById("panels");
-P.forEach((p,i)=>{
-  const b = document.createElement("button");
-  b.className = "tab"+(i?"":" on"); b.textContent = p.tab; b.dataset.i = i;
-  tabs.appendChild(b);
-
-  const d = document.createElement("div");
-  d.className = "panel"+(i?"":" on");
-  const optHtml = p.opts ? `<div class="opt">${p.opts.map((o,j)=>`<button class="${j?"":"on"}" data-o="${j}">${o.n}</button>`).join("")}</div>` : "";
-  const multi = (p.opts?p.opts[0].p:p.prices).length>1;
-  d.innerHTML = `
-   <div><h3>${p.title}</h3><div class="sub">${p.sub}</div>
-   <ul>${p.items.map(x=>`<li>${x}</li>`).join("")}</ul>
-   <div class="note">${p.note}</div></div>
-   <div class="calc">
-     ${multi?`<label>¿Cuántas personas viajan?</label>
-     <div class="pers"><button data-d="-1">−</button><span>1</span><button data-d="1">+</button></div>`:`<label>Precio por persona</label><div style="height:10px"></div>`}
-     ${optHtml}
-     <div class="price"></div><div class="total"></div>
-     <a class="btn wa-link" style="width:100%;text-align:center">Quiero este paquete</a>
+const host = document.getElementById("scenes");
+S.forEach(s => {
+  const el = document.createElement("section");
+  el.className = "dest"; el.id = s.id;
+  const multi = (s.opts ? s.opts[0].p : s.prices).length > 1;
+  el.innerHTML = `
+   <div class="decor">${s.decor||""}</div>
+   <div class="wrap in">
+    <div>
+      <p class="eye">${s.eye}</p><h2>${s.title}</h2><p class="sub">${s.sub}</p>
+      <ul>${s.items.map(x=>`<li>${x}</li>`).join("")}</ul>
+      <p class="note">${s.note}</p>
+    </div>
+    <div class="calc">
+      ${multi ? `<label>¿Cuántas personas viajan?</label>
+        <div class="pers"><button type="button" data-d="-1" aria-label="Menos">−</button><span aria-live="polite">1</span><button type="button" data-d="1" aria-label="Más">+</button></div>`
+        : `<label>Precio por persona</label><div style="height:12px"></div>`}
+      ${s.opts ? `<div class="opt">${s.opts.map((o,j)=>`<button type="button" class="${j?"":"on"}" data-o="${j}">${o.n}</button>`).join("")}</div>` : ""}
+      <div class="price"></div><div class="total"></div>
+      <a class="go" href="${WA_LINK}" target="_blank" rel="noopener noreferrer">Quiero este paquete</a>
+      <button type="button" class="cp">Copiar mi selección para pegarla en el chat</button>
+      <p class="hint"></p>
+    </div>
    </div>`;
-  panels.appendChild(d);
+  host.appendChild(el);
 
-  let n = 1, o = 0;
+  let n = 1, o = 0, msg = "";
+  const q = x => el.querySelector(x);
   const upd = () => {
-    const arr = p.opts ? p.opts[o].p : p.prices;
-    const pp = arr[Math.min(n,arr.length)-1];
-    d.querySelector(".price").innerHTML = `${cop(pp)}<small>por persona${multi&&n>=arr.length?" (desde "+arr.length+" personas)":""}</small>`;
-    d.querySelector(".total").textContent = multi ? `Total ${n} ${n>1?"personas":"persona"}: ${cop(pp*n)} COP` : "";
-    const sp = d.querySelector(".pers span"); if(sp) sp.textContent = n;
-    d.querySelector(".btn").dataset.msg = `Hola, me interesa: ${p.title}${p.opts?" ("+p.opts[o].n+")":""} para ${n} ${n>1?"personas":"persona"}.`;
-    d.querySelector(".btn").href = wa(d.querySelector(".btn").dataset.msg);
+    const arr = s.opts ? s.opts[o].p : s.prices;
+    const pp = arr[Math.min(n, arr.length) - 1];
+    q(".price").innerHTML = `${cop(pp)}<small>por persona${multi && n >= arr.length ? " (precio desde " + arr.length + " personas)" : ""}</small>`;
+    q(".total").textContent = multi ? `Total ${n} ${n>1?"personas":"persona"}: ${cop(pp*n)} COP` : "";
+    const sp = q(".pers span"); if (sp) sp.textContent = n;
+    msg = `Hola, me interesa: ${s.title}${s.opts ? " (" + s.opts[o].n + ")" : ""}, ${n} ${n>1?"personas":"persona"}. Total ${cop(pp*n)} COP.`;
+    q(".hint").textContent = "";
   };
-  d.querySelectorAll(".pers button").forEach(x=>x.onclick=()=>{n=Math.max(1,Math.min(10,n+ +x.dataset.d));upd()});
-  d.querySelectorAll(".opt button").forEach(x=>x.onclick=()=>{o=+x.dataset.o;d.querySelectorAll(".opt button").forEach(y=>y.classList.toggle("on",y===x));upd()});
+  el.querySelectorAll(".pers button").forEach(b => b.onclick = () => { n = Math.max(1, Math.min(10, n + +b.dataset.d)); upd(); });
+  el.querySelectorAll(".opt button").forEach(b => b.onclick = () => { o = +b.dataset.o; el.querySelectorAll(".opt button").forEach(x => x.classList.toggle("on", x === b)); upd(); });
+  q(".cp").onclick = async () => {
+    const h = q(".hint");
+    try { await navigator.clipboard.writeText(msg); h.textContent = "Copiado. Pégalo en el chat de WhatsApp."; }
+    catch (e) { h.textContent = msg; const r = document.createRange(); r.selectNodeContents(h); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r); }
+  };
   upd();
 });
-tabs.onclick = e => {
-  const b = e.target.closest(".tab"); if(!b) return;
-  [...tabs.children].forEach((t,i)=>{t.classList.toggle("on",t===b);panels.children[i].classList.toggle("on",t===b)});
-};
-document.querySelectorAll(".wa-link[data-msg]:not(.panel .wa-link)").forEach(a=>a.href=wa(a.dataset.msg));
 </script>
 </body>
 </html>
