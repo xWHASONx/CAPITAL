@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Capital Travel</title>
-<meta name="description" content="Asesoría de visas y adelanto de cita en Medellín: visa americana, mundialista, renovación, Canadá, Reino Unido y pasaporte colombiano.">
+<meta name="description" content="Asesoría de visas y adelanto de cita en Medellín: visa americana, Visa Flash, renovación, Canadá, Reino Unido y pasaporte colombiano.">
 <meta name="theme-color" content="#04070a">
 <link rel="icon" href="assets/mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -537,7 +537,7 @@ main,footer{position:relative;z-index:1}
     <a href="#visas">Todas las visas <small>01</small></a>
     <a href="#adelanto">Adelanto de cita <small>02</small></a>
     <a href="#usa">Visa americana <small>MCO</small></a>
-    <a href="#mundial">Mundialista <small>MIA</small></a>
+    <a href="#flash">Visa Flash <small>MIA</small></a>
     <a href="#vegas">Renovación <small>LAS</small></a>
     <a href="#canada">Canadá <small>YYZ</small></a>
     <a href="#uk">Reino Unido <small>LHR</small></a>
@@ -605,12 +605,12 @@ main,footer{position:relative;z-index:1}
           <a href="https://www.instagram.com/reel/C-6MUgPgCv4/" target="_blank" rel="noopener noreferrer">Caso 3 ↗</a>
         </div>
       </div>
-      <div class="board rv" id="board" role="img" aria-label="Tablero de citas: visa EE. UU., adelantamos. Visa mundial, cita 2026. Pasaporte colombiano, adelantamos. Récord, 1 semana. Casos de éxito, más de 500.">
+      <div class="board rv" id="board" role="img" aria-label="Tablero de citas: visa EE. UU., adelantamos. Visa Flash, exprés. Pasaporte colombiano, adelantamos. Récord, 1 semana. Casos de éxito, más de 500.">
         <div class="b-head"><span><svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>Tablero de citas</span><span class="b-clock">Medellín <b id="bclock">--:--</b></span></div>
         <div class="b-cols" aria-hidden="true"><span>Trámite</span><span>Estado</span></div>
         <div id="brows" aria-hidden="true">
           <p class="b-txt" data-a="VISA EE.UU." data-b="ADELANTAMOS">VISA EE.UU. — <span class="b-b">ADELANTAMOS</span></p>
-          <p class="b-txt" data-a="VISA MUNDIAL" data-b="CITA 2026">VISA MUNDIAL — <span class="b-b">CITA 2026</span></p>
+          <p class="b-txt" data-a="VISA FLASH" data-b="EXPRÉS">VISA FLASH — <span class="b-b">EXPRÉS</span></p>
           <p class="b-txt" data-a="PASAPORTE CO" data-b="ADELANTAMOS">PASAPORTE CO — <span class="b-b">ADELANTAMOS</span></p>
           <p class="b-txt" data-a="RÉCORD" data-b="1 SEMANA">RÉCORD — <span class="b-b">1 SEMANA</span></p>
           <p class="b-txt" data-a="CASOS ÉXITO" data-b="+500">CASOS ÉXITO — <span class="b-b">+500</span></p>
@@ -699,7 +699,7 @@ main,footer{position:relative;z-index:1}
           <option value="">Elige una opción</option>
           <option value="usa">Visa americana · primera vez</option>
           <option value="vegas">Visa americana · renovación</option>
-          <option value="mundial">Visa mundialista</option>
+          <option value="flash">Visa Flash · con adelanto de cita</option>
           <option value="canada">Visa de turismo · Canadá</option>
           <option value="uk">Visa de turismo · Reino Unido</option>
           <option value="adelanto">Adelanto de cita de visa</option>
@@ -797,13 +797,13 @@ const PK = [
     note: "Los precios son por persona. El valor consular es de 185 USD y no está incluido.",
     tiers: [390000, 390000, 380000, 370000, 360000], stub: [["Clase", "B1/B2"], ["Asesorías", "3"], ["Paquete", "01"]], consular: "185 USD",
     stamp: { ring: "ESTADOS UNIDOS • VISA B1/B2 • MCO • ", big: "USA", small: "B1/B2", color: "#ff7a8a", seed: 4 } },
-  { id: "mundial", g: "usa", flag: "us", code: "MIA", font: "t-mundial", acc: "#ffd23f", acc2: "#7f9cff", tk: "#1d3fd6", pbg: "#040a2a",
-    title: ["Visa", "mundialista"], cardTitle: ["Visa", "mundialista"], kick: "Estados Unidos · Mundial 2026", pkg: "Paquete 2",
-    sub: "3 asesorías + adelantamiento de cita 2026", label: "Asesoría", sessions: THREE_SESSIONS, numbered: true,
-    extras: ["Acompañamiento al proceso", "Adelantamiento de cita 2026"],
+  { id: "flash", g: "usa", flag: "us", code: "MIA", font: "t-mundial", acc: "#ffd23f", acc2: "#7f9cff", tk: "#1d3fd6", pbg: "#07082a",
+    title: ["Visa", "flash"], cardTitle: ["Visa", "flash"], kick: "Estados Unidos · Tiempo récord", pkg: "Paquete 2",
+    sub: "3 asesorías + adelanto de cita · tu visa en tiempo récord", label: "Asesoría", sessions: THREE_SESSIONS, numbered: true,
+    extras: ["Adelanto de cita incluido", "Acompañamiento al proceso"],
     note: "Los precios son por persona. El valor consular es de 185 USD y no está incluido.",
     tiers: [650000, 600000, 550000, 500000], stub: [["Clase", "B1/B2"], ["Asesorías", "3"], ["Paquete", "02"]], consular: "185 USD",
-    stamp: { shape: "rect", big: "MIA 26", small: "MUNDIAL • 2026", color: "#ffd23f", seed: 7 } },
+    stamp: { shape: "rect", big: "FLASH", small: "TIEMPO RÉCORD", color: "#ffd23f", seed: 7 } },
   { id: "vegas", g: "usa", flag: "us", code: "LAS", font: "t-vegas", acc: "#ff3d8b", acc2: "#ffb347", tk: "#d6176a", pbg: "#11031b",
     title: ["Renovación", "visa americana"], cardTitle: ["Renovación"], kick: "Estados Unidos · B1/B2", pkg: "Paquete 3",
     sub: "B1/B2 · paquete completo o solo asesoría", label: "Incluye", sessions: ["Diligenciar el formulario", "Pago consular", "Agendamiento de citas", "Espacio abierto para dudas e inquietudes"], numbered: false,
@@ -832,7 +832,7 @@ const ADEL_CARD = { id: "adelanto", g: "tram", flag: "co", acc: "#ffcf4a", font:
 
 /* ---------- marquesina ---------- */
 (() => {
-  const items = [["Visa americana", 0], ["primera vez", 1], ["Mundialista", 0], ["Renovación", 0], ["Canadá", 0], ["Reino Unido", 0], ["adelanto de cita", 1], ["Pasaporte", 0]];
+  const items = [["Visa americana", 0], ["primera vez", 1], ["Visa Flash", 0], ["Renovación", 0], ["Canadá", 0], ["Reino Unido", 0], ["adelanto de cita", 1], ["Pasaporte", 0]];
   const one = items.map(([t, s]) => `<span>${s ? `<em>${t}</em>` : t}${PLANE}</span>`).join("");
   $("#mq").innerHTML = one + one;
 })();
@@ -995,7 +995,7 @@ const board = (() => {
 
 /* ---------- estado según la sección a la vista ---------- */
 const syncState = (() => {
-  const navMap = { pick: "pick", adelanto: "adelanto", usa: "usa", mundial: "usa", vegas: "usa", canada: "canada", uk: "uk", faq: "faq" };
+  const navMap = { pick: "pick", adelanto: "adelanto", usa: "usa", flash: "usa", vegas: "usa", canada: "canada", uk: "uk", faq: "faq" };
   const links = $$(".links a"), secs = $$("[data-state]");
   let shown = "";
   return () => {
@@ -1066,7 +1066,7 @@ const syncState = (() => {
 
 
 /* ---------- formulario de cotización → WhatsApp ---------- */
-const TRAM = { usa: "Visa americana · primera vez", vegas: "Visa americana · renovación", mundial: "Visa mundialista", canada: "Visa de turismo · Canadá", uk: "Visa de turismo · Reino Unido", adelanto: "Adelanto de cita de visa", pasaporte: "Pasaporte colombiano", otro: "Aún no sé, quiero asesoría" };
+const TRAM = { usa: "Visa americana · primera vez", vegas: "Visa americana · renovación", flash: "Visa Flash · con adelanto de cita", canada: "Visa de turismo · Canadá", uk: "Visa de turismo · Reino Unido", adelanto: "Adelanto de cita de visa", pasaporte: "Pasaporte colombiano", otro: "Aún no sé, quiero asesoría" };
 const qd = $("#qd"), qform = $("#qform"), segVal = {};
 let qExtra = "", qMsg = "";
 function openQuote(tram, pax, opt) {
@@ -1203,7 +1203,7 @@ function startGlobe() {
   scene.add(stars);
 
   // rutas desde Medellín
-  const home = AIR.MDE, KEYS = ["usa", "mundial", "vegas", "canada", "uk"], CODE = { usa: "MCO", mundial: "MIA", vegas: "LAS", canada: "YYZ", uk: "LHR" };
+  const home = AIR.MDE, KEYS = ["usa", "flash", "vegas", "canada", "uk"], CODE = { usa: "MCO", flash: "MIA", vegas: "LAS", canada: "YYZ", uk: "LHR" };
   const A = ll(home.lat, home.lon, 1), SEG = 160, arcs = {};
   const ringGeo = new THREE.RingGeometry(.03, .04, 48), up0 = new THREE.Vector3(0, 0, 1), pinGeo = new THREE.SphereGeometry(.018, 12, 12);
   const mkRing = p => { const m = new THREE.Mesh(ringGeo, new THREE.MeshBasicMaterial({ color: 0xffffff, transparent: true, side: THREE.DoubleSide, depthWrite: false })); m.position.copy(p).multiplyScalar(1.003); m.quaternion.setFromUnitVectors(up0, p.clone().normalize()); R.add(m); return m; };
@@ -1234,7 +1234,7 @@ function startGlobe() {
   const ST = {
     hero: { a: "#2dafd3", b: "#7fdcf3", lat: 24, lon: -58, m: "dust" }, pick: { a: "#2dafd3", b: "#7fdcf3", lat: 24, lon: -58, m: "dust" },
     adelanto: { a: "#ffcf4a", b: "#ff9d2e", lat: 20, lon: -62, m: "sparks" },
-    usa: { a: "#ff5d72", b: "#6f8cff", k: "usa", m: "stars" }, mundial: { a: "#ffd23f", b: "#ff2d46", k: "mundial", m: "confetti" },
+    usa: { a: "#ff5d72", b: "#6f8cff", k: "usa", m: "stars" }, flash: { a: "#ffd23f", b: "#3de0ff", k: "flash", m: "confetti" },
     vegas: { a: "#ff3d8b", b: "#ffb347", k: "vegas", m: "bokeh" }, canada: { a: "#ff5a4d", b: "#5ef2c2", k: "canada", m: "snow" },
     uk: { a: "#ff5a6a", b: "#7c9bff", k: "uk", m: "rain" },
     how: { a: "#2dafd3", b: "#7fdcf3", lat: 24, lon: -58, m: "dust" }, faq: { a: "#2dafd3", b: "#7fdcf3", lat: 24, lon: -58, m: "dust" },
