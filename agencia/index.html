@@ -22,7 +22,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=JetBrains+Mono:wght@500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&text=%20AWacdehijlmnoprstuv&display=swap">
 <script>
-(function(){var p=new URLSearchParams(location.search).get("d"),m=/^(ninguna)$/.test(p)&&p;
+(function(){var p=new URLSearchParams(location.search).get("d"),m=/^(brasil|despegue|eeuu|europa|peru|puntacana|sudamerica|viajes|visas)$/.test(p)&&p;
 if(m){var l=document.createElement("link");l.rel="preload";l.as="image";l.href="/assets/foto/"+m+(innerWidth>=1024?"-l":"-s")+".webp";l.setAttribute("fetchpriority","high");document.head.appendChild(l)}})();
 </script>
 <style>
@@ -170,7 +170,7 @@ html[data-modo="revision"] .chips{padding-top:16px}
 .win__panel{position:relative;padding:16px 16px 6px;border-radius:44px;background:linear-gradient(180deg,#fbfcfd,var(--cabin) 70%);box-shadow:inset 0 1px 0 #fff,inset 0 -2px 6px rgba(13,27,38,.08),0 30px 60px -28px rgba(13,27,38,.45),0 0 0 1px rgba(13,27,38,.06)}
 .win__hole{position:relative;overflow:hidden;border-radius:46%/34%;height:clamp(260px,42svh,400px);background:#0b2a4a;isolation:isolate;transform:translateZ(0)}
 .win__hole>*{position:absolute;inset:0;width:100%;height:100%}
-.win__mde{z-index:1}
+.win__base{z-index:1;object-fit:cover;object-position:68% 50%}
 .win__img{z-index:2;object-fit:cover;opacity:0;transition:opacity .45s var(--ease)}
 .win__img.is-top{z-index:3}
 .win__img.is-on{opacity:1}
@@ -566,12 +566,9 @@ details.col[open] summary::after{content:"−"}
    <figure class="win" data-time="tarde">
     <div class="win__panel">
      <div class="win__hole" aria-hidden="true">
-      <svg preserveAspectRatio="xMidYMid slice" class="win__mde" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800"><style>.mdeC{fill:var(--cloud,#eef3f6)}.mdeS{fill:var(--cloud-sh,#b9d6e3)}.mdeU{fill:var(--sun,#ffcf4a)}.mdeT3{stop-color:var(--sky3,#f6a85b)}.mdeTU{stop-color:var(--sun,#ffcf4a)}.mdeTL{stop-color:var(--lights,#ffcf4a)}</style><defs><linearGradient id="mde-mdeA" x2="0" y2="1"><stop style="stop-color:var(--sky1,#0b2a4a)"/><stop offset=".35" style="stop-color:var(--sky2,#3c6e8f)"/><stop offset=".58" class="mdeT3"/></linearGradient><radialGradient id="mde-mdeG"><stop class="mdeT3"/><stop offset="1" class="mdeT3" stop-opacity="0"/></radialGradient><radialGradient id="mde-mdeH"><stop offset=".4" class="mdeTU" stop-opacity=".42"/><stop offset="1" class="mdeTU" stop-opacity="0"/></radialGradient><linearGradient id="mde-mdeZ" x2="0" y2="1"><stop class="mdeT3" stop-opacity="0"/><stop offset=".55" class="mdeT3" stop-opacity=".65"/><stop offset="1" class="mdeT3" stop-opacity="0"/></linearGradient><radialGradient id="mde-mdeW"><stop offset=".55" stop-color="#06131a" stop-opacity=".5"/><stop offset="1" stop-color="#06131a" stop-opacity="0"/></radialGradient><radialGradient id="mde-mdeV"><stop class="mdeTL" stop-opacity=".5"/><stop offset="1" class="mdeTL" stop-opacity="0"/></radialGradient><clipPath id="mde-mdeK"><use href="#mde-mdeE"/></clipPath><clipPath id="mde-mdeb1k"><use href="#mde-mdeb1"/></clipPath><clipPath id="mde-mdeb2k"><use href="#mde-mdeb2"/></clipPath><clipPath id="mde-mdeb3k"><use href="#mde-mdeb3"/></clipPath><clipPath id="mde-mdeb4k"><use href="#mde-mdeb4"/></clipPath></defs><rect width="600" height="800" fill="url(#mde-mdeA)"/><rect y="480" width="600" height="320" class="mdeS"/><g fill="#fff" style="opacity:var(--stars,.3)"><circle cx="168" cy="96" r="1.6"/><circle cx="262" cy="58" r="1.2"/><circle cx="384" cy="120" r="1.8"/><circle cx="470" cy="76" r="1.3"/><circle cx="318" cy="186" r="1.2"/><circle cx="128" cy="210" r="1.4"/></g><ellipse cx="420" cy="450" rx="330" ry="230" fill="url(#mde-mdeG)"/><path d="M60 318q120-16 250-4q-120 8-250 4ZM250 352q110-12 220-3q-110 6-220 3Z" style="fill:var(--sky3,#f6a85b);opacity:.5"/><circle cx="430" cy="440" r="120" fill="url(#mde-mdeH)"/><circle cx="430" cy="440" r="46" class="mdeU"/><path d="M316 418q54-8 108 0q-54 4-108 0ZM384 430q76-9 152 0q-76 4-152 0Z" style="fill:var(--sky2,#3c6e8f);opacity:.5"/><g fill="#1d6f80"><path id="mde-mdeR1" d="M-10 462C-2 456 26 436 40 426S65 406 76 404S93 414 104 412S128 392 140 390S166 403 178 402S201 385 214 384S241 396 254 398S276 389 292 394S329 417 350 428S395 453 420 460S487 468 500 470V520H-10Z"/></g><use href="#mde-mdeR1" style="fill:var(--sky2,#3c6e8f);opacity:.3"/><rect y="370" width="600" height="170" fill="url(#mde-mdeZ)"/><use href="#mde-mdeB0" y="-2" class="mdeU" style="stroke:var(--sun,#ffcf4a);stroke-width:4"/><path id="mde-mdeB0" d="M-10 530V474a45 45 0 0 1 50 -5a48 48 0 0 1 56 3a49 49 0 0 1 54 -5a48 48 0 0 1 56 4a45 45 0 0 1 50 -5a37 37 0 0 1 44 3a27 27 0 0 1 34 5a19 19 0 0 1 28 -6a21 21 0 0 1 36 -10a28 28 0 0 1 50 -2a16 16 0 0 1 26 2a22 22 0 0 1 40 4a19 19 0 0 1 30 6a23 23 0 0 1 42 -2a18 18 0 0 1 26 2V530Z" class="mdeS"/><path fill="#135468" d="M-10 474C-3 471 17 461 30 456S58 447 70 446S91 454 102 452S125 435 138 434S168 444 180 448S200 460 212 460S238 448 254 450S290 461 310 470S365 500 376 506V560H-10Z"/><g class="mdeC"><path id="mde-mdeb1" d="M-40 600V509a18 18 0 0 1 31 6a17 17 0 0 1 26 -6a22 22 0 0 1 33 5a17 17 0 0 1 33 -5a15 15 0 0 1 28 3a36 36 0 0 1 71 2a24 24 0 0 1 38 -3a31 31 0 0 1 59 6a20 20 0 0 1 38 1a30 30 0 0 1 54 -2a20 20 0 0 1 29 3a37 37 0 0 1 68 -2a17 17 0 0 1 31 -1a21 21 0 0 1 32 -2a36 36 0 0 1 56 2a45 45 0 0 1 75 -2V600Z"/></g><g clip-path="url(#mde-mdeb1k)"><use href="#mde-mdeb1" transform="matrix(1.08 0 0 1 -30 12)" class="mdeS"/></g><rect y="430" width="600" height="170" fill="url(#mde-mdeZ)" opacity=".45"/><path fill="#0d3b4f" d="M290 570C298 564 321 544 340 534S386 516 404 508S434 489 450 486S486 490 500 492S519 502 534 500S576 481 590 478S615 483 620 484V600H290Z"/><ellipse cx="254" cy="656" rx="150" ry="70" fill="url(#mde-mdeW)"/><ellipse id="mde-mdeE" cx="254" cy="664" rx="124" ry="46" fill="#06131a"/><g clip-path="url(#mde-mdeK)"><path fill="#0b222d" d="M120 712L340 612H380L190 720Z"/><ellipse cx="256" cy="658" rx="96" ry="40" fill="url(#mde-mdeV)"/><g style="fill:var(--lights,#ffcf4a)"><circle cx="234" cy="658" r="1.6"/><circle cx="245" cy="659" r="1.6"/><circle cx="199" cy="686" r="1.6"/><circle cx="304" cy="636" r="1.6"/><circle cx="217" cy="675" r="1.6"/><circle cx="277" cy="658" r="1.6"/><circle cx="239" cy="646" r="1.6"/><circle cx="252" cy="663" r="1.6"/><circle cx="268" cy="652" r="1.6"/><circle cx="279" cy="648" r="1.6"/><circle cx="256" cy="658" r="1.6"/><circle cx="296" cy="642" r="1.6"/><circle cx="236" cy="670" r="1.6"/><circle cx="196" cy="671" r="1.6"/><circle cx="189" cy="672" r="1.6"/><circle cx="302" cy="657" r="1.6"/><circle cx="254" cy="652" r="1.6"/><circle cx="272" cy="667" r="1.6"/><circle cx="275" cy="641" r="1.6"/><circle cx="220" cy="670" r="1.6"/><circle cx="203" cy="668" r="1.6"/><circle cx="230" cy="653" r="1.6"/><circle cx="285" cy="648" r="1.6"/><circle cx="203" cy="680" r="1.6"/><circle cx="231" cy="677" r="1.6"/><circle cx="208" cy="689" r="1.6"/><circle cx="221" cy="658" r="1.6"/><circle cx="301" cy="650" r="1.6"/><circle cx="306" cy="641" r="1.6"/><circle cx="177" cy="683" r="1.6"/><circle cx="282" cy="654" r="1.6"/><circle cx="269" cy="680" r="1.6"/><circle cx="211" cy="682" r="1.6"/><circle cx="283" cy="664" r="1.6"/><circle cx="316" cy="640" r="1.6"/><circle cx="288" cy="637" r="1.6"/></g><g fill="#2dafd3"><rect x="285" y="689" width="6" height="4"/><rect x="247" y="669" width="6" height="4"/><rect x="209" y="650" width="6" height="4"/></g><path d="M318 704L168 626" stroke="#9fc4d2" stroke-width="1.2"/></g><g class="mdeC"><path id="mde-mdeb2" d="M-40 720V569a42 42 0 0 1 67 7a19 19 0 0 1 36 -4a48 48 0 0 1 76 -6a21 21 0 0 1 39 2a35 35 0 0 1 68 -6a46 46 0 0 1 78 -1a42 42 0 0 1 66 -4a49 49 0 0 1 82 -1a42 42 0 0 1 77 -5a55 55 0 0 1 83 -2a55 55 0 0 1 81 3V720H420V660a34 34 0 0 1 -36 -44a21 21 0 0 1 -34 10a33 33 0 0 1 -60 -6a16 16 0 0 1 -28 8a38 38 0 0 1 -62 -10a19 19 0 0 1 -34 8a45 45 0 0 1 -70 26V720Z"/></g><g clip-path="url(#mde-mdeb2k)"><use href="#mde-mdeb2" transform="matrix(1.08 0 0 1 -34 22)" class="mdeS"/></g><g class="mdeC"><path id="mde-mdeb3" d="M322 800V706a25 25 0 0 1 30 -34a29 29 0 0 1 46 -32a42 42 0 0 1 65 -27a51 51 0 0 1 88 0a52 52 0 0 1 91 -14a43 43 0 0 1 85 7V800Z"/></g><g clip-path="url(#mde-mdeb3k)"><use href="#mde-mdeb3" transform="matrix(1.08 0 0 1 -40 34)" class="mdeS"/></g><g class="mdeC"><path id="mde-mdeb4" d="M-40 800V630a24 24 0 0 1 40 -18a23 23 0 0 1 44 8a23 23 0 0 1 36 -20a31 31 0 0 1 46 40a31 31 0 0 1 24 50a24 24 0 0 1 36 16a28 28 0 0 1 50 6a26 26 0 0 1 44 -4a28 28 0 0 1 50 8a23 23 0 0 1 42 -4a28 28 0 0 1 48 24a35 35 0 0 1 68 -6a35 35 0 0 1 64 18a50 50 0 0 1 98 -4V800Z"/></g><g clip-path="url(#mde-mdeb4k)"><use href="#mde-mdeb4" transform="matrix(1.08 0 0 1 -38 30)" class="mdeS"/></g><ellipse cx="470" cy="600" rx="260" ry="110" fill="url(#mde-mdeG)" opacity=".3"/></svg>
+      <img class="win__base" src="/assets/foto/despegue-s.webp" srcset="/assets/foto/despegue-s.webp 760w, /assets/foto/despegue-l.webp 1500w" sizes="(min-width:1024px) 420px, 320px" width="760" height="507" alt="" fetchpriority="high" decoding="async">
       <img class="win__img" alt="" decoding="async">
       <img class="win__img" alt="" decoding="async">
-      <div class="win__clouds win__clouds--far"></div>
-      <div class="win__clouds win__clouds--near"></div>
-      <svg class="win__wing" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240"><defs><radialGradient id="wing-n"><stop offset=".55" stop-color="#ff3b30" stop-opacity=".25"/><stop offset="1" stop-color="#ff3b30" stop-opacity="0"/></radialGradient><linearGradient id="wing-g" gradientUnits="userSpaceOnUse" x1="170" y1="120" x2="250" y2="240"><stop offset="0" stop-color="#c9d1d8"/><stop offset="1" stop-color="#8e9aa5"/></linearGradient><linearGradient id="wing-h"><stop offset="0" stop-color="#fff6ea" stop-opacity="0"/><stop offset=".57" stop-color="#fff6ea" stop-opacity=".5"/><stop offset="1" stop-color="#fff6ea" stop-opacity=".15"/></linearGradient><linearGradient id="wing-c"><stop offset="0" stop-color="#4cc4e4"/><stop offset=".5" stop-color="#2dafd3"/><stop offset="1" stop-color="#2496bc"/></linearGradient><linearGradient id="wing-d" x2="0" y2="1"><stop offset=".59" stop-color="#0d6a8e" stop-opacity="0"/><stop offset=".97" stop-color="#0d6a8e" stop-opacity=".34"/></linearGradient><path id="wing-w" d="M150 120.7C135 119.5 129.5 116 129 105C128.5 88 127 62 126.5 44Q126.2 37.5 121 35.5L116 33.6Q110 32 107.5 38.5C101 56 93.5 80 92 97C91 112 109.5 121.3 124.5 127.5L138 133.1Q141 124 150 120.7Z"/></defs><path fill="#8a96a2" d="M182 150.2Q184.6 157.3 188 158.5Q189.5 155.2 186.4 148.4ZM230.5 171Q234.2 180.8 238.7 182.7Q240.5 178.1 236.2 168.6ZM278.9 191.7Q284 205 289.8 207.7Q291.9 201.7 286 188.7ZM317.6 225.7Q324.4 243.2 331.7 246.9Q334.1 239.1 326.4 222Z"/><path fill="url(#wing-g)" d="M118 118.4Q270.2 128.6 412 151V250H338L300 200.5L124.5 127.5Z"/><path fill="#4a5664" fill-opacity=".13" d="M140 129.7L300 182.3L412 224V250H338L300 200.5L140 133.9Z"/><path fill="url(#wing-h)" d="M156 123.1Q270 133.5 412 156V168Q270 145 156 127.4Z"/><g fill="none"><path stroke="#000" stroke-opacity=".12" d="M146 125.5L412 172M140 129.7L300 182.3L412 224M196 148.1L199 158.5M248 165.1L251 180.1M214 138.9L216 153.8M262 148.7L264 169.2M318 165.5L320 198.5"/><path stroke="#6f7b87" d="M124.5 127.5L300 200.5L338 246"/><path stroke="#e3e8ec" stroke-width="2" d="M140 120Q280.5 130.2 412 151"/></g><use href="#wing-w" fill="url(#wing-c)"/><use href="#wing-w" fill="url(#wing-d)"/><path fill="none" stroke="#a9e7f6" stroke-width="1.3" stroke-linecap="round" d="M107.5 38.5C101 56 93.5 80 92 97C91.7 99 91.6 101 91.7 102"/><g fill="#fff" transform="translate(113.5 66)scale(1.15)"><path d="M-.8 .6C0 8-.9 14-4 20.4H-1C1.6 14 2.3 8 1.1 .4Z"/><path d="M0 0C-4-4-10-3.4-13 2.6-9-.6-4-1 0 0ZM0 0C4-4 10-3.4 13 2.6 9-.6 4-1 0 0ZM0 0C-2-6-7-9.4-11.4-7.6-6.4-6.6-3-4 0 0ZM0 0C2-6 7-9.4 11.4-7.6 6.4-6.6 3-4 0 0ZM0 0C-5 0-8.4 3-9.6 8.4-6.4 4-3.4 1.6 0 0ZM0 0C5 0 8.4 3 9.6 8.4 6.4 4 3.4 1.6 0 0Z"/></g><circle class="nav" cx="92.6" cy="106" r="10" fill="url(#wing-n)"/><circle class="nav" cx="92.6" cy="106" r="4" fill="#ff3b30"/></svg>
       <div class="win__shade"><span class="win__grip"></span></div>
       <div class="win__glass"></div>
      </div>
@@ -607,7 +604,7 @@ details.col[open] summary::after{content:"−"}
   <div class="sec-head"><p class="eyebrow"><b>01</b> · Servicios</p><h2>Lo que hacemos <em>por tu viaje</em></h2><p class="sub">Especialistas en destinos internacionales. Y si tu viaje necesita visa, te acompañamos en todo el trámite.</p></div>
   <div class="svc">
    <article class="card svc__trip" id="servicio-viajes">
-    <div class="svc__trip-img"><div class="cover" style="--g1:#0a7499;--g2:#2dafd3" role="img" aria-label="El mundo"><b>El mundo</b><span>Europa · Caribe · Sudamérica · EE. UU.</span></div></div>
+    <div class="svc__trip-img"><img src="/assets/foto/viajes-s.webp" srcset="/assets/foto/viajes-s.webp 760w, /assets/foto/viajes-l.webp 1500w" sizes="(min-width:1024px) 600px, 100vw" width="760" height="507" alt="" loading="lazy" decoding="async"></div>
     <div class="svc__trip-body">
      <p class="tag">Especialistas en destinos internacionales</p>
      <h3>Viajes internacionales a tu medida</h3>
@@ -624,7 +621,7 @@ details.col[open] summary::after{content:"−"}
     </div>
    </article>
    <article class="card svc__visa" id="servicio-visas">
-    <div class="svc__strip"><img src="/assets/art/flash-s.webp" srcset="/assets/art/flash-s.webp 760w, /assets/art/flash-l.webp 1500w" sizes="(min-width:1024px) 780px, 100vw" width="760" height="507" alt="" loading="lazy" decoding="async"></div>
+    <div class="svc__strip"><img src="/assets/foto/visas-s.webp" srcset="/assets/foto/visas-s.webp 760w, /assets/foto/visas-l.webp 1500w" sizes="(min-width:1024px) 780px, 100vw" width="760" height="507" alt="" loading="lazy" decoding="async"></div>
     <div class="svc__body">
      <p class="tag">+500 casos de éxito</p>
      <h3>Asesoría de visas</h3>
@@ -667,12 +664,12 @@ details.col[open] summary::after{content:"−"}
   <div class="sec-head dest__head"><div><p class="eyebrow"><b>02</b> · Destinos</p><h2>Postales desde <em>la ventanilla</em></h2><p class="sub">Los favoritos de nuestros viajeros. ¿Tienes otro destino en mente? Un asesor te ayuda a planearlo.</p></div><p class="dest__count mono" aria-hidden="true">01 / 05</p></div>
   <div class="posts" tabindex="0" aria-label="Destinos, desliza para ver más">
    <article class="post">
-    <div class="post__img"><div class="cover" style="--g1:#1d3557;--g2:#4f86b5" role="img" aria-label="Europa"><b>Europa</b><span>París · Madrid · Roma</span></div></div>
+    <div class="post__img"><img src="/assets/foto/europa-s.webp" srcset="/assets/foto/europa-s.webp 760w, /assets/foto/europa-l.webp 1500w" sizes="(min-width:1024px) 280px, (min-width:600px) 44vw, 80vw" width="760" height="507" alt="Foto de París con la torre Eiffel" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
     <span class="post__stamp" aria-hidden="true"><span>MAD</span></span>
     <div class="post__body"><h3>Europa</h3><p>París, Madrid, Roma y más.</p><span class="ptag">Tiquetes · paquetes</span><a class="btn btn--sec" href="#cotizar" data-dest="europa" aria-label="Quiero ir a Europa">Quiero ir</a></div>
    </article>
    <article class="post">
-    <div class="post__img"><div class="cover" style="--g1:#0096c7;--g2:#5fd3e6" role="img" aria-label="Punta Cana"><b>Punta Cana</b><span>Playa · todo incluido</span></div></div>
+    <div class="post__img"><img src="/assets/foto/puntacana-s.webp" srcset="/assets/foto/puntacana-s.webp 760w, /assets/foto/puntacana-l.webp 1500w" sizes="(min-width:1024px) 280px, (min-width:600px) 44vw, 80vw" width="760" height="507" alt="Foto de una playa de Punta Cana con palmeras" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
     <span class="post__stamp" aria-hidden="true"><span>PUJ</span></span>
     <div class="post__body"><h3>Punta Cana</h3><p>Playas de arena blanca y planes todo incluido.</p><span class="ptag">Playa · todo incluido</span><a class="btn btn--sec" href="#cotizar" data-dest="puntacana" aria-label="Quiero ir a Punta Cana">Quiero ir</a></div>
    </article>
@@ -682,22 +679,22 @@ details.col[open] summary::after{content:"−"}
     <div class="post__body"><h3>Panamá</h3><p>Ciudad, compras y playas, a un vuelo corto.</p><span class="ptag">Ciudad · playa</span><a class="btn btn--sec" href="#cotizar" data-dest="panama" aria-label="Quiero ir a Panamá">Quiero ir</a></div>
    </article>
    <article class="post">
-    <div class="post__img"><div class="cover" style="--g1:#1f7a5c;--g2:#d9b43b" role="img" aria-label="Brasil"><b>Brasil</b><span>Río de Janeiro</span></div></div>
+    <div class="post__img"><img src="/assets/foto/brasil-s.webp" srcset="/assets/foto/brasil-s.webp 760w, /assets/foto/brasil-l.webp 1500w" sizes="(min-width:1024px) 280px, (min-width:600px) 44vw, 80vw" width="760" height="507" alt="Foto de Río de Janeiro" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
     <span class="post__stamp" aria-hidden="true"><span>GIG</span></span>
     <div class="post__body"><h3>Brasil</h3><p>Río de Janeiro, sus playas y el carnaval.</p><span class="ptag">Playa · ciudad</span><a class="btn btn--sec" href="#cotizar" data-dest="brasil" aria-label="Quiero ir a Brasil">Quiero ir</a></div>
    </article>
    <article class="post">
-    <div class="post__img"><div class="cover" style="--g1:#5a3d7a;--g2:#e0895a" role="img" aria-label="Perú"><b>Perú</b><span>Cusco · Machu Picchu</span></div></div>
+    <div class="post__img"><img src="/assets/foto/peru-s.webp" srcset="/assets/foto/peru-s.webp 760w, /assets/foto/peru-l.webp 1500w" sizes="(min-width:1024px) 280px, (min-width:600px) 44vw, 80vw" width="760" height="507" alt="Foto de Machu Picchu" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
     <span class="post__stamp" aria-hidden="true"><span>CUZ</span></span>
     <div class="post__body"><h3>Perú</h3><p>Machu Picchu, Cusco y Lima.</p><span class="ptag">Cultura · aventura</span><a class="btn btn--sec" href="#cotizar" data-dest="peru" aria-label="Quiero ir a Perú">Quiero ir</a></div>
    </article>
    <article class="post">
-    <div class="post__img"><div class="cover" style="--g1:#1f4e5f;--g2:#5aa9a0" role="img" aria-label="Sudamérica"><b>Sudamérica</b><span>Buenos Aires · Santiago</span></div></div>
+    <div class="post__img"><img src="/assets/foto/sudamerica-s.webp" srcset="/assets/foto/sudamerica-s.webp 760w, /assets/foto/sudamerica-l.webp 1500w" sizes="(min-width:1024px) 280px, (min-width:600px) 44vw, 80vw" width="760" height="507" alt="Foto de un destino de Sudamérica" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
     <span class="post__stamp" aria-hidden="true"><span>EZE</span></span>
     <div class="post__body"><h3>Sudamérica</h3><p>Buenos Aires, Santiago, la Patagonia y más.</p><span class="ptag">Ciudad · naturaleza</span><a class="btn btn--sec" href="#cotizar" data-dest="sudamerica" aria-label="Quiero ir a Sudamérica">Quiero ir</a></div>
    </article>
    <article class="post">
-    <div class="post__img"><div class="cover" style="--g1:#22223b;--g2:#5c6b9c" role="img" aria-label="Estados Unidos"><b>Estados Unidos</b><span>Nueva York · Miami · Orlando</span></div></div>
+    <div class="post__img"><img src="/assets/foto/eeuu-s.webp" srcset="/assets/foto/eeuu-s.webp 760w, /assets/foto/eeuu-l.webp 1500w" sizes="(min-width:1024px) 280px, (min-width:600px) 44vw, 80vw" width="760" height="507" alt="Foto de Nueva York" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
     <span class="post__stamp" aria-hidden="true"><span>JFK</span></span>
     <div class="post__body"><h3>Estados Unidos</h3><p>Nueva York, Miami, Orlando y más.</p><span class="ptag">Visa americana · asesoría</span><a class="btn btn--sec" href="#cotizar" data-dest="eeuu" aria-label="Quiero ir a Estados Unidos">Quiero ir</a></div>
    </article>
@@ -927,13 +924,13 @@ $$("[data-wa]").forEach(a=>a.href=wa(GEN));
 
 /* destinos */
 const D={
- europa:{l:"Europa",c:"MAD",i:"europa",p:"50% 50%",cap:"MDE → MAD\u00a0· Europa\u00a0· Tiquetes y paquetes"},
- puntacana:{l:"Punta Cana",c:"PUJ",i:"puntacana",p:"50% 50%",cap:"MDE → PUJ\u00a0· Punta Cana\u00a0· Playa todo incluido"},
+ europa:{l:"Europa",c:"MAD",i:"europa",p:"62% 50%",cap:"MDE → MAD\u00a0· Europa\u00a0· Tiquetes y paquetes"},
+ puntacana:{l:"Punta Cana",c:"PUJ",i:"puntacana",p:"35% 50%",cap:"MDE → PUJ\u00a0· Punta Cana\u00a0· Playa todo incluido"},
  panama:{l:"Panamá",c:"PTY",i:"panama",p:"50% 50%",cap:"MDE → PTY\u00a0· Panamá\u00a0· Ciudad y playas"},
- brasil:{l:"Brasil",c:"GIG",i:"brasil",p:"50% 50%",cap:"MDE → GIG\u00a0· Río de Janeiro\u00a0· Brasil"},
+ brasil:{l:"Brasil",c:"GIG",i:"brasil",p:"60% 50%",cap:"MDE → GIG\u00a0· Río de Janeiro\u00a0· Brasil"},
  peru:{l:"Perú",c:"CUZ",i:"peru",p:"50% 50%",cap:"MDE → CUZ\u00a0· Cusco y Machu Picchu\u00a0· Perú"},
  sudamerica:{l:"Otro país de Sudamérica",c:"SUR"},
- eeuu:{l:"Estados Unidos",c:"EE. UU.",r:"JFK",i:"eeuu",p:"50% 50%",cap:"MDE → JFK\u00a0· Nueva York\u00a0· Visa americana: te asesoramos",v:"eeuu1"},
+ eeuu:{l:"Estados Unidos",c:"EE. UU.",r:"JFK",i:"eeuu",p:"48% 50%",cap:"MDE → JFK\u00a0· Nueva York\u00a0· Visa americana: te asesoramos",v:"eeuu1"},
  canada:{l:"Canadá",c:"YYZ",v:"ca"},
  reinounido:{l:"Reino Unido",c:"LHR",v:"uk"},
  otro:{l:"Otro destino",c:"???"}
@@ -953,7 +950,7 @@ function route(code){
  rp.style.transition="none";rp.style.transform="translate(32px,0)";
  requestAnimationFrame(()=>requestAnimationFrame(()=>{rp.style.transition="transform .7s cubic-bezier(.2,.7,.2,1)";rp.style.transform="translate("+x+"px,0)"}));
 }
-const FOTOS=[];
+const FOTOS=["brasil", "despegue", "eeuu", "europa", "peru", "puntacana", "sudamerica", "viajes", "visas"];
 function scene(k){
  const dd=D[k]&&D[k].cap?D[k]:null,d=dd&&FOTOS.includes(dd.i)?dd:null,id=++req;
  chips.forEach(c=>c.setAttribute("aria-pressed",c.dataset.scene===(dd?k:"mde")));
