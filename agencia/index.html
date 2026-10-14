@@ -19,7 +19,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&text=%20AWadehijlnoprstuv&display=swap">
 <script>
 (function(){var p=new URLSearchParams(location.search).get("d"),m={orlando:"usa",vegas:"vegas",rocosas:"canada",londres:"uk",cartagena:"cartagena",sanandres:"sanandres",ejecafetero:"ejecafetero"}[p];
 if(m&&!(document.documentElement.dataset.modo==="publicar"&&/^(cartagena|sanandres|ejecafetero)$/.test(p))){var l=document.createElement("link");l.rel="preload";l.as="image";l.href="/assets/art/"+m+(innerWidth>=1024?"-l":"-s")+".webp";l.setAttribute("fetchpriority","high");document.head.appendChild(l)}})();
@@ -38,6 +39,7 @@ if(m&&!(document.documentElement.dataset.modo==="publicar"&&/^(cartagena|sanandr
 *,*::before,*::after{box-sizing:border-box}
 [hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
+@media(max-width:1023px){html{scroll-padding-bottom:88px}}
 body{margin:0;background:var(--ink);color:var(--fg);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:clip}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:160px 160px;transform:translateZ(0)}
 @media(min-width:1024px){body{font-size:17px}}
@@ -62,7 +64,6 @@ ul,ol{margin:0;padding:0;list-style:none}
 .mut{color:var(--mut)}
 .sub{color:var(--mut);max-width:52ch;margin-top:14px}
 .sec{padding-block:var(--sec)}
-.cv{content-visibility:auto;contain-intrinsic-size:auto 1100px}
 .sec-head{margin-bottom:32px}
 @media(min-width:1024px){.sec-head{margin-bottom:48px}}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:52px;padding:0 24px;border-radius:999px;font-weight:700;font-size:16px;line-height:1;white-space:nowrap;transition:background-color .2s,border-color .2s,transform .1s}
@@ -95,7 +96,7 @@ html[data-modo="revision"] [data-confirmar="pendiente"]::before{content:"Por con
 .brand img{width:36px;height:36px}
 .logo{display:flex;flex-direction:column;text-transform:uppercase;font-weight:800;font-stretch:125%;letter-spacing:.2em;font-size:12px;line-height:1.2}
 .logo b{color:var(--cy);font-weight:800}
-.nav,.bar__cta{display:none}
+.topnav,.bar__cta{display:none}
 .bar__wa{width:44px;height:44px;border-radius:50%;background:var(--wa);color:var(--wa-ink);display:grid;place-items:center}
 .bar__wa svg{width:22px;height:22px}
 .bar__menu{width:44px;height:44px;display:grid;place-content:center;gap:6px}
@@ -105,9 +106,9 @@ html[data-modo="revision"] [data-confirmar="pendiente"]::before{content:"Por con
  .bar{height:72px}
  .bar__in{display:grid;grid-template-columns:1fr auto 1fr}
  .brand{margin:0}
- .nav{display:flex;gap:2px;padding:5px;background:var(--ink3);border:1px solid var(--line);border-radius:999px}
- .nav a{padding:8px 16px;border-radius:999px;font-size:14px;font-weight:500;color:var(--mut);transition:color .2s,background-color .2s}
- .nav a:hover{color:var(--fg);background:var(--cabin)}
+ .topnav{display:flex;gap:2px;padding:5px;background:var(--ink3);border:1px solid var(--line);border-radius:999px}
+ .topnav a{padding:8px 16px;border-radius:999px;font-size:14px;font-weight:500;color:var(--mut);transition:color .2s,background-color .2s}
+ .topnav a:hover{color:var(--fg);background:var(--cabin)}
  .bar__cta{display:inline-flex;justify-self:end;height:44px;font-size:15px}
  .bar__wa,.bar__menu{display:none}
 }
@@ -131,6 +132,8 @@ html[data-modo="revision"] [data-confirmar="pendiente"]::before{content:"Por con
 .chips::-webkit-scrollbar{display:none}
 html[data-modo="revision"] .chips{padding-top:16px}
 .chip{flex:none;scroll-snap-align:start;height:40px;margin-block:2px;padding:0 16px;border-radius:999px;background:var(--ink3);border:1px solid var(--line);font-size:14px;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:background-color .2s,color .2s,border-color .2s}
+.chip{position:relative}
+.chip::after{content:"";position:absolute;inset:-3px 0}
 .chip small{font:500 10px var(--mono);letter-spacing:.1em;color:var(--mut)}
 .chip:hover{border-color:var(--line2)}
 .chip[aria-pressed="true"]{background:var(--cy);border-color:var(--cy);color:var(--ink)}
@@ -290,10 +293,12 @@ html[data-modo="revision"] .chips{padding-top:16px}
 .pp__f div span{display:block;font:500 10px var(--mono);letter-spacing:.14em;color:var(--mut);text-transform:uppercase}
 .pp__f div b{display:block;font:500 13px/1.45 var(--mono);letter-spacing:.04em;text-transform:uppercase;margin-top:3px}
 .pp__f .w{grid-column:1/-1}
-.pp__more{margin-top:14px}
+.pp__more{margin-top:14px;display:flex;flex-direction:column}
 .pp__more summary{cursor:pointer;color:var(--cy2);font-size:14px;list-style:none;min-height:44px;display:flex;align-items:center}
 .pp__more summary::-webkit-details-marker{display:none}
-.pp__more[open] summary{display:none}
+.pp__more summary .o,.pp__more[open] summary .c{display:none}
+.pp__more[open] summary .o{display:inline}
+.pp__more[open] summary{order:2}
 .pp__mrz{margin-top:20px;font:500 12px/1.6 var(--mono);letter-spacing:.1em;color:var(--mut);white-space:nowrap;overflow:hidden;opacity:.8}
 .stamps{display:grid;grid-template-columns:1fr 1fr;gap:26px 10px;padding:28px 16px}
 .st{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
@@ -338,7 +343,7 @@ html[data-modo="revision"] .chips{padding-top:16px}
 .play{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:var(--cy);color:var(--ink);display:grid;place-items:center;z-index:2;box-shadow:0 8px 24px rgba(0,0,0,.45);transition:transform .2s var(--ease)}
 .play:hover{transform:scale(1.06)}
 .play svg{width:26px;height:26px;margin-left:3px;fill:currentColor}
-.casos__more{margin-top:18px;display:inline-block}
+.casos__more{margin-top:10px;display:inline-flex;align-items:center;min-height:44px}
 @media(min-width:600px){.screens{grid-auto-columns:40%}}
 @media(min-width:1024px){
  .casos{grid-template-columns:4fr 8fr;gap:48px;align-items:center}
@@ -347,13 +352,15 @@ html[data-modo="revision"] .chips{padding-top:16px}
 }
 
 /* cotiza */
-.plan{display:grid;gap:24px}
+.plan{display:grid;gap:48px}
+@media(min-width:600px){.plan{gap:32px}}
 .steps{display:flex;gap:8px;justify-content:space-between;position:relative;margin-top:22px}
 .steps::before{content:"";position:absolute;left:12%;right:12%;top:13px;border-top:1.5px dashed var(--line2)}
 .steps li{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;font-size:13px;color:var(--mut)}
 .steps li span{width:28px;height:28px;border-radius:50%;background:var(--ink3);border:1px solid var(--cy);color:var(--cy2);display:grid;place-items:center;font:500 12px var(--mono)}
 .steps .l{display:none}
 .alt{margin-top:20px;font-size:15px;color:var(--mut)}
+.alt .lnk,.after .lnk{text-decoration:underline;padding-block:12px}
 .pv{margin-top:22px}
 .pv summary{cursor:pointer;color:var(--cy2);font-size:15px;min-height:44px;display:flex;align-items:center;gap:8px;list-style:none}
 .pv summary::-webkit-details-marker{display:none}
@@ -369,7 +376,7 @@ html[data-modo="revision"] .chips{padding-top:16px}
 .fld>label,.lbl,.fld legend{font-size:14px;font-weight:600;padding:0}
 .fld legend{margin-bottom:8px}
 .in{width:100%;height:52px;background:var(--ink3);border:1px solid var(--line);border-radius:12px;color:var(--fg);font:400 16px var(--sans);padding:0 14px;transition:border-color .2s}
-.in::placeholder{color:#6b7a86}
+.in::placeholder{color:#7d8c98}
 .in:focus{outline:none;border-color:var(--cy)}
 .in:focus-visible{outline:2px solid var(--cy2);outline-offset:2px}
 select.in{appearance:none;-webkit-appearance:none;padding-right:42px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238d9ca8' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M7 10l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;background-size:20px}
@@ -384,8 +391,8 @@ html[data-modo="revision"] .chip[data-confirmar]::before{font-size:8px;left:50%;
 .vbox[hidden]{display:none}
 @media(max-width:399px){.vbox{padding:12px}}
 @media(min-width:1024px) and (max-width:1180px){.vbox{grid-template-columns:1fr}}
-.seg{display:inline-flex;align-self:flex-start;background:var(--ink3);border:1px solid var(--line);border-radius:999px;padding:3px}
-.seg button{height:42px;min-width:52px;padding:0 14px;white-space:nowrap;border-radius:999px;font-size:15px;transition:background-color .2s,color .2s}
+.seg{display:inline-flex;align-self:flex-start;background:var(--ink3);border:1px solid var(--line);border-radius:999px;padding:2px}
+.seg button{height:44px;min-width:52px;padding:0 14px;white-space:nowrap;border-radius:999px;font-size:15px;transition:background-color .2s,color .2s}
 .seg button[aria-pressed="true"]{background:var(--cy);color:var(--ink);font-weight:600}
 .stepper{display:flex;align-items:center;justify-content:space-between;height:52px;padding:3px;background:var(--ink3);border:1px solid var(--line);border-radius:999px}
 .stepper button{width:44px;height:44px;border-radius:50%;font-size:22px;line-height:1;display:grid;place-items:center;color:var(--cy2)}
@@ -440,7 +447,9 @@ details.col summary{cursor:pointer;min-height:44px;margin:-10px 0}
 details.col summary::-webkit-details-marker{display:none}
 details.col summary::after{content:"+";font-size:18px;color:var(--mut)}
 details.col[open] summary::after{content:"−"}
-.col ul{margin-top:14px;display:flex;flex-direction:column;gap:10px;font-size:15px}
+.col ul{margin-top:6px;display:flex;flex-direction:column;gap:0;font-size:15px}
+.col li{padding-block:5px}
+.col li a{display:inline-block;padding-block:10px;margin-block:-5px}
 .col li{color:var(--mut)}
 .col a{color:var(--fg)}
 .col a:hover{color:var(--cy2)}
@@ -502,7 +511,7 @@ details.col[open] summary::after{content:"−"}
 <header class="bar" id="bar">
  <div class="wrap bar__in">
   <a class="brand" href="#inicio" aria-label="Capital Travel, ir al inicio"><img src="/assets/mark-96.webp" width="36" height="36" alt=""><span class="logo" aria-hidden="true">Capital<b>Travel</b></span></a>
-  <nav class="nav" aria-label="Principal"><a href="#servicios">Servicios</a><a href="#destinos">Destinos</a><a href="/" data-visas>Visas ↗</a><a href="#casos">Casos</a><a href="#cotizar">Cotizar</a></nav>
+  <nav class="topnav" aria-label="Principal"><a href="#servicios">Servicios</a><a href="#destinos">Destinos</a><a href="/" data-visas>Visas ↗</a><a href="#casos">Casos</a><a href="#cotizar">Cotizar</a></nav>
   <a class="btn btn--pri bar__cta" href="#cotizar">Cotizar viaje</a>
   <a class="bar__wa" href="https://wa.me/573008603114?text=Hola%20Capital%20Travel%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20cotizar%20un%20viaje." data-wa target="_blank" rel="noopener" aria-label="Escribir a Capital Travel por WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
   <button class="bar__menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
@@ -519,22 +528,6 @@ details.col[open] summary::after{content:"−"}
  <div class="wrap hero__grid">
   <p class="eyebrow">Agencia de viajes · Medellín · RNT&nbsp;152996</p>
   <h1>Tú eliges la <em>ventanilla</em>.<br>Nosotros, el&nbsp;papeleo.</h1>
-  <p class="hero__lead">Visas, adelanto de citas, pasaporte y la cotización de tu viaje. En nuestra oficina de Laureles o por WhatsApp.</p>
-  <p class="chips__t" id="chips-t">¿Hacia dónde quieres mirar?</p>
-  <div class="chips" role="group" aria-label="Elegir destino para la ventanilla">
-   <button class="chip" type="button" data-scene="mde" aria-pressed="true">Despegue <small>MDE</small></button>
-   <button class="chip" type="button" data-scene="orlando" aria-pressed="false">Orlando <small>MCO</small></button>
-   <button class="chip" type="button" data-scene="vegas" aria-pressed="false">Las Vegas <small>LAS</small></button>
-   <button class="chip" type="button" data-scene="rocosas" aria-pressed="false">Rocosas <small>YYC</small></button>
-   <button class="chip" type="button" data-scene="londres" aria-pressed="false">Londres <small>LHR</small></button>
-   <button class="chip" type="button" data-scene="cartagena" aria-pressed="false" data-confirmar="pendiente">Cartagena <small>CTG</small></button>
-   <button class="chip" type="button" data-scene="sanandres" aria-pressed="false" data-confirmar="pendiente">San Andrés <small>ADZ</small></button>
-   <button class="chip" type="button" data-scene="ejecafetero" aria-pressed="false" data-confirmar="pendiente">Eje Cafetero <small>AXM</small></button>
-  </div>
-  <div class="hero__btns">
-   <a class="btn btn--pri" id="hero-cta" href="#cotizar">Cotizar mi viaje</a>
-   <a class="btn btn--sec hero__vis" href="/" data-visas>¿Vienes por la visa? Ver precios →</a>
-  </div>
   <div class="hero__win">
    <p class="seat mono" aria-hidden="true">Asiento 1A · Ventanilla</p>
    <figure class="win" data-time="tarde">
@@ -557,6 +550,22 @@ details.col[open] summary::after{content:"−"}
     </figcaption>
    </figure>
   </div>
+  <p class="chips__t" id="chips-t">¿Hacia dónde quieres mirar?</p>
+  <div class="chips" role="group" aria-label="Elegir destino para la ventanilla">
+   <button class="chip" type="button" data-scene="mde" aria-pressed="true">Despegue <small>MDE</small></button>
+   <button class="chip" type="button" data-scene="orlando" aria-pressed="false">Orlando <small>MCO</small></button>
+   <button class="chip" type="button" data-scene="vegas" aria-pressed="false">Las Vegas <small>LAS</small></button>
+   <button class="chip" type="button" data-scene="rocosas" aria-pressed="false">Rocosas <small>YYC</small></button>
+   <button class="chip" type="button" data-scene="londres" aria-pressed="false">Londres <small>LHR</small></button>
+   <button class="chip" type="button" data-scene="cartagena" aria-pressed="false" data-confirmar="pendiente">Cartagena <small>CTG</small></button>
+   <button class="chip" type="button" data-scene="sanandres" aria-pressed="false" data-confirmar="pendiente">San Andrés <small>ADZ</small></button>
+   <button class="chip" type="button" data-scene="ejecafetero" aria-pressed="false" data-confirmar="pendiente">Eje Cafetero <small>AXM</small></button>
+  </div>
+  <div class="hero__btns">
+   <a class="btn btn--pri" id="hero-cta" href="#cotizar">Cotizar mi viaje</a>
+   <a class="btn btn--sec hero__vis" href="/" data-visas>¿Vienes por la visa? Ver precios →</a>
+  </div>
+  <p class="hero__lead">Visas, adelanto de citas, pasaporte y la cotización de tu viaje. En nuestra oficina de Laureles o por WhatsApp.</p>
  </div>
  <noscript><style>.chips,.chips__t{display:none}</style></noscript>
 </section>
@@ -670,7 +679,7 @@ details.col[open] summary::after{content:"−"}
      <div class="w"><span>NIT</span><b>1007241221-1</b></div>
     </div>
     <details class="pp__more" data-desk>
-     <summary>Ver más datos</summary>
+     <summary><span class="c">Ver más datos</span><span class="o">Ver menos datos</span></summary>
      <div class="pp__f">
       <div class="w"><span>Tipo</span><b>Agencia de viajes</b></div>
       <div class="w"><span>Dirección</span><b>Calle 40A #81A-115, Simón Bolívar, Laureles</b></div>
@@ -917,7 +926,8 @@ const seen=new Set();
 IO(pl,e=>{e.isIntersecting?seen.add(e.target):seen.delete(e.target);if(seen.size)cnt.textContent=pad(Math.min(...[...seen].map(x=>pl.indexOf(x)))+1)+" / "+pad(pl.length)},{root:posts,threshold:.6});
 
 /* detalles abiertos en escritorio */
-const desk=()=>$$("details[data-desk]").forEach(d=>{if(DESK.matches)d.open=true});
+const desk=()=>$$("details[data-desk]").forEach(d=>{if(DESK.matches)d.open=true;const sm=$("summary",d);if(d.classList.contains("col")||d.classList.contains("pv"))sm.tabIndex=DESK.matches?-1:0});
+$$("details[data-desk]>summary").forEach(sm=>sm.addEventListener("click",e=>{if(DESK.matches&&!sm.closest(".pp__more"))e.preventDefault()}));
 desk();DESK.addEventListener&&DESK.addEventListener("change",desk);
 
 /* menú */
