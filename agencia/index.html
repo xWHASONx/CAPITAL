@@ -143,10 +143,13 @@ html[data-modo="revision"] .chips{padding-top:16px}
 @media(min-width:600px){.hero__btns{flex-direction:row;flex-wrap:wrap}}
 @media(min-width:1024px){
  .hero{min-height:100svh;padding:120px 0 64px;display:flex;align-items:center}
+}
+@media(min-width:1024px) and (max-height:820px){.hero{padding:100px 0 40px}}
+@media(min-width:1024px){
  .hero>.wrap{width:100%}
- .hero__grid{grid-template-columns:minmax(0,6fr) minmax(0,.6fr) minmax(0,5fr);grid-template-rows:1fr auto auto auto auto auto auto 1fr;
+ .hero__grid{grid-template-columns:minmax(0,6.5fr) minmax(0,.4fr) minmax(0,5fr);grid-template-rows:1fr auto auto auto auto auto auto 1fr;
   grid-template-areas:". . win" "eye . win" "h1 . win" "lead . win" "ct . win" "chips . win" "btns . win" ". . win"}
- .hero h1{font-size:clamp(56px,5vw,76px)}
+ .hero h1{font-size:clamp(52px,4.6vw,64px)}
  .hero .eyebrow{margin-bottom:22px}
  .hero__lead{margin-top:24px;font-size:18px}
  .chips__t{margin-top:36px}
@@ -161,7 +164,7 @@ html[data-modo="revision"] .chips{padding-top:16px}
 .win[data-time="amanecer"]{--sky1:#1a2a4a;--sky2:#e8708a;--sky3:#f6c27a}
 .win[data-time="noche"]{--sky1:#04070a;--sky2:#0d2c3a;--sky3:#133243;--sun:#eef3f6;--cloud:#3a4a5a;--cloud-sh:#26323e;--stars:.9}
 .win__panel{position:relative;padding:16px 16px 6px;border-radius:44px;background:linear-gradient(180deg,var(--cabin-hi),var(--cabin) 18%);box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 30px 60px -20px rgba(0,0,0,.8)}
-.win__hole{position:relative;overflow:hidden;border-radius:46%/34%;height:clamp(280px,46svh,420px);background:#0b2a4a;isolation:isolate;transform:translateZ(0)}
+.win__hole{position:relative;overflow:hidden;border-radius:46%/34%;height:clamp(260px,42svh,400px);background:#0b2a4a;isolation:isolate;transform:translateZ(0)}
 .win__hole>*{position:absolute;inset:0;width:100%;height:100%}
 .win__mde{z-index:1}
 .win__img{z-index:2;object-fit:cover;opacity:0;transition:opacity .45s var(--ease)}
@@ -196,7 +199,7 @@ html[data-modo="revision"] .chips{padding-top:16px}
 .route .route__code{fill:var(--cy2)}
 .route__plane{transform:translate(32px,0)}
 @media(min-width:1024px){
- .win{max-width:464px}
+ .win{max-width:max(330px,min(464px,calc((100svh - 340px)*.75 + 44px)))}
  .win__panel{padding:22px 22px 8px}
  .win__hole{height:auto;aspect-ratio:3/4}
 }
@@ -222,11 +225,11 @@ html[data-modo="revision"] .chips{padding-top:16px}
 .svc__btns{display:flex;flex-direction:column;gap:10px;margin-top:20px}
 @media(max-width:599px){
  .prices thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
- .prices tr{display:grid;grid-template-columns:1fr 1fr;padding:12px 0;border-bottom:1px solid var(--line)}
+ .prices tr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}
  .prices tbody th{grid-column:1/-1;padding:0 0 6px;border:0}
  .prices td{border:0;padding:0;text-align:left}
  .prices td+td{text-align:right}
- .prices td::before{content:attr(data-l) " ";font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut);margin-right:6px}
+ .prices td::before{content:attr(data-l);display:block;margin-bottom:2px;font:500 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
 }
 .svc__card{display:flex;flex-direction:column;overflow:hidden}
 .svc__card .ico{color:var(--cy);width:28px;height:28px}
@@ -263,10 +266,9 @@ html[data-modo="revision"] .chips{padding-top:16px}
 .post__stamp span{display:grid;place-items:center;width:100%;height:100%;border:1px solid rgba(45,175,211,.4)}
 .post__body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1}
 .post__body p{color:var(--mut);font-size:15px}
-.ptag{align-self:flex-start;font:500 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;padding:6px 9px;border-radius:999px;border:1px solid var(--cy);color:var(--cy2)}
+.ptag{align-self:flex-start;margin-bottom:10px;font:500 10px/1.35 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border-radius:10px;text-wrap:balance;border:1px solid var(--cy);color:var(--cy2)}
 .ptag--nat{border-color:var(--line2);color:var(--mut)}
 .post .btn{margin-top:auto;align-self:flex-start;height:44px;padding:0 20px;font-size:15px}
-.post__body .btn{margin-top:10px}
 .post--otro{border:1.5px dashed var(--cy);background:var(--ink2);justify-content:center}
 .post--otro .post__body{justify-content:center;gap:10px;padding:24px}
 .post--otro svg{width:100%;max-width:220px;height:auto;margin-bottom:6px}
@@ -281,7 +283,7 @@ html[data-modo="revision"] .chips{padding-top:16px}
 @media(hover:hover) and (min-width:1024px){.post:not(.post--otro):hover{transform:translateY(-4px) rotate(-.5deg)}}
 
 /* por qué: pasaporte */
-.pp{position:relative;display:grid;background:var(--ink2);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.pp{position:relative;display:grid;grid-template-columns:minmax(0,1fr);background:var(--ink2);border:1px solid var(--line);border-radius:18px;overflow:hidden}
 .pp__data{padding:22px 20px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='48'%3E%3Cg fill='none' stroke='%232dafd3' stroke-opacity='.08'%3E%3Cpath d='M0 24q15-18 30 0t30 0 30 0 30 0'/%3E%3Cpath d='M0 24q15 18 30 0t30 0 30 0 30 0'/%3E%3Cpath d='M0 12q15-12 30 0t30 0 30 0 30 0'/%3E%3Cpath d='M0 36q15 12 30 0t30 0 30 0 30 0'/%3E%3C/g%3E%3C/svg%3E");border-bottom:1px solid var(--line)}
 .pp__t{color:var(--cy);font-size:11px;margin-bottom:16px;display:flex;justify-content:space-between}
 .pp__f{display:grid;grid-template-columns:1fr 1fr;gap:14px 18px}
@@ -298,6 +300,7 @@ html[data-modo="revision"] .chips{padding-top:16px}
 .st svg{width:110px;height:110px;transform:rotate(var(--r));transition:opacity .32s,transform .32s var(--ease);transition-delay:calc(var(--i)*80ms)}
 .js .stamps:not(.is-in) .st svg{opacity:0;transform:scale(1.35) rotate(-8deg)}
 .st p{font-size:14px;color:var(--mut);max-width:20ch;line-height:1.4}
+@media(max-width:359px){.st svg{width:96px;height:96px}.stamps{padding:24px 10px}}
 .stp text{font-family:var(--mono);font-weight:500;letter-spacing:.08em}
 .stp .big{font-family:var(--sans);font-weight:800;font-stretch:85%;letter-spacing:-.01em}
 .yesno{display:grid;gap:28px;margin-top:28px}
@@ -307,7 +310,7 @@ html[data-modo="revision"] .chips{padding-top:16px}
 .yesno .no li{color:var(--mut)}
 .yesno .no li::before{background:var(--line2)}
 @media(min-width:1024px){
- .pp{grid-template-columns:1fr 1fr}
+ .pp{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
  .pp::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 49.4%,rgba(0,0,0,.4) 50%,transparent 50.6%);pointer-events:none}
  .pp__data{padding:36px 40px;border:0}
  .pp__f{gap:20px 24px}
@@ -360,7 +363,7 @@ html[data-modo="revision"] .chips{padding-top:16px}
 .bubble{margin-top:8px;background:#0b2a1f;border:1px solid rgba(37,211,102,.25);border-radius:14px 14px 14px 4px;padding:14px 16px;font-size:14px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere;color:#dff5e8}
 .pf{position:relative;background:var(--ink2);border:1px solid var(--line);border-radius:var(--r-l);padding:20px}
 .pf__head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:14px;margin-bottom:20px;border-bottom:1.5px dashed var(--line2);color:var(--cy2);font-size:11px}
-.pf__head span+span{color:var(--mut)}
+.pf__head span+span{color:var(--mut);white-space:nowrap;flex:none}
 .fgrid{display:grid;gap:18px}
 .fld{display:flex;flex-direction:column;gap:8px;min-width:0;border:0;margin:0;padding:0}
 .fld>label,.lbl,.fld legend{font-size:14px;font-weight:600;padding:0}
@@ -379,13 +382,15 @@ html[data-modo="revision"] .chip[data-confirmar]::before{font-size:8px;left:50%;
 .needs .chip{height:40px;margin:0}
 .vbox{display:grid;gap:18px;padding:16px;border:1px solid var(--line);border-radius:14px;background:rgba(17,25,34,.5)}
 .vbox[hidden]{display:none}
+@media(max-width:399px){.vbox{padding:12px}}
+@media(min-width:1024px) and (max-width:1180px){.vbox{grid-template-columns:1fr}}
 .seg{display:inline-flex;align-self:flex-start;background:var(--ink3);border:1px solid var(--line);border-radius:999px;padding:3px}
-.seg button{height:42px;min-width:56px;padding:0 16px;border-radius:999px;font-size:15px;transition:background-color .2s,color .2s}
+.seg button{height:42px;min-width:52px;padding:0 14px;white-space:nowrap;border-radius:999px;font-size:15px;transition:background-color .2s,color .2s}
 .seg button[aria-pressed="true"]{background:var(--cy);color:var(--ink);font-weight:600}
 .stepper{display:flex;align-items:center;justify-content:space-between;height:52px;padding:3px;background:var(--ink3);border:1px solid var(--line);border-radius:999px}
 .stepper button{width:44px;height:44px;border-radius:50%;font-size:22px;line-height:1;display:grid;place-items:center;color:var(--cy2)}
 .stepper button:hover{background:var(--cabin)}
-.stepper button:disabled{color:#3a4652;cursor:default;background:none}
+.stepper button[aria-disabled="true"]{color:#3a4652;cursor:default;background:none}
 .stepper output{font-weight:700;font-size:18px;font-variant-numeric:tabular-nums}
 .est{border-top:1.5px dashed var(--gold);background:rgba(255,207,74,.06);padding:14px 16px;border-radius:0 0 10px 10px;font-family:var(--mono)}
 .est[hidden]{display:none}
@@ -404,13 +409,16 @@ html[data-modo="revision"] .chip[data-confirmar]::before{font-size:8px;left:50%;
 .after[hidden]{display:none}
 .after .btn{height:44px}
 #cotizar{overflow-x:clip}
-.okst{position:absolute;top:-22px;right:-6px;width:168px;height:auto;z-index:5;pointer-events:none;opacity:0;color:var(--stamp)}
+.okst{position:absolute;top:-36px;right:-10px;width:132px;height:auto;z-index:5;pointer-events:none;opacity:0;color:var(--stamp)}
 .pf.is-sent .okst{animation:stamp .35s var(--ease) forwards}
+.pf.is-sent .pf__head span+span{visibility:hidden}
+@media(min-width:600px){.okst{width:156px;top:-40px}}
 @keyframes stamp{from{opacity:0;transform:scale(1.6) rotate(-14deg)}to{opacity:.9;transform:rotate(-6deg)}}
 @media(min-width:600px){.fgrid{grid-template-columns:1fr 1fr}.fld--full,.vbox{grid-column:1/-1}.vbox{grid-template-columns:1fr 1fr}.vbox>.fld:first-child,.est{grid-column:1/-1}}
 @media(min-width:1024px){
  .plan{grid-template-columns:5fr 7fr;gap:56px;align-items:start}
  .plan__side{position:sticky;top:96px}
+ .bubble{max-height:max(140px,calc(100svh - 500px));overflow:auto}
  .steps{flex-direction:column;gap:18px;margin-top:32px;padding-left:0}
  .steps::before{left:13px;right:auto;top:14px;bottom:14px;border-top:0;border-left:1.5px dashed var(--line2)}
  .steps li{flex-direction:row;text-align:left;font-size:15px;color:var(--fg);gap:14px}
@@ -509,8 +517,8 @@ details.col[open] summary::after{content:"−"}
 <main id="main">
 <section class="hero" id="inicio">
  <div class="wrap hero__grid">
-  <p class="eyebrow">Agencia de viajes · Medellín · RNT 152996</p>
-  <h1>Tú eliges la <em>ventanilla</em>.<br>Nosotros, el papeleo.</h1>
+  <p class="eyebrow">Agencia de viajes · Medellín · RNT&nbsp;152996</p>
+  <h1>Tú eliges la <em>ventanilla</em>.<br>Nosotros, el&nbsp;papeleo.</h1>
   <p class="hero__lead">Visas, adelanto de citas, pasaporte y la cotización de tu viaje. En nuestra oficina de Laureles o por WhatsApp.</p>
   <p class="chips__t" id="chips-t">¿Hacia dónde quieres mirar?</p>
   <div class="chips" role="group" aria-label="Elegir destino para la ventanilla">
@@ -532,7 +540,7 @@ details.col[open] summary::after{content:"−"}
    <figure class="win" data-time="tarde">
     <div class="win__panel">
      <div class="win__hole" aria-hidden="true">
-      <svg preserveAspectRatio="xMidYMid slice" class="win__mde" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800"><style>.mdeC{fill:var(--cloud,#eef3f6)}.mdeS{fill:var(--cloud-sh,#b9d6e3)}.mdeU{fill:var(--sun,#ffcf4a)}.mdeL{fill:var(--lights,#ffcf4a)}.mdeT1{stop-color:var(--sky1,#0b2a4a)}.mdeT2{stop-color:var(--sky2,#3c6e8f)}.mdeT3{stop-color:var(--sky3,#f6a85b)}.mdeTU{stop-color:var(--sun,#ffcf4a)}.mdeTL{stop-color:var(--lights,#ffcf4a)}</style><defs><linearGradient id="mde-mdeA" x2="0" y2="1"><stop offset="0" class="mdeT1"/><stop offset=".35" class="mdeT2"/><stop offset=".58" class="mdeT3"/></linearGradient><radialGradient id="mde-mdeG"><stop offset="0" class="mdeT3"/><stop offset="1" class="mdeT3" stop-opacity="0"/></radialGradient><radialGradient id="mde-mdeH"><stop offset=".4" class="mdeTU" stop-opacity=".5"/><stop offset="1" class="mdeTU" stop-opacity="0"/></radialGradient><linearGradient id="mde-mdeZ" x2="0" y2="1"><stop offset="0" class="mdeT3" stop-opacity="0"/><stop offset=".55" class="mdeT3" stop-opacity=".65"/><stop offset="1" class="mdeT3" stop-opacity="0"/></linearGradient><radialGradient id="mde-mdeW"><stop offset=".55" stop-color="#06131a" stop-opacity=".5"/><stop offset="1" stop-color="#06131a" stop-opacity="0"/></radialGradient><radialGradient id="mde-mdeV"><stop offset="0" class="mdeTL" stop-opacity=".5"/><stop offset="1" class="mdeTL" stop-opacity="0"/></radialGradient><clipPath id="mde-mdeK"><ellipse cx="254" cy="664" rx="124" ry="46"/></clipPath><path id="mde-mdeb1" d="M-40 600V509a17 17 0 0 1 28 6a16 16 0 0 1 24 -6a20 20 0 0 1 30 5a16 16 0 0 1 30 -5a14 14 0 0 1 26 3a33 33 0 0 1 65 2a21 21 0 0 1 34 -3a28 28 0 0 1 53 6a18 18 0 0 1 34 1a26 26 0 0 1 48 -2a19 19 0 0 1 27 3a33 33 0 0 1 62 -2a16 16 0 0 1 28 -1a19 19 0 0 1 29 -2a32 32 0 0 1 50 2a41 41 0 0 1 69 3a32 32 0 0 1 53 -5V600Z"/><clipPath id="mde-mdeb1k"><use href="#mde-mdeb1"/></clipPath><path id="mde-mdeb2" d="M-40 720V569a39 39 0 0 1 61 7a17 17 0 0 1 32 -4a45 45 0 0 1 71 -6a19 19 0 0 1 35 2a32 32 0 0 1 63 -5a43 43 0 0 1 73 -1a39 39 0 0 1 61 -4a47 47 0 0 1 78 0a40 40 0 0 1 73 -5a51 51 0 0 1 78 -2a52 52 0 0 1 77 1V720H420V660a34 34 0 0 1 -36 -44a21 21 0 0 1 -34 10a33 33 0 0 1 -60 -6a16 16 0 0 1 -28 8a38 38 0 0 1 -62 -10a19 19 0 0 1 -34 8a45 45 0 0 1 -70 26V720Z"/><clipPath id="mde-mdeb2k"><use href="#mde-mdeb2"/></clipPath><path id="mde-mdeb3" d="M322 800V706a25 25 0 0 1 30 -34a29 29 0 0 1 46 -32a42 42 0 0 1 65 -27a51 51 0 0 1 88 0a52 52 0 0 1 91 -14a43 43 0 0 1 85 7V800Z"/><clipPath id="mde-mdeb3k"><use href="#mde-mdeb3"/></clipPath><path id="mde-mdeb4" d="M-40 800V630a24 24 0 0 1 40 -18a23 23 0 0 1 44 8a23 23 0 0 1 36 -20a31 31 0 0 1 46 40a31 31 0 0 1 24 50a24 24 0 0 1 36 16a28 28 0 0 1 50 6a26 26 0 0 1 44 -4a28 28 0 0 1 50 8a23 23 0 0 1 42 -4a28 28 0 0 1 48 24a35 35 0 0 1 68 -6a35 35 0 0 1 64 18a50 50 0 0 1 98 -4V800Z"/><clipPath id="mde-mdeb4k"><use href="#mde-mdeb4"/></clipPath></defs><rect width="600" height="800" fill="url(#mde-mdeA)"/><rect y="480" width="600" height="320" class="mdeS"/><g fill="#fff" style="opacity:var(--stars,.3)"><circle cx="168" cy="96" r="1.6"/><circle cx="262" cy="58" r="1.2"/><circle cx="384" cy="120" r="1.8"/><circle cx="470" cy="76" r="1.3"/><circle cx="318" cy="186" r="1.2"/><circle cx="128" cy="210" r="1.4"/></g><ellipse cx="420" cy="450" rx="330" ry="230" fill="url(#mde-mdeG)"/><path d="M60 318q120-16 250-4q-120 8-250 4ZM250 352q110-12 220-3q-110 6-220 3Z" style="fill:var(--sky3,#f6a85b);opacity:.5"/><circle cx="430" cy="440" r="120" fill="url(#mde-mdeH)"/><circle cx="430" cy="440" r="46" class="mdeU"/><path d="M316 418q54-8 108 0q-54 4-108 0ZM384 430q76-9 152 0q-76 4-152 0ZM452 406q32-5 64 0q-32 3-64 0Z" style="fill:var(--sky2,#3c6e8f);opacity:.5"/><g fill="#1d6f80"><path id="mde-mdeR1" d="M-10 462C-2 456 26 436 40 426S65 406 76 404S93 414 104 412S128 392 140 390S166 403 178 402S201 385 214 384S241 396 254 398S276 389 292 394S329 417 350 428S395 453 420 460S487 468 500 470V520H-10Z" style="stroke:var(--sun,#ffcf4a);stroke-opacity:.3;stroke-width:1.5"/></g><use href="#mde-mdeR1" style="fill:var(--sky2,#3c6e8f);opacity:.3"/><rect y="370" width="600" height="170" fill="url(#mde-mdeZ)"/><use href="#mde-mdeB0" y="-2" class="mdeU" style="stroke:var(--sun,#ffcf4a);stroke-width:4"/><path id="mde-mdeB0" d="M-10 530V474a45 45 0 0 1 50 -5a48 48 0 0 1 56 3a49 49 0 0 1 54 -5a48 48 0 0 1 56 4a45 45 0 0 1 50 -5a37 37 0 0 1 44 3a27 27 0 0 1 34 5a19 19 0 0 1 28 -6a21 21 0 0 1 36 -10a28 28 0 0 1 50 -2a16 16 0 0 1 26 2a22 22 0 0 1 40 4a19 19 0 0 1 30 6a23 23 0 0 1 42 -2a18 18 0 0 1 26 2V530Z" class="mdeS"/><path fill="#135468" d="M-10 474C-3 471 17 461 30 456S58 447 70 446S91 454 102 452S126 435 138 434S162 440 174 444S200 459 212 460S236 451 248 450S271 451 284 456S309 470 324 478S367 501 376 506V560H-10Z"/><use href="#mde-mdeb1" class="mdeC"/><g clip-path="url(#mde-mdeb1k)"><use href="#mde-mdeb1" transform="matrix(1.08 0 0 1 -30 12)" class="mdeS"/></g><rect y="430" width="600" height="170" fill="url(#mde-mdeZ)" opacity=".45"/><path fill="#0d3b4f" d="M290 570C297 565 317 546 330 538S356 527 368 522S392 513 404 508S429 494 440 490S460 482 470 482S491 489 502 492S523 501 534 500S556 492 566 488S587 479 596 478S616 483 620 484V600H290Z"/><ellipse cx="254" cy="656" rx="150" ry="70" fill="url(#mde-mdeW)"/><ellipse cx="254" cy="664" rx="124" ry="46" fill="#06131a"/><g clip-path="url(#mde-mdeK)"><path fill="#0b222d" d="M120 712L340 612H380L190 720Z"/><ellipse cx="256" cy="658" rx="96" ry="40" fill="url(#mde-mdeV)"/><g class="mdeL"><circle cx="234" cy="658" r="1.6"/><circle cx="245" cy="659" r="1.6"/><circle cx="199" cy="686" r="1.6"/><circle cx="304" cy="636" r="1.6"/><circle cx="217" cy="675" r="1.6"/><circle cx="277" cy="658" r="1.6"/><circle cx="239" cy="646" r="1.6"/><circle cx="252" cy="663" r="1.6"/><circle cx="268" cy="652" r="1.6"/><circle cx="279" cy="648" r="1.6"/><circle cx="256" cy="658" r="1.6"/><circle cx="296" cy="642" r="1.6"/><circle cx="236" cy="670" r="1.6"/><circle cx="196" cy="671" r="1.6"/><circle cx="189" cy="672" r="1.6"/><circle cx="302" cy="657" r="1.6"/><circle cx="254" cy="652" r="1.6"/><circle cx="272" cy="667" r="1.6"/><circle cx="275" cy="641" r="1.6"/><circle cx="220" cy="670" r="1.6"/><circle cx="203" cy="668" r="1.6"/><circle cx="230" cy="653" r="1.6"/><circle cx="285" cy="648" r="1.6"/><circle cx="203" cy="680" r="1.6"/><circle cx="231" cy="677" r="1.6"/><circle cx="208" cy="689" r="1.6"/><circle cx="221" cy="658" r="1.6"/><circle cx="301" cy="650" r="1.6"/><circle cx="306" cy="641" r="1.6"/><circle cx="177" cy="683" r="1.6"/><circle cx="282" cy="654" r="1.6"/><circle cx="269" cy="680" r="1.6"/><circle cx="211" cy="682" r="1.6"/><circle cx="283" cy="664" r="1.6"/><circle cx="316" cy="640" r="1.6"/><circle cx="288" cy="637" r="1.6"/></g><g fill="#2dafd3"><rect x="285" y="691" width="6" height="4"/><rect x="247" y="671" width="6" height="4"/><rect x="209" y="652" width="6" height="4"/></g><path d="M318 704L168 626M288 688v3M250 668v3M212 649v3" stroke="#9fc4d2" stroke-width="1.2"/></g><use href="#mde-mdeb2" class="mdeC"/><g clip-path="url(#mde-mdeb2k)"><use href="#mde-mdeb2" transform="matrix(1.08 0 0 1 -34 22)" class="mdeS"/></g><use href="#mde-mdeb3" class="mdeC"/><g clip-path="url(#mde-mdeb3k)"><use href="#mde-mdeb3" transform="matrix(1.08 0 0 1 -40 34)" class="mdeS"/></g><use href="#mde-mdeb4" class="mdeC"/><g clip-path="url(#mde-mdeb4k)"><use href="#mde-mdeb4" transform="matrix(1.08 0 0 1 -38 30)" class="mdeS"/></g><ellipse cx="470" cy="600" rx="260" ry="110" fill="url(#mde-mdeG)" opacity=".3"/></svg>
+      <svg preserveAspectRatio="xMidYMid slice" class="win__mde" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800"><style>.mdeC{fill:var(--cloud,#eef3f6)}.mdeS{fill:var(--cloud-sh,#b9d6e3)}.mdeU{fill:var(--sun,#ffcf4a)}.mdeT3{stop-color:var(--sky3,#f6a85b)}.mdeTU{stop-color:var(--sun,#ffcf4a)}.mdeTL{stop-color:var(--lights,#ffcf4a)}</style><defs><linearGradient id="mde-mdeA" x2="0" y2="1"><stop style="stop-color:var(--sky1,#0b2a4a)"/><stop offset=".35" style="stop-color:var(--sky2,#3c6e8f)"/><stop offset=".58" class="mdeT3"/></linearGradient><radialGradient id="mde-mdeG"><stop class="mdeT3"/><stop offset="1" class="mdeT3" stop-opacity="0"/></radialGradient><radialGradient id="mde-mdeH"><stop offset=".4" class="mdeTU" stop-opacity=".42"/><stop offset="1" class="mdeTU" stop-opacity="0"/></radialGradient><linearGradient id="mde-mdeZ" x2="0" y2="1"><stop class="mdeT3" stop-opacity="0"/><stop offset=".55" class="mdeT3" stop-opacity=".65"/><stop offset="1" class="mdeT3" stop-opacity="0"/></linearGradient><radialGradient id="mde-mdeW"><stop offset=".55" stop-color="#06131a" stop-opacity=".5"/><stop offset="1" stop-color="#06131a" stop-opacity="0"/></radialGradient><radialGradient id="mde-mdeV"><stop class="mdeTL" stop-opacity=".5"/><stop offset="1" class="mdeTL" stop-opacity="0"/></radialGradient><clipPath id="mde-mdeK"><use href="#mde-mdeE"/></clipPath><clipPath id="mde-mdeb1k"><use href="#mde-mdeb1"/></clipPath><clipPath id="mde-mdeb2k"><use href="#mde-mdeb2"/></clipPath><clipPath id="mde-mdeb3k"><use href="#mde-mdeb3"/></clipPath><clipPath id="mde-mdeb4k"><use href="#mde-mdeb4"/></clipPath></defs><rect width="600" height="800" fill="url(#mde-mdeA)"/><rect y="480" width="600" height="320" class="mdeS"/><g fill="#fff" style="opacity:var(--stars,.3)"><circle cx="168" cy="96" r="1.6"/><circle cx="262" cy="58" r="1.2"/><circle cx="384" cy="120" r="1.8"/><circle cx="470" cy="76" r="1.3"/><circle cx="318" cy="186" r="1.2"/><circle cx="128" cy="210" r="1.4"/></g><ellipse cx="420" cy="450" rx="330" ry="230" fill="url(#mde-mdeG)"/><path d="M60 318q120-16 250-4q-120 8-250 4ZM250 352q110-12 220-3q-110 6-220 3Z" style="fill:var(--sky3,#f6a85b);opacity:.5"/><circle cx="430" cy="440" r="120" fill="url(#mde-mdeH)"/><circle cx="430" cy="440" r="46" class="mdeU"/><path d="M316 418q54-8 108 0q-54 4-108 0ZM384 430q76-9 152 0q-76 4-152 0Z" style="fill:var(--sky2,#3c6e8f);opacity:.5"/><g fill="#1d6f80"><path id="mde-mdeR1" d="M-10 462C-2 456 26 436 40 426S65 406 76 404S93 414 104 412S128 392 140 390S166 403 178 402S201 385 214 384S241 396 254 398S276 389 292 394S329 417 350 428S395 453 420 460S487 468 500 470V520H-10Z"/></g><use href="#mde-mdeR1" style="fill:var(--sky2,#3c6e8f);opacity:.3"/><rect y="370" width="600" height="170" fill="url(#mde-mdeZ)"/><use href="#mde-mdeB0" y="-2" class="mdeU" style="stroke:var(--sun,#ffcf4a);stroke-width:4"/><path id="mde-mdeB0" d="M-10 530V474a45 45 0 0 1 50 -5a48 48 0 0 1 56 3a49 49 0 0 1 54 -5a48 48 0 0 1 56 4a45 45 0 0 1 50 -5a37 37 0 0 1 44 3a27 27 0 0 1 34 5a19 19 0 0 1 28 -6a21 21 0 0 1 36 -10a28 28 0 0 1 50 -2a16 16 0 0 1 26 2a22 22 0 0 1 40 4a19 19 0 0 1 30 6a23 23 0 0 1 42 -2a18 18 0 0 1 26 2V530Z" class="mdeS"/><path fill="#135468" d="M-10 474C-3 471 17 461 30 456S58 447 70 446S91 454 102 452S125 435 138 434S168 444 180 448S200 460 212 460S238 448 254 450S290 461 310 470S365 500 376 506V560H-10Z"/><g class="mdeC"><path id="mde-mdeb1" d="M-40 600V509a18 18 0 0 1 31 6a17 17 0 0 1 26 -6a22 22 0 0 1 33 5a17 17 0 0 1 33 -5a15 15 0 0 1 28 3a36 36 0 0 1 71 2a24 24 0 0 1 38 -3a31 31 0 0 1 59 6a20 20 0 0 1 38 1a30 30 0 0 1 54 -2a20 20 0 0 1 29 3a37 37 0 0 1 68 -2a17 17 0 0 1 31 -1a21 21 0 0 1 32 -2a36 36 0 0 1 56 2a45 45 0 0 1 75 -2V600Z"/></g><g clip-path="url(#mde-mdeb1k)"><use href="#mde-mdeb1" transform="matrix(1.08 0 0 1 -30 12)" class="mdeS"/></g><rect y="430" width="600" height="170" fill="url(#mde-mdeZ)" opacity=".45"/><path fill="#0d3b4f" d="M290 570C298 564 321 544 340 534S386 516 404 508S434 489 450 486S486 490 500 492S519 502 534 500S576 481 590 478S615 483 620 484V600H290Z"/><ellipse cx="254" cy="656" rx="150" ry="70" fill="url(#mde-mdeW)"/><ellipse id="mde-mdeE" cx="254" cy="664" rx="124" ry="46" fill="#06131a"/><g clip-path="url(#mde-mdeK)"><path fill="#0b222d" d="M120 712L340 612H380L190 720Z"/><ellipse cx="256" cy="658" rx="96" ry="40" fill="url(#mde-mdeV)"/><g style="fill:var(--lights,#ffcf4a)"><circle cx="234" cy="658" r="1.6"/><circle cx="245" cy="659" r="1.6"/><circle cx="199" cy="686" r="1.6"/><circle cx="304" cy="636" r="1.6"/><circle cx="217" cy="675" r="1.6"/><circle cx="277" cy="658" r="1.6"/><circle cx="239" cy="646" r="1.6"/><circle cx="252" cy="663" r="1.6"/><circle cx="268" cy="652" r="1.6"/><circle cx="279" cy="648" r="1.6"/><circle cx="256" cy="658" r="1.6"/><circle cx="296" cy="642" r="1.6"/><circle cx="236" cy="670" r="1.6"/><circle cx="196" cy="671" r="1.6"/><circle cx="189" cy="672" r="1.6"/><circle cx="302" cy="657" r="1.6"/><circle cx="254" cy="652" r="1.6"/><circle cx="272" cy="667" r="1.6"/><circle cx="275" cy="641" r="1.6"/><circle cx="220" cy="670" r="1.6"/><circle cx="203" cy="668" r="1.6"/><circle cx="230" cy="653" r="1.6"/><circle cx="285" cy="648" r="1.6"/><circle cx="203" cy="680" r="1.6"/><circle cx="231" cy="677" r="1.6"/><circle cx="208" cy="689" r="1.6"/><circle cx="221" cy="658" r="1.6"/><circle cx="301" cy="650" r="1.6"/><circle cx="306" cy="641" r="1.6"/><circle cx="177" cy="683" r="1.6"/><circle cx="282" cy="654" r="1.6"/><circle cx="269" cy="680" r="1.6"/><circle cx="211" cy="682" r="1.6"/><circle cx="283" cy="664" r="1.6"/><circle cx="316" cy="640" r="1.6"/><circle cx="288" cy="637" r="1.6"/></g><g fill="#2dafd3"><rect x="285" y="689" width="6" height="4"/><rect x="247" y="669" width="6" height="4"/><rect x="209" y="650" width="6" height="4"/></g><path d="M318 704L168 626" stroke="#9fc4d2" stroke-width="1.2"/></g><g class="mdeC"><path id="mde-mdeb2" d="M-40 720V569a42 42 0 0 1 67 7a19 19 0 0 1 36 -4a48 48 0 0 1 76 -6a21 21 0 0 1 39 2a35 35 0 0 1 68 -6a46 46 0 0 1 78 -1a42 42 0 0 1 66 -4a49 49 0 0 1 82 -1a42 42 0 0 1 77 -5a55 55 0 0 1 83 -2a55 55 0 0 1 81 3V720H420V660a34 34 0 0 1 -36 -44a21 21 0 0 1 -34 10a33 33 0 0 1 -60 -6a16 16 0 0 1 -28 8a38 38 0 0 1 -62 -10a19 19 0 0 1 -34 8a45 45 0 0 1 -70 26V720Z"/></g><g clip-path="url(#mde-mdeb2k)"><use href="#mde-mdeb2" transform="matrix(1.08 0 0 1 -34 22)" class="mdeS"/></g><g class="mdeC"><path id="mde-mdeb3" d="M322 800V706a25 25 0 0 1 30 -34a29 29 0 0 1 46 -32a42 42 0 0 1 65 -27a51 51 0 0 1 88 0a52 52 0 0 1 91 -14a43 43 0 0 1 85 7V800Z"/></g><g clip-path="url(#mde-mdeb3k)"><use href="#mde-mdeb3" transform="matrix(1.08 0 0 1 -40 34)" class="mdeS"/></g><g class="mdeC"><path id="mde-mdeb4" d="M-40 800V630a24 24 0 0 1 40 -18a23 23 0 0 1 44 8a23 23 0 0 1 36 -20a31 31 0 0 1 46 40a31 31 0 0 1 24 50a24 24 0 0 1 36 16a28 28 0 0 1 50 6a26 26 0 0 1 44 -4a28 28 0 0 1 50 8a23 23 0 0 1 42 -4a28 28 0 0 1 48 24a35 35 0 0 1 68 -6a35 35 0 0 1 64 18a50 50 0 0 1 98 -4V800Z"/></g><g clip-path="url(#mde-mdeb4k)"><use href="#mde-mdeb4" transform="matrix(1.08 0 0 1 -38 30)" class="mdeS"/></g><ellipse cx="470" cy="600" rx="260" ry="110" fill="url(#mde-mdeG)" opacity=".3"/></svg>
       <img class="win__img" alt="" decoding="async">
       <img class="win__img" alt="" decoding="async">
       <div class="win__clouds win__clouds--far"></div>
@@ -553,7 +561,7 @@ details.col[open] summary::after{content:"−"}
  <noscript><style>.chips,.chips__t{display:none}</style></noscript>
 </section>
 
-<section class="sec cv" id="servicios">
+<section class="sec" id="servicios">
  <div class="wrap">
   <div class="sec-head"><p class="eyebrow"><b>01</b> · Servicios</p><h2>Lo que hacemos <em>por tu viaje</em></h2><p class="sub">Empezamos por lo más difícil: la visa. El resto te lo cotizamos.</p></div>
   <div class="svc">
@@ -562,7 +570,7 @@ details.col[open] summary::after{content:"−"}
     <div class="svc__body">
      <p class="tag">Producto estrella · +500 casos de éxito</p>
      <h3>Asesoría de visas</h3>
-     <p class="mut">Perfilamiento, formulario, pago consular, cita y preparación de entrevista. EE. UU., Canadá y Reino Unido.</p>
+     <p class="mut">Perfilamiento, formulario, pago consular, cita y preparación de entrevista. EE.&nbsp;UU., Canadá y Reino Unido.</p>
      <!-- PRECIOS: cambiar aquí, en el objeto T del script y en la página de visas -->
      <table class="prices">
       <caption class="sr">Precios de asesoría de visas, por persona, en pesos colombianos</caption>
@@ -576,14 +584,14 @@ details.col[open] summary::after{content:"−"}
        <tr><th scope="row">Visa Reino Unido</th><td data-l="1 persona">$450.000</td><td class="nil" data-l="Grupo">—</td></tr>
       </tbody>
      </table>
-     <p class="note">Precios por persona en pesos colombianos. El valor «desde» aplica a grupos: 5 o más personas en visa americana y renovación, 4 o más en Visa Flash. El valor consular se paga aparte: 185 USD (EE. UU.), 185 CAD (Canadá), 115 GBP (Reino Unido). La aprobación la decide el consulado.</p>
+     <p class="note">Precios por persona en pesos colombianos. El valor «desde» aplica a grupos: 5 o más personas en visa americana y renovación, 4 o más en Visa Flash. El valor consular se paga aparte: 185&nbsp;USD (EE.&nbsp;UU.), 185&nbsp;CAD (Canadá), 115&nbsp;GBP (Reino Unido). La aprobación la decide el consulado.</p>
      <div class="svc__btns"><a class="btn btn--pri" href="#cotizar" data-go="visa">Cotizar visa</a><a class="btn btn--sec" href="/" data-visas>Ver visas y precios ↗</a></div>
     </div>
    </article>
    <article class="card svc__card">
     <div class="svc__mini-img"><img src="/assets/art/adel-s.webp" width="760" height="507" alt="" loading="lazy" decoding="async"></div>
     <h3>Adelanto de cita</h3>
-    <p>Buscamos una fecha más cercana para tu cita consular. Nuestro récord: 1 semana. Depende de la disponibilidad del consulado.</p>
+    <p>Buscamos una fecha más cercana para tu cita consular. Nuestro récord: 1&nbsp;semana. Depende de la disponibilidad del consulado.</p>
     <a class="btn btn--sec" href="#cotizar" data-go="adelanto">Cotizar</a>
    </article>
    <article class="card svc__card">
@@ -599,29 +607,29 @@ details.col[open] summary::after{content:"−"}
  </div>
 </section>
 
-<section class="sec cv" id="destinos">
+<section class="sec" id="destinos">
  <div class="wrap">
   <div class="sec-head dest__head"><div><p class="eyebrow"><b>02</b> · Destinos</p><h2>Postales desde <em>la ventanilla</em></h2><p class="sub">Ideas para tu próximo viaje. ¿Tienes otro destino en mente? También lo cotizamos.</p></div><p class="dest__count mono" aria-hidden="true">01 / 05</p></div>
   <div class="posts" tabindex="0" aria-label="Destinos, desliza para ver más">
    <article class="post">
     <div class="post__img"><img src="/assets/art/usa-s.webp" srcset="/assets/art/usa-s.webp 760w, /assets/art/usa-l.webp 1500w" sizes="(min-width:1024px) 280px, (min-width:600px) 44vw, 80vw" width="760" height="507" alt="Ilustración de Orlando al atardecer con palmeras" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
     <span class="post__stamp" aria-hidden="true"><span>MCO</span></span>
-    <div class="post__body"><h3>Orlando</h3><p>Parques, compras y sol de Florida.</p><span class="ptag">Visa americana · te asesoramos</span><a class="btn btn--sec" href="#cotizar" data-dest="orlando" aria-label="Quiero ir a Orlando">Quiero ir</a></div>
+    <div class="post__body"><h3>Orlando</h3><p>Parques, compras y sol de Florida.</p><span class="ptag">Visa EE. UU. · asesoría</span><a class="btn btn--sec" href="#cotizar" data-dest="orlando" aria-label="Quiero ir a Orlando">Quiero ir</a></div>
    </article>
    <article class="post">
     <div class="post__img"><img src="/assets/art/vegas-s.webp" srcset="/assets/art/vegas-s.webp 760w, /assets/art/vegas-l.webp 1500w" sizes="(min-width:1024px) 280px, (min-width:600px) 44vw, 80vw" width="760" height="507" alt="Ilustración del letrero de Las Vegas de noche" loading="lazy" decoding="async" style="object-position:55% 50%"></div>
     <span class="post__stamp" aria-hidden="true"><span>LAS</span></span>
-    <div class="post__body"><h3>Las Vegas</h3><p>Luces, shows y el desierto de Nevada.</p><span class="ptag">Visa americana · te asesoramos</span><a class="btn btn--sec" href="#cotizar" data-dest="vegas" aria-label="Quiero ir a Las Vegas">Quiero ir</a></div>
+    <div class="post__body"><h3>Las Vegas</h3><p>Luces, shows y el desierto de Nevada.</p><span class="ptag">Visa EE. UU. · asesoría</span><a class="btn btn--sec" href="#cotizar" data-dest="vegas" aria-label="Quiero ir a Las Vegas">Quiero ir</a></div>
    </article>
    <article class="post">
     <div class="post__img"><img src="/assets/art/canada-s.webp" srcset="/assets/art/canada-s.webp 760w, /assets/art/canada-l.webp 1500w" sizes="(min-width:1024px) 280px, (min-width:600px) 44vw, 80vw" width="760" height="507" alt="Ilustración de las Montañas Rocosas con aurora boreal" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
     <span class="post__stamp" aria-hidden="true"><span>YYC</span></span>
-    <div class="post__body"><h3>Rocosas canadienses</h3><p>Lagos, montañas y auroras.</p><span class="ptag">Visa de Canadá · te asesoramos</span><a class="btn btn--sec" href="#cotizar" data-dest="rocosas" aria-label="Quiero ir a Rocosas canadienses">Quiero ir</a></div>
+    <div class="post__body"><h3>Rocosas canadienses</h3><p>Lagos, montañas y auroras.</p><span class="ptag">Visa Canadá · asesoría</span><a class="btn btn--sec" href="#cotizar" data-dest="rocosas" aria-label="Quiero ir a Rocosas canadienses">Quiero ir</a></div>
    </article>
    <article class="post">
     <div class="post__img"><img src="/assets/art/uk-s.webp" srcset="/assets/art/uk-s.webp 760w, /assets/art/uk-l.webp 1500w" sizes="(min-width:1024px) 280px, (min-width:600px) 44vw, 80vw" width="760" height="507" alt="Ilustración de Londres de noche con el Big Ben" loading="lazy" decoding="async" style="object-position:45% 50%"></div>
     <span class="post__stamp" aria-hidden="true"><span>LHR</span></span>
-    <div class="post__body"><h3>Londres</h3><p>Big Ben, el London Eye y cabinas rojas.</p><span class="ptag">Visa de Reino Unido · te asesoramos</span><a class="btn btn--sec" href="#cotizar" data-dest="londres" aria-label="Quiero ir a Londres">Quiero ir</a></div>
+    <div class="post__body"><h3>Londres</h3><p>Big Ben, el London Eye y cabinas rojas.</p><span class="ptag">Visa Reino Unido · asesoría</span><a class="btn btn--sec" href="#cotizar" data-dest="londres" aria-label="Quiero ir a Londres">Quiero ir</a></div>
    </article>
    <article class="post" data-confirmar="pendiente">
     <div class="post__img"><img src="/assets/art/cartagena-s.webp" srcset="/assets/art/cartagena-s.webp 760w, /assets/art/cartagena-l.webp 1500w" sizes="(min-width:1024px) 280px, (min-width:600px) 44vw, 80vw" width="760" height="507" alt="Ilustración de la Torre del Reloj de Cartagena al atardecer" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
@@ -649,7 +657,7 @@ details.col[open] summary::after{content:"−"}
  </div>
 </section>
 
-<section class="sec cv" id="por-que">
+<section class="sec" id="por-que">
  <div class="wrap">
   <div class="sec-head"><p class="eyebrow"><b>03</b> · Por qué Capital</p><h2>Los sellos de <em>nuestro pasaporte</em></h2><p class="sub">Datos, no promesas.</p></div>
   <div class="pp">
@@ -673,8 +681,8 @@ details.col[open] summary::after{content:"−"}
    <ul class="stamps">
     <li class="st" style="--r:-6deg;--i:0;color:var(--cy)"><svg class="stp" viewBox="0 0 140 140" aria-hidden="true"><g mask="url(#wear)" fill="none" stroke="currentColor"><circle cx="70" cy="70" r="65" stroke-width="3"/><circle cx="70" cy="70" r="57" stroke-width="1.2"/><circle cx="70" cy="70" r="40" stroke-width="1"/><path id="sp1" d="M70 70m-47 0a47 47 0 1 1 94 0a47 47 0 1 1-94 0" stroke="none"/><text fill="currentColor" stroke="none" font-size="9"><textPath href="#sp1" textLength="292">CASOS DE ÉXITO · EN VISAS · CAPITAL TRAVEL ·</textPath></text><text class="big" x="70" y="80" text-anchor="middle" font-size="30" fill="currentColor" stroke="none">+500</text></g></svg><p><b class="sr">+500 casos de éxito: </b>en asesoría de visas</p></li>
     <li class="st" style="--r:4deg;--i:1;color:var(--gold)"><svg class="stp" viewBox="0 0 160 120" aria-hidden="true"><g mask="url(#wear)" fill="none" stroke="currentColor"><rect x="4" y="10" width="152" height="100" rx="6" stroke-width="3"/><rect x="11" y="17" width="138" height="86" rx="3" stroke-width="1.2"/><text x="80" y="42" text-anchor="middle" font-size="11" fill="currentColor" stroke="none">RÉCORD</text><text class="big" x="80" y="72" text-anchor="middle" font-size="27" fill="currentColor" stroke="none">1 SEMANA</text><path d="M30 82h100" stroke-width="1"/><text x="80" y="95" text-anchor="middle" font-size="8.5" fill="currentColor" stroke="none">ADELANTO DE CITA</text></g></svg><p><b class="sr">Récord: 1 semana: </b>en adelanto de cita</p></li>
-    <li class="st" style="--r:-2deg;--i:2;color:var(--cy)"><svg class="stp" viewBox="0 0 140 140" aria-hidden="true"><g mask="url(#wear)" fill="none" stroke="currentColor"><path d="M70 6l55.4 32v64L70 134l-55.4-32V38z" stroke-width="3" stroke-linejoin="round"/><path d="M70 15l47.6 27.5v55L70 125l-47.6-27.5v-55z" stroke-width="1.2" stroke-linejoin="round"/><text class="big" x="70" y="76" text-anchor="middle" font-size="44" fill="currentColor" stroke="none">3</text><text x="70" y="94" text-anchor="middle" font-size="10" fill="currentColor" stroke="none">ASESORÍAS</text><text x="70" y="107" text-anchor="middle" font-size="7.5" fill="currentColor" stroke="none">VISA AMERICANA</text></g></svg><p><b class="sr">3 asesorías: </b>en la visa americana de primera vez, hasta la entrevista</p></li>
-    <li class="st" style="--r:5deg;--i:3;color:var(--fg)"><svg class="stp" viewBox="0 0 160 120" aria-hidden="true"><g mask="url(#wear)" fill="none" stroke="currentColor"><ellipse cx="80" cy="60" rx="74" ry="50" stroke-width="3"/><ellipse cx="80" cy="60" rx="66" ry="42" stroke-width="1.2"/><text x="80" y="40" text-anchor="middle" font-size="8" fill="currentColor" stroke="none">REGISTRO NACIONAL</text><text class="big" x="80" y="70" text-anchor="middle" font-size="25" fill="currentColor" stroke="none">RNT 152996</text><text x="80" y="87" text-anchor="middle" font-size="8" fill="currentColor" stroke="none">DE TURISMO</text></g></svg><p><b class="sr">RNT 152996: </b>inscritos en el Registro Nacional de Turismo</p></li>
+    <li class="st" style="--r:-2deg;--i:2;color:var(--cy)"><svg class="stp" viewBox="0 0 140 140" aria-hidden="true"><g mask="url(#wear)" fill="none" stroke="currentColor"><path d="M70 6l55.4 32v64L70 134l-55.4-32V38z" stroke-width="3" stroke-linejoin="round"/><path d="M70 15l47.6 27.5v55L70 125l-47.6-27.5v-55z" stroke-width="1.2" stroke-linejoin="round"/><text class="big" x="70" y="76" text-anchor="middle" font-size="44" fill="currentColor" stroke="none">3</text><text x="70" y="94" text-anchor="middle" font-size="10" fill="currentColor" stroke="none">ASESORÍAS</text><text x="70" y="105" text-anchor="middle" font-size="6.5" fill="currentColor" stroke="none">VISA AMERICANA</text></g></svg><p><b class="sr">3 asesorías: </b>en la visa americana de primera vez, hasta la entrevista</p></li>
+    <li class="st" style="--r:5deg;--i:3;color:var(--fg)"><svg class="stp" viewBox="0 0 160 120" aria-hidden="true"><g mask="url(#wear)" fill="none" stroke="currentColor"><ellipse cx="80" cy="60" rx="74" ry="50" stroke-width="3"/><ellipse cx="80" cy="60" rx="66" ry="42" stroke-width="1.2"/><text x="80" y="40" text-anchor="middle" font-size="8" fill="currentColor" stroke="none">REGISTRO NACIONAL</text><text class="big" x="80" y="69" text-anchor="middle" font-size="21" fill="currentColor" stroke="none">RNT 152996</text><text x="80" y="87" text-anchor="middle" font-size="8" fill="currentColor" stroke="none">DE TURISMO</text></g></svg><p><b class="sr">RNT 152996: </b>inscritos en el Registro Nacional de Turismo</p></li>
     <li class="st" style="--r:-4deg;--i:4;color:var(--stamp)"><svg class="stp" viewBox="0 0 140 140" aria-hidden="true"><g mask="url(#wear)" fill="none" stroke="currentColor"><circle cx="70" cy="70" r="65" stroke-width="3"/><circle cx="70" cy="70" r="57" stroke-width="1.2"/><circle cx="70" cy="70" r="40" stroke-width="1"/><path id="sp5" d="M70 70m-47 0a47 47 0 1 1 94 0a47 47 0 1 1-94 0" stroke="none"/><text fill="currentColor" stroke="none" font-size="9"><textPath href="#sp5" textLength="292">MDE · LAURELES · MEDELLÍN · OFICINA FÍSICA ·</textPath></text><path transform="translate(50.5 15.4) scale(2.6)" d="M14 21l-4-1.2-2.8-4.3H5.6l1.6 4.6-3.6.3-1.4-1.8H1l.8 2.4-.8 2.4h1.2l1.4-1.8 3.6.3-1.6 4.6h1.6l2.8-4.3z" fill="currentColor" stroke="none"/></g></svg><p><b class="sr">MDE · Laureles: </b>oficina física: puedes visitarnos</p></li>
     <li class="st" style="--r:3deg;--i:5;color:var(--fg)"><svg class="stp" viewBox="0 0 160 120" aria-hidden="true"><g mask="url(#wear)" fill="none" stroke="currentColor"><rect x="4" y="8" width="152" height="104" rx="16" stroke-width="3"/><rect x="12" y="16" width="136" height="88" rx="10" stroke-width="1.2" stroke-dasharray="3 3"/><text x="80" y="44" text-anchor="middle" font-size="11" fill="currentColor" stroke="none">WHATSAPP</text><text class="big" x="80" y="71" text-anchor="middle" font-size="22" fill="currentColor" stroke="none">300 860 3114</text><text x="80" y="90" text-anchor="middle" font-size="7.5" fill="currentColor" stroke="none">COTIZA · SEGUIMIENTO</text></g></svg><p><b class="sr">WhatsApp 300 860 3114: </b>cotizas y haces seguimiento desde tu celular</p></li>
    </ul>
@@ -682,7 +690,7 @@ details.col[open] summary::after{content:"−"}
   <div class="yesno">
    <div><h3>Lo que sí hacemos</h3><ul>
     <li>Te acompañamos con el formulario, la cita y la preparación de la entrevista.</li>
-    <li>Buscamos adelantar tu cita. Nuestro récord: 1 semana.</li>
+    <li>Buscamos adelantar tu cita. Nuestro récord: 1&nbsp;semana.</li>
     <li>Te decimos el precio desde el principio, con el valor consular aparte.</li>
     <li>Te atendemos por WhatsApp y en nuestra oficina de Laureles.</li>
    </ul></div>
@@ -695,7 +703,7 @@ details.col[open] summary::after{content:"−"}
  </div>
 </section>
 
-<section class="sec cv" id="casos">
+<section class="sec" id="casos">
  <div class="wrap casos">
   <div><p class="eyebrow"><b>04</b> · Casos reales</p><h2 style="margin-top:14px">Lo cuentan <em>ellos</em></h2><p class="sub">Videos de clientes de Capital Travel. Cada caso es distinto y cada visa la decide el consulado.</p><a class="lnk casos__more" href="/#casos" data-visas>Ver más sobre visas ↗</a></div>
   <div class="screens" tabindex="0" aria-label="Videos de casos reales, desliza para ver más">
@@ -758,9 +766,9 @@ details.col[open] summary::after{content:"−"}
      <div class="fld"><label for="f-visa">¿Qué visa?</label>
       <select id="f-visa" class="in">
        <option value="eeuu1">Americana, primera vez</option>
-       <option value="flash">Visa Flash (americana con adelanto de cita)</option>
-       <option value="renc">Renovación americana, trámite completo</option>
-       <option value="rena">Renovación americana, solo asesoría</option>
+       <option value="flash">Visa Flash (con adelanto)</option>
+       <option value="renc">Renovación: trámite completo</option>
+       <option value="rena">Renovación: solo asesoría</option>
        <option value="ca">Canadá, turismo</option>
        <option value="uk">Reino Unido</option>
       </select>
@@ -781,7 +789,7 @@ details.col[open] summary::after{content:"−"}
    <p class="help">Nada se envía hasta que tú le des enviar en WhatsApp.</p>
    <div class="after" id="after" hidden><button class="btn btn--sec" type="button" id="copy">Copiar mensaje</button><p>¿No se abrió? Escríbenos al <a class="lnk" id="again" href="https://wa.me/573008603114?text=Hola%20Capital%20Travel%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20cotizar%20un%20viaje." target="_blank" rel="noopener">300 860 3114</a>.</p></div>
    <textarea id="copy-ta" class="sr" readonly tabindex="-1" aria-hidden="true"></textarea>
-   <svg class="okst" viewBox="0 0 200 84" aria-hidden="true"><g mask="url(#wear)" fill="none" stroke="currentColor"><rect x="3" y="3" width="194" height="78" rx="8" stroke-width="3"/><rect x="10" y="10" width="180" height="64" rx="4" stroke-width="1.2"/><text x="100" y="42" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo,Arial,sans-serif" font-weight="800" font-size="19" letter-spacing=".5">LISTO PARA ABORDAR</text><text x="100" y="62" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono,monospace" font-size="10.5" letter-spacing="1.5">MDE · <tspan id="stamp-date">HOY</tspan></text></g></svg>
+   <svg class="okst" viewBox="0 0 200 84" aria-hidden="true"><g mask="url(#wear)" fill="none" stroke="currentColor"><rect x="3" y="3" width="194" height="78" rx="8" stroke-width="3"/><rect x="10" y="10" width="180" height="64" rx="4" stroke-width="1.2"/><text x="100" y="42" text-anchor="middle" fill="currentColor" stroke="none" font-family="Archivo,Arial,sans-serif" font-weight="800" font-size="17" textLength="170" lengthAdjust="spacingAndGlyphs">LISTO PARA ABORDAR</text><text x="100" y="62" text-anchor="middle" fill="currentColor" stroke="none" font-family="JetBrains Mono,monospace" font-size="10.5" letter-spacing="1.5">MDE · <tspan id="stamp-date">HOY</tspan></text></g></svg>
   </form>
  </div>
 </section>
@@ -847,15 +855,15 @@ $$("[data-wa]").forEach(a=>a.href=wa(GEN));
 
 /* destinos */
 const D={
- orlando:{l:"Orlando, Florida",c:"MCO",i:"usa",p:"50% 55%",cap:"MDE → MCO · Orlando, Florida · Visa americana: te asesoramos",v:"eeuu1"},
- vegas:{l:"Las Vegas, Nevada",c:"LAS",i:"vegas",p:"58% 50%",cap:"MDE → LAS · Las Vegas, Nevada · Visa americana: te asesoramos",v:"eeuu1"},
+ orlando:{l:"Orlando, Florida",c:"MCO",i:"usa",p:"50% 55%",cap:"MDE → MCO\u00a0· Orlando, Florida\u00a0· Visa americana: te asesoramos",v:"eeuu1"},
+ vegas:{l:"Las Vegas, Nevada",c:"LAS",i:"vegas",p:"58% 50%",cap:"MDE → LAS\u00a0· Las Vegas, Nevada\u00a0· Visa americana: te asesoramos",v:"eeuu1"},
  miami:{l:"Miami, Florida",c:"MIA",v:"eeuu1"},
  eeuu:{l:"Otro destino en EE. UU.",c:"EE. UU.",v:"eeuu1"},
- rocosas:{l:"Canadá (Rocosas u otro)",c:"YYC",i:"canada",p:"50% 45%",cap:"MDE → YYC · Rocosas canadienses · Visa de Canadá: te asesoramos",v:"ca"},
- londres:{l:"Londres / Reino Unido",c:"LHR",i:"uk",p:"52% 50%",cap:"MDE → LHR · Londres · Visa de Reino Unido: te asesoramos",v:"uk"},
- cartagena:{l:"Cartagena",c:"CTG",i:"cartagena",p:"50% 50%",cap:"MDE → CTG · Cartagena · Vuelo nacional",n:1},
- sanandres:{l:"San Andrés",c:"ADZ",i:"sanandres",p:"50% 50%",cap:"MDE → ADZ · San Andrés · Vuelo nacional",n:1},
- ejecafetero:{l:"Eje Cafetero",c:"AXM",i:"ejecafetero",p:"50% 50%",cap:"MDE → AXM · Eje Cafetero · Vuelo nacional",n:1},
+ rocosas:{l:"Canadá (Rocosas u otro)",c:"YYC",i:"canada",p:"50% 45%",cap:"MDE → YYC\u00a0· Rocosas canadienses\u00a0· Visa de Canadá: te asesoramos",v:"ca"},
+ londres:{l:"Londres / Reino Unido",c:"LHR",i:"uk",p:"52% 50%",cap:"MDE → LHR\u00a0· Londres\u00a0· Visa de Reino Unido: te asesoramos",v:"uk"},
+ cartagena:{l:"Cartagena",c:"CTG",i:"cartagena",p:"50% 50%",cap:"MDE → CTG\u00a0· Cartagena\u00a0· Vuelo nacional",n:1},
+ sanandres:{l:"San Andrés",c:"ADZ",i:"sanandres",p:"50% 50%",cap:"MDE → ADZ\u00a0· San Andrés\u00a0· Vuelo nacional",n:1},
+ ejecafetero:{l:"Eje Cafetero",c:"AXM",i:"ejecafetero",p:"50% 50%",cap:"MDE → AXM\u00a0· Eje Cafetero\u00a0· Vuelo nacional",n:1},
  otro:{l:"Otro destino",c:"???"}
 };
 
@@ -876,7 +884,7 @@ function route(code){
 function scene(k){
  const d=D[k]&&D[k].i?D[k]:null,id=++req;
  chips.forEach(c=>c.setAttribute("aria-pressed",c.dataset.scene===(d?k:"mde")));
- cap.textContent=d?d.cap:"MDE · Despegando desde Medellín";
+ cap.textContent=d?d.cap:"MDE\u00a0· Despegando desde Medellín";
  route(d&&d.c);
  if(!d){imgs.forEach(i=>i.classList.remove("is-on"));win.classList.remove("has-img");cur=-1;return}
  const s=src(d),pre=new Image();pre.src=s;
@@ -897,15 +905,16 @@ pull.addEventListener("click",()=>{const cl=!win.classList.contains("is-closed")
 IO([$(".sentinel")],e=>$("#bar").classList.toggle("is-solid",!e.isIntersecting));
 IO([win],e=>win.classList.toggle("is-paused",!e.isIntersecting));
 IO([$(".stamps")],(e,o)=>{if(e.isIntersecting){e.target.classList.add("is-in");o.disconnect()}},{threshold:.25});
-/* el dock aparece cuando ya pasaste el botón del hero y no estás en el formulario */
+/* el dock aparece cuando el botón del hero no está en pantalla y tampoco el formulario */
 const dock=$("#dock"),vis={"hero-cta":false,cotizar:false};
 const dk=()=>dock.classList.toggle("is-on",vis["hero-cta"]&&!vis.cotizar);
-IO([$("#hero-cta")],e=>{vis["hero-cta"]=!e.isIntersecting;dk()},{rootMargin:"0px 0px 99999px 0px"});
+IO([$("#hero-cta")],e=>{vis["hero-cta"]=!e.isIntersecting;dk()});
 IO([$("#cotizar")],e=>{vis.cotizar=e.isIntersecting;dk()});
 const posts=$(".posts"),cnt=$(".dest__count"),pl=$$(".post",posts).filter(ok);
 const pad=n=>String(n).padStart(2,"0");
 cnt.textContent="01 / "+pad(pl.length);
-IO(pl,e=>{if(e.isIntersecting)cnt.textContent=pad(pl.indexOf(e.target)+1)+" / "+pad(pl.length)},{root:posts,threshold:.6});
+const seen=new Set();
+IO(pl,e=>{e.isIntersecting?seen.add(e.target):seen.delete(e.target);if(seen.size)cnt.textContent=pad(Math.min(...[...seen].map(x=>pl.indexOf(x)))+1)+" / "+pad(pl.length)},{root:posts,threshold:.6});
 
 /* detalles abiertos en escritorio */
 const desk=()=>$$("details[data-desk]").forEach(d=>{if(DESK.matches)d.open=true});
@@ -1003,7 +1012,7 @@ function render(){
  $("#pf-route").textContent="Plan de vuelo · MDE"+(code?" → "+code:"");
  $("#dock-route").textContent=code?"MDE → "+code:"MDE";
  $("#o-ad").textContent=st.ad;$("#o-ni").textContent=st.ni;
- $$(".stepper button").forEach(b=>{const v=st[b.dataset.st];b.disabled=+b.dataset.d<0?v<=(b.dataset.st==="ad"?1:0):v>=9});
+ $$(".stepper button").forEach(b=>{const v=st[b.dataset.st];b.setAttribute("aria-disabled",+b.dataset.d<0?v<=(b.dataset.st==="ad"?1:0):v>=9)});
  const eb=$("#est");eb.hidden=!e;
  if(e){$("#e1").textContent="Asesoría · "+NOM[e.k];$("#e2").textContent=e.n+" × "+money(e.p)+" = "+money(e.t);$("#e3").textContent="Por persona según el tamaño del grupo. Más "+CONS[e.k]+" de valor consular por persona, que se paga aparte. La aprobación la decide el consulado."}
  const m=msg();$("#bubble").textContent=m;send.href=wa(m);$("#again").href=wa(m);
@@ -1019,23 +1028,31 @@ send.addEventListener("click",ev=>{
 });
 const cp=$("#copy");
 cp.addEventListener("click",async()=>{
- const t=msg();
- try{await navigator.clipboard.writeText(t)}catch(_){const ta=$("#copy-ta");ta.value=t;ta.select();try{document.execCommand("copy")}catch(_){}}
- cp.textContent="Copiado";setTimeout(()=>cp.textContent="Copiar mensaje",2000);
+ const t=msg();let done=false;
+ try{await navigator.clipboard.writeText(t);done=true}catch(_){
+  const ta=$("#copy-ta");ta.value=t;ta.removeAttribute("readonly");ta.setSelectionRange(0,t.length);ta.select();
+  try{done=document.execCommand("copy")}catch(_){}
+  ta.setAttribute("readonly","");cp.focus();
+ }
+ if(!done){const pv=$(".pv");pv.open=true}
+ cp.textContent=done?"Copiado":"No se pudo copiar: mantén presionado el mensaje";
+ setTimeout(()=>cp.textContent="Copiar mensaje",done?2000:4000);
 });
 
 /* botones que llevan al plan de vuelo */
 function goPlan(){$("#cotizar").scrollIntoView({behavior:RM?"auto":"smooth"});$("#plan-h").focus({preventScroll:true})}
 $$("[data-go]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();needsTouched=true;setNeed(a.dataset.go,true);goPlan()}));
-$$(".post [data-dest]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();const k=a.dataset.dest;destTouched=true;setDest(k);if(D[k]&&D[k].i)scene(k);goPlan()}));
+$$(".post [data-dest]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();const k=a.dataset.dest;setDest(k);if(D[k]&&D[k].i)scene(k);goPlan()}));
 $("#hero-cta").addEventListener("click",()=>{if(!destTouched){const c=chips.find(x=>x.getAttribute("aria-pressed")==="true");if(c&&c.dataset.scene!=="mde")setDest(c.dataset.scene)}});
 
 /* parámetros ?d y ?n */
 const qd=Q.get("d");
-if(qd&&D[qd]&&[...fd.options].some(o=>o.value===qd)){destTouched=true;setDest(qd);if(D[qd].i)scene(qd)}
+if(qd&&D[qd]&&[...fd.options].some(o=>o.value===qd)){setDest(qd);if(D[qd].i)scene(qd)}
 const NP={visa:["visa"],flash:["visa","flash"],renovacion:["visa","renc"],canada:["visa","ca"],reinounido:["visa","uk"],adelanto:["adelanto"],pasaporte:["pasaporte"],tiquetes:["tiquetes"],hotel:["hotel"],asistencia:["asistencia"]}[Q.get("n")];
 if(NP){needsTouched=true;if(NP[1]){fv.value=NP[1];visaTouched=true}setNeed(NP[0],true)}
 render();
+/* al volver atrás el navegador restaura los campos después de cargar el script */
+addEventListener("pageshow",()=>{fow.hidden=fd.value!=="otro";render()});
 
 /* precarga ociosa y prefetch de visas */
 addEventListener("load",()=>{if(navigator.connection&&navigator.connection.saveData)return;(window.requestIdleCallback||(f=>setTimeout(f,2000)))(()=>["usa","uk"].forEach(i=>{new Image().src="/assets/art/"+i+"-s.webp"}))});
