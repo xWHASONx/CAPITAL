@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es-CO" data-modo="revision" data-visas="/">
+<html lang="es-CO" data-modo="revision" data-visas="/visas/">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -303,6 +303,9 @@ html[data-modo="revision"] .chips{padding-top:16px}
 .cover b{position:relative;font-weight:800;font-stretch:90%;letter-spacing:-.03em;font-size:clamp(28px,5vw,40px);line-height:1}
 .cover span{position:relative;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-top:6px}
 .bar{background:rgba(255,255,255,.95);border-color:var(--line)}
+.brand__logo{height:52px;width:auto}
+@media(min-width:1024px){.brand__logo{height:58px}}
+.land__logo{width:120px;height:auto}
 /* logo circular */
 .logo-c{width:42px;height:42px;border-radius:50%;background:#fff;border:1.5px solid rgba(45,175,211,.55);display:grid;place-items:center;box-shadow:0 2px 8px rgba(13,27,38,.12);flex:none}
 .logo-c img{width:28px;height:28px}
@@ -591,16 +594,16 @@ details.col[open] summary::after{content:"−"}
 <div class="sentinel" aria-hidden="true"></div>
 <header class="bar" id="bar">
  <div class="wrap bar__in">
-  <a class="brand" href="#inicio" aria-label="Capital Travel, ir al inicio"><span class="logo-c"><img src="/assets/mark-dark-96.webp" width="30" height="30" alt=""></span><span class="logo" aria-hidden="true">Capital<b>Travel</b></span></a>
-  <nav class="topnav" aria-label="Principal"><a href="#inicio">Inicio</a><a href="#destinos">Destinos</a><a href="/" data-visas>Visas ↗</a><a href="#nosotros">Nosotros</a><a href="#experiencias">Experiencias</a></nav>
+  <a class="brand" href="#inicio" aria-label="Capital Travel, ir al inicio"><img class="brand__logo" src="/assets/logo-head-dark.webp" width="50" height="57" alt="Capital Travel"></a>
+  <nav class="topnav" aria-label="Principal"><a href="#inicio">Inicio</a><a href="#destinos">Destinos</a><a href="/visas/" data-visas>Visas ↗</a><a href="#nosotros">Nosotros</a><a href="#experiencias">Experiencias</a></nav>
   <a class="btn btn--pri bar__cta" href="#cotizar">Contactar asesor</a>
   <a class="bar__wa" href="https://wa.me/573008603114?text=Hola%20Capital%20Travel%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20hablar%20con%20un%20asesor." data-wa target="_blank" rel="noopener" aria-label="Escribir a Capital Travel por WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
   <button class="bar__menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
  </div>
 </header>
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú" hidden>
- <div class="menu__top"><span class="logo">Capital<b>Travel</b></span><button class="menu__x" type="button" aria-label="Cerrar menú">×</button></div>
- <nav aria-label="Menú móvil"><a href="#inicio"><span>01</span>Inicio</a><a href="#destinos"><span>02</span>Destinos</a><a href="/" data-visas><span>03</span>Visas ↗</a><a href="#nosotros"><span>04</span>Nosotros</a><a href="#experiencias"><span>05</span>Experiencias</a><a href="#cotizar"><span>06</span>Contactar a un asesor</a></nav>
+ <div class="menu__top"><img src="/assets/logo-head-dark.webp" width="40" height="46" alt="Capital Travel"><button class="menu__x" type="button" aria-label="Cerrar menú">×</button></div>
+ <nav aria-label="Menú móvil"><a href="#inicio"><span>01</span>Inicio</a><a href="#destinos"><span>02</span>Destinos</a><a href="/visas/" data-visas><span>03</span>Visas ↗</a><a href="#nosotros"><span>04</span>Nosotros</a><a href="#experiencias"><span>05</span>Experiencias</a><a href="#cotizar"><span>06</span>Contactar a un asesor</a></nav>
  <p class="menu__foot mono">WhatsApp 300 860 3114 · Calle 40A #81A-115, Laureles · <a href="https://www.instagram.com/capital.travel1/" target="_blank" rel="noopener">@capital.travel1</a></p>
 </div>
 
@@ -625,7 +628,7 @@ details.col[open] summary::after{content:"−"}
 
 <section class="vban-w">
  <div class="wrap">
-  <a class="vban" href="/" data-visas>
+  <a class="vban" href="/visas/" data-visas>
    <img src="/assets/foto/visas-s.webp" srcset="/assets/foto/visas-s.webp 760w, /assets/foto/visas-l.webp 1500w" sizes="(min-width:1200px) 1136px, 100vw" width="760" height="507" alt="" loading="lazy" decoding="async">
    <div class="vban__txt"><p class="mono">Asesoría de visas · +500 casos de éxito</p><h2>¿Necesitas <em>visa</em>?</h2><p>EE.&nbsp;UU., Canadá y Reino Unido. Adelanto de citas y Visa Flash.</p></div>
    <span class="btn btn--pri">Ver visas y precios →</span>
@@ -778,7 +781,7 @@ details.col[open] summary::after{content:"−"}
 
 <section class="sec" id="experiencias">
  <div class="wrap casos">
-  <div><p class="eyebrow"><b>03</b> · Experiencias</p><h2 style="margin-top:14px">Lo cuentan <em>nuestros viajeros</em></h2><p class="sub">Videos de clientes de Capital Travel. Cada caso es distinto y cada visa la decide el consulado.</p><a class="lnk casos__more" href="/#casos" data-visas>Ver más casos de visas ↗</a></div>
+  <div><p class="eyebrow"><b>03</b> · Experiencias</p><h2 style="margin-top:14px">Lo cuentan <em>nuestros viajeros</em></h2><p class="sub">Videos de clientes de Capital Travel. Cada caso es distinto y cada visa la decide el consulado.</p><a class="lnk casos__more" href="/visas/#casos" data-visas>Ver más casos de visas ↗</a></div>
   <div class="screens" tabindex="0" aria-label="Videos de casos reales, desliza para ver más">
    <div class="screen"><p class="screen__lbl">Capital Travel · A bordo</p><div class="screen__vid"><img src="/assets/media/caso1.webp" width="540" height="960" alt="" loading="lazy" decoding="async"><p class="screen__tag"><small>Caso 01</small>Visa aprobada</p><button class="play" type="button" data-src="/assets/media/caso1.mp4" aria-label="Ver video: Visa aprobada"><svg aria-hidden="true"><use href="#i-play"/></svg></button></div></div>
    <div class="screen"><p class="screen__lbl">Capital Travel · A bordo</p><div class="screen__vid"><img src="/assets/media/caso2.webp" width="540" height="960" alt="" loading="lazy" decoding="async"><p class="screen__tag"><small>Caso 02</small>Pasaporte</p><button class="play" type="button" data-src="/assets/media/caso2.mp4" aria-label="Ver video: Pasaporte"><svg aria-hidden="true"><use href="#i-play"/></svg></button></div></div>
@@ -875,7 +878,7 @@ details.col[open] summary::after{content:"−"}
 
 <footer class="land" id="contacto">
  <div class="wrap">
-  <div class="land__top"><h2>Te esperamos en Laureles <em>o en WhatsApp</em>.</h2><a class="btn btn--wa" href="https://wa.me/573008603114?text=Hola%20Capital%20Travel%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20hablar%20con%20un%20asesor." data-wa target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Escribir por WhatsApp</a></div>
+  <div class="land__top"><img class="land__logo" src="/assets/logo-dark.webp" width="140" height="178" alt="Capital Travel · Explora sin límites" loading="lazy"><h2>Te esperamos en Laureles <em>o en WhatsApp</em>.</h2><a class="btn btn--wa" href="https://wa.me/573008603114?text=Hola%20Capital%20Travel%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20hablar%20con%20un%20asesor." data-wa target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Escribir por WhatsApp</a></div>
   <div class="land__cols">
    <div class="col"><h3 class="col__t mono">Contacto</h3><ul>
     <li><a href="https://wa.me/573008603114?text=Hola%20Capital%20Travel%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20hablar%20con%20un%20asesor." data-wa target="_blank" rel="noopener">WhatsApp 300 860 3114</a></li>
@@ -886,7 +889,7 @@ details.col[open] summary::after{content:"−"}
    </ul></div>
    <details class="col" data-desk><summary class="col__t mono">Servicios</summary><ul>
     <li><a href="#cotizar" data-go="hotel">Viajes internacionales</a></li>
-    <li><a href="/" data-visas>Visas y precios ↗</a></li>
+    <li><a href="/visas/" data-visas>Visas y precios ↗</a></li>
     <li><a href="#cotizar" data-go="adelanto">Adelanto de cita</a></li>
     <li><a href="#cotizar" data-go="pasaporte">Pasaporte</a></li>
     <li><a href="#cotizar">Contactar a un asesor</a></li>
