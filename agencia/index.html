@@ -303,8 +303,9 @@ html[data-modo="revision"] .chips{padding-top:16px}
 .cover b{position:relative;font-weight:800;font-stretch:90%;letter-spacing:-.03em;font-size:clamp(28px,5vw,40px);line-height:1}
 .cover span{position:relative;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-top:6px}
 .bar{background:rgba(255,255,255,.95);border-color:var(--line)}
-.brand__logo{height:52px;width:auto}
-@media(min-width:1024px){.brand__logo{height:58px}}
+.brand .brand__logo{height:64px;width:64px}
+@media(min-width:1024px){.brand .brand__logo{height:80px;width:80px}}
+.bar{height:80px}@media(min-width:1024px){.bar{height:96px}}html{scroll-padding-top:104px}
 .land__logo{width:120px;height:auto}
 /* logo circular */
 .logo-c{width:42px;height:42px;border-radius:50%;background:#fff;border:1.5px solid rgba(45,175,211,.55);display:grid;place-items:center;box-shadow:0 2px 8px rgba(13,27,38,.12);flex:none}
@@ -354,6 +355,10 @@ html[data-modo="revision"] .chips{padding-top:16px}
 @media(min-width:1024px){.chats__g{grid-template-columns:repeat(4,1fr)}}
 
 /* nosotros */
+.about__logo{margin:0;display:grid;place-items:center}
+.about__logo img{width:min(320px,70%);height:auto}
+.about__vid{margin-bottom:48px}
+@media(min-width:1024px){.svc{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 .about{display:grid;gap:28px;margin-bottom:48px}
 .about h2{margin:14px 0 18px}
 .about__lead{font-size:18px;line-height:1.55;margin-bottom:12px;max-width:56ch}
@@ -609,14 +614,14 @@ details.col[open] summary::after{content:"−"}
 
 <main id="main">
 <section class="hero" id="inicio">
- <div class="hero__bg" aria-hidden="true"><img class="hs is-on" src="/assets/foto/europa-l.webp" srcset="/assets/foto/europa-s.webp 760w, /assets/foto/europa-l.webp 1500w" sizes="100vw" width="1500" height="1000" alt="" data-name="Europa" data-code="MAD" fetchpriority="high" decoding="async"><img class="hs" src="/assets/foto/puntacana-l.webp" srcset="/assets/foto/puntacana-s.webp 760w, /assets/foto/puntacana-l.webp 1500w" sizes="100vw" width="1500" height="1000" alt="" data-name="Punta Cana" data-code="PUJ" loading="lazy" decoding="async"><img class="hs" src="/assets/foto/brasil-l.webp" srcset="/assets/foto/brasil-s.webp 760w, /assets/foto/brasil-l.webp 1500w" sizes="100vw" width="1500" height="1000" alt="" data-name="Río de Janeiro" data-code="GIG" loading="lazy" decoding="async"><img class="hs" src="/assets/foto/peru-l.webp" srcset="/assets/foto/peru-s.webp 760w, /assets/foto/peru-l.webp 1500w" sizes="100vw" width="1500" height="1000" alt="" data-name="Machu Picchu" data-code="CUZ" loading="lazy" decoding="async"><img class="hs" src="/assets/foto/eeuu-l.webp" srcset="/assets/foto/eeuu-s.webp 760w, /assets/foto/eeuu-l.webp 1500w" sizes="100vw" width="1500" height="1000" alt="" data-name="Nueva York" data-code="JFK" loading="lazy" decoding="async"></div>
+ <div class="hero__bg" aria-hidden="true"><img class="hs is-on" src="/assets/portada/maldivas-l.webp" srcset="/assets/portada/maldivas-s.webp 900w, /assets/portada/maldivas-l.webp 1920w" sizes="100vw" width="1920" height="1200" alt="" data-name="Maldivas" data-code="MLE" fetchpriority="high" decoding="async"><img class="hs" src="/assets/portada/santorini-l.webp" srcset="/assets/portada/santorini-s.webp 900w, /assets/portada/santorini-l.webp 1920w" sizes="100vw" width="1920" height="1200" alt="" data-name="Santorini, Grecia" data-code="JTR" loading="lazy" decoding="async"><img class="hs" src="/assets/portada/bali-l.webp" srcset="/assets/portada/bali-s.webp 900w, /assets/portada/bali-l.webp 1920w" sizes="100vw" width="1920" height="1200" alt="" data-name="Bali, Indonesia" data-code="DPS" loading="lazy" decoding="async"><img class="hs" src="/assets/portada/halong-l.webp" srcset="/assets/portada/halong-s.webp 900w, /assets/portada/halong-l.webp 1920w" sizes="100vw" width="1920" height="1200" alt="" data-name="Bahía de Ha Long, Vietnam" data-code="HAN" loading="lazy" decoding="async"><img class="hs" src="/assets/portada/dubai-l.webp" srcset="/assets/portada/dubai-s.webp 900w, /assets/portada/dubai-l.webp 1920w" sizes="100vw" width="1920" height="1200" alt="" data-name="Dubái" data-code="DXB" loading="lazy" decoding="async"><img class="hs" src="/assets/portada/marrakech-l.webp" srcset="/assets/portada/marrakech-s.webp 900w, /assets/portada/marrakech-l.webp 1920w" sizes="100vw" width="1920" height="1200" alt="" data-name="Marrakech, Marruecos" data-code="RAK" loading="lazy" decoding="async"><img class="hs" src="/assets/portada/tajmahal-l.webp" srcset="/assets/portada/tajmahal-s.webp 900w, /assets/portada/tajmahal-l.webp 1920w" sizes="100vw" width="1920" height="1200" alt="" data-name="Taj Mahal, India" data-code="AGR" loading="lazy" decoding="async"></div>
  <div class="wrap hero__grid">
   <div class="hero__txt">
    <p class="eyebrow">Agencia de viajes · Medellín · RNT&nbsp;152996</p>
    <h1>Tú eliges el <em>destino</em>.<br>Nosotros, el&nbsp;papeleo.</h1>
    <p class="hero__lead">Especialistas en destinos internacionales: vuelos, hoteles, tours, traslados, seguros y visas.</p>
    <div class="hero__btns"><a class="btn btn--pri" id="hero-cta" href="#cotizar">Contactar a un asesor</a><a class="btn btn--ghost" href="#destinos">Ver destinos</a></div>
-   <p class="hero__now mono" aria-live="polite"><span id="hs-code">MAD</span> · <span id="hs-name">Europa</span></p>
+   <p class="hero__now mono" aria-live="polite"><span id="hs-code">MLE</span> · <span id="hs-name">Maldivas</span></p>
   </div>
   <a class="xp" href="#experiencias">
    <p class="xp__t mono">Las experiencias de nuestros viajeros</p>
@@ -701,8 +706,9 @@ details.col[open] summary::after{content:"−"}
      <p>Aquí va la historia de Capital Travel: cómo empezó, quién está detrás y qué la hace distinta. El texto lo envía la agencia.</p>
     </div>
    </div>
-   <figure class="about__img" data-confirmar="pendiente"><div class="about__ph"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg><span>Video de presentación de Verónica (pendiente)</span></div></figure>
+   <figure class="about__logo"><img src="/assets/logo-dark.webp" width="400" height="508" alt="Capital Travel · Explora sin límites" loading="lazy"></figure>
   </div>
+  <figure class="about__img about__vid" data-confirmar="pendiente"><div class="about__ph"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg><span>Video de presentación de Verónica (pendiente)</span></div></figure>
   <div class="pp-head"><h3>Lo que hacemos <em>por tu viaje</em></h3></div>
   <div class="svc">
    <article class="card svc__trip" id="servicio-viajes">
@@ -735,6 +741,7 @@ details.col[open] summary::after{content:"−"}
     <a class="btn btn--sec" href="#cotizar" data-go="pasaporte">Contactar a un asesor</a>
    </article>
   
+  </div>
   <div class="pp-head" style="margin-top:56px"><h3>Los sellos de <em>nuestro pasaporte</em></h3><p class="mut">Datos, no promesas.</p></div>
   <div class="pp">
    <div class="pp__data">
@@ -956,9 +963,8 @@ const FOTOS=["brasil", "despegue", "eeuu", "europa", "peru", "puntacana", "sudam
 /* portada: fotos de destinos que rotan */
 const hs=$$(".hs");let hi=0,ht;
 const hsShow=n=>{hs[hi].classList.remove("is-on");hi=(n+hs.length)%hs.length;const im=hs[hi];im.loading="eager";im.classList.add("is-on");$("#hs-name").textContent=im.dataset.name;$("#hs-code").textContent=im.dataset.code};
-const hsRun=()=>{clearInterval(ht);if(!RM)ht=setInterval(()=>hsShow(hi+1),5500)};
-const SCN={europa:0,puntacana:1,brasil:2,peru:3,eeuu:4};
-function scene(k){if(k in SCN){hsShow(SCN[k]);hsRun()}}
+const hsRun=()=>{clearInterval(ht);if(!RM)ht=setInterval(()=>hsShow(hi+1),4500)};
+function scene(k){}
 /* observadores */
 IO([$(".sentinel")],e=>$("#bar").classList.toggle("is-solid",!e.isIntersecting));
 IO([$(".hero")],e=>{if(e.isIntersecting)hsRun();else clearInterval(ht)});
