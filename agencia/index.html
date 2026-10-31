@@ -302,6 +302,54 @@ html[data-modo="revision"] .chips{padding-top:16px}
 .cover::before{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 85% 10%,rgba(255,255,255,.28),transparent 55%),repeating-linear-gradient(115deg,rgba(255,255,255,.06) 0 2px,transparent 2px 14px)}
 .cover b{position:relative;font-weight:800;font-stretch:90%;letter-spacing:-.03em;font-size:clamp(28px,5vw,40px);line-height:1}
 .cover span{position:relative;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;opacity:.85;margin-top:6px}
+.bar{background:rgba(255,255,255,.95);border-color:var(--line)}
+/* logo circular */
+.logo-c{width:42px;height:42px;border-radius:50%;background:#fff;border:1.5px solid rgba(45,175,211,.55);display:grid;place-items:center;box-shadow:0 2px 8px rgba(13,27,38,.12);flex:none}
+.logo-c img{width:28px;height:28px}
+/* portada con fotos de destinos */
+.hero{position:relative;min-height:100svh;padding:96px 0 40px;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero>.wrap{width:100%;position:relative;z-index:2}
+.hero__bg{position:absolute;inset:0;z-index:0;background:#0d1b26}
+.hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,12,20,.45) 0%,rgba(4,12,20,.1) 35%,rgba(4,12,20,.78) 100%),linear-gradient(90deg,rgba(4,12,20,.55),transparent 65%)}
+.hs{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity 1.2s ease,transform 7s linear}
+.hs.is-on{opacity:1;transform:scale(1)}
+.hero .hero__grid{display:grid;gap:28px;grid-template-areas:none;grid-template-columns:minmax(0,1fr);grid-template-rows:none}
+.hero .eyebrow{color:rgba(255,255,255,.85);margin-bottom:14px}
+.hero h1{color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.25)}
+.hero h1 em{color:#9be3f7}
+.hero .hero__lead{color:rgba(255,255,255,.92);margin-top:16px;max-width:46ch;font-size:17px}
+.hero .hero__btns{display:flex;flex-direction:row;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn--ghost{border:1px solid rgba(255,255,255,.6);color:#fff}
+.btn--ghost:hover{background:rgba(255,255,255,.12)}
+.hero__now{margin-top:22px;font-size:11px;color:rgba(255,255,255,.8)}
+.xp{display:block;align-self:end;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:14px;color:#fff;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);max-width:380px}
+.xp__t{font-size:10px;margin-bottom:10px;color:rgba(255,255,255,.9)}
+.xp__pics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.xp__pics img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:12px}
+.xp__b{margin-top:10px;display:flex;justify-content:space-between;align-items:center;font-size:14px}
+.xp__b b{font-size:20px;font-weight:800}
+.xp__b>span:last-child{color:#9be3f7;font-weight:600}
+.xp__n{color:#fff}
+@media(min-width:1024px){.hero{padding:120px 0 72px}.hero .hero__grid{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:end}.hero h1{font-size:clamp(48px,4.4vw,64px)}.xp{justify-self:end;width:100%}}
+/* banner de visas */
+.vban-w{padding-top:var(--sec)}
+.vban{position:relative;display:grid;gap:18px;align-items:end;min-height:260px;border-radius:var(--r-l);overflow:hidden;padding:28px;color:#fff;box-shadow:var(--shadow)}
+.vban img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.vban::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,12,20,.85),rgba(4,12,20,.35));z-index:1}
+.vban>*:not(img){position:relative;z-index:2}
+.vban .mono{font-size:11px;color:#9be3f7}
+.vban h2{color:#fff;margin:8px 0}
+.vban h2 em{color:#9be3f7}
+.vban__txt p:last-child{color:rgba(255,255,255,.9)}
+.vban .btn{justify-self:start}
+@media(min-width:1024px){.vban{grid-template-columns:1fr auto;padding:48px}}
+/* experiencias: chats */
+.chats{margin-top:48px}
+.chats__t{font-size:11px;color:var(--cy2);margin-bottom:14px}
+.chats__g{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.chat-ph{aspect-ratio:9/16;border-radius:16px;background:var(--paper);border:1px dashed var(--line2);display:grid;place-items:center;color:var(--mut);font-size:14px}
+@media(min-width:1024px){.chats__g{grid-template-columns:repeat(4,1fr)}}
+
 /* nosotros */
 .about{display:grid;gap:28px;margin-bottom:48px}
 .about h2{margin:14px 0 18px}
@@ -543,8 +591,8 @@ details.col[open] summary::after{content:"−"}
 <div class="sentinel" aria-hidden="true"></div>
 <header class="bar" id="bar">
  <div class="wrap bar__in">
-  <a class="brand" href="#inicio" aria-label="Capital Travel, ir al inicio"><img src="/assets/mark-dark-96.webp" width="36" height="36" alt=""><span class="logo" aria-hidden="true">Capital<b>Travel</b></span></a>
-  <nav class="topnav" aria-label="Principal"><a href="#servicios">Servicios</a><a href="#destinos">Destinos</a><a href="#nosotros">Nosotros</a><a href="/" data-visas>Visas ↗</a><a href="#casos">Casos</a></nav>
+  <a class="brand" href="#inicio" aria-label="Capital Travel, ir al inicio"><span class="logo-c"><img src="/assets/mark-dark-96.webp" width="30" height="30" alt=""></span><span class="logo" aria-hidden="true">Capital<b>Travel</b></span></a>
+  <nav class="topnav" aria-label="Principal"><a href="#inicio">Inicio</a><a href="#destinos">Destinos</a><a href="/" data-visas>Visas ↗</a><a href="#nosotros">Nosotros</a><a href="#experiencias">Experiencias</a></nav>
   <a class="btn btn--pri bar__cta" href="#cotizar">Contactar asesor</a>
   <a class="bar__wa" href="https://wa.me/573008603114?text=Hola%20Capital%20Travel%2C%20vengo%20de%20la%20p%C3%A1gina%20web%20y%20quiero%20hablar%20con%20un%20asesor." data-wa target="_blank" rel="noopener" aria-label="Escribir a Capital Travel por WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
   <button class="bar__menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
@@ -552,116 +600,44 @@ details.col[open] summary::after{content:"−"}
 </header>
 <div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menú" hidden>
  <div class="menu__top"><span class="logo">Capital<b>Travel</b></span><button class="menu__x" type="button" aria-label="Cerrar menú">×</button></div>
- <nav aria-label="Menú móvil"><a href="#servicios"><span>01</span>Servicios</a><a href="#destinos"><span>02</span>Destinos</a><a href="#nosotros"><span>03</span>Nosotros</a><a href="/" data-visas><span>04</span>Visas y precios ↗</a><a href="#casos"><span>05</span>Casos reales</a><a href="#cotizar"><span>06</span>Contactar a un asesor</a></nav>
+ <nav aria-label="Menú móvil"><a href="#inicio"><span>01</span>Inicio</a><a href="#destinos"><span>02</span>Destinos</a><a href="/" data-visas><span>03</span>Visas ↗</a><a href="#nosotros"><span>04</span>Nosotros</a><a href="#experiencias"><span>05</span>Experiencias</a><a href="#cotizar"><span>06</span>Contactar a un asesor</a></nav>
  <p class="menu__foot mono">WhatsApp 300 860 3114 · Calle 40A #81A-115, Laureles · <a href="https://www.instagram.com/capital.travel1/" target="_blank" rel="noopener">@capital.travel1</a></p>
 </div>
 
 <main id="main">
 <section class="hero" id="inicio">
+ <div class="hero__bg" aria-hidden="true"><img class="hs is-on" src="/assets/foto/europa-l.webp" srcset="/assets/foto/europa-s.webp 760w, /assets/foto/europa-l.webp 1500w" sizes="100vw" width="1500" height="1000" alt="" data-name="Europa" data-code="MAD" fetchpriority="high" decoding="async"><img class="hs" src="/assets/foto/puntacana-l.webp" srcset="/assets/foto/puntacana-s.webp 760w, /assets/foto/puntacana-l.webp 1500w" sizes="100vw" width="1500" height="1000" alt="" data-name="Punta Cana" data-code="PUJ" loading="lazy" decoding="async"><img class="hs" src="/assets/foto/brasil-l.webp" srcset="/assets/foto/brasil-s.webp 760w, /assets/foto/brasil-l.webp 1500w" sizes="100vw" width="1500" height="1000" alt="" data-name="Río de Janeiro" data-code="GIG" loading="lazy" decoding="async"><img class="hs" src="/assets/foto/peru-l.webp" srcset="/assets/foto/peru-s.webp 760w, /assets/foto/peru-l.webp 1500w" sizes="100vw" width="1500" height="1000" alt="" data-name="Machu Picchu" data-code="CUZ" loading="lazy" decoding="async"><img class="hs" src="/assets/foto/eeuu-l.webp" srcset="/assets/foto/eeuu-s.webp 760w, /assets/foto/eeuu-l.webp 1500w" sizes="100vw" width="1500" height="1000" alt="" data-name="Nueva York" data-code="JFK" loading="lazy" decoding="async"></div>
  <div class="wrap hero__grid">
-  <p class="eyebrow">Agencia de viajes · Medellín · RNT&nbsp;152996</p>
-  <h1>Tú eliges la <em>ventanilla</em>.<br>Nosotros, el&nbsp;papeleo.</h1>
-  <div class="hero__win">
-   <p class="seat mono" aria-hidden="true">Asiento 1A · Ventanilla</p>
-   <figure class="win" data-time="tarde">
-    <div class="win__panel">
-     <div class="win__hole" aria-hidden="true">
-      <img class="win__base" src="/assets/foto/despegue-s.webp" srcset="/assets/foto/despegue-s.webp 760w, /assets/foto/despegue-l.webp 1500w" sizes="(min-width:1024px) 420px, 320px" width="760" height="507" alt="" fetchpriority="high" decoding="async">
-      <img class="win__img" alt="" decoding="async">
-      <img class="win__img" alt="" decoding="async">
-      <div class="win__shade"><span class="win__grip"></span></div>
-      <div class="win__glass"></div>
-     </div>
-     <button class="win__pull" type="button" aria-label="Subir o bajar la persiana" aria-pressed="false"></button>
-    </div>
-    <figcaption>
-     <p class="win__cap mono" aria-live="polite">MDE · Despegando desde Medellín</p>
-     <svg class="route" viewBox="0 0 320 40" aria-hidden="true"><text x="0" y="25">MDE</text><path d="M42 21H274" stroke="rgba(13,27,38,.28)" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"/><text class="route__code" x="320" y="25" text-anchor="end">···</text><g class="route__plane"><path fill="#1a8db2" d="M14 21l-4-1.2-2.8-4.3H5.6l1.6 4.6-3.6.3-1.4-1.8H1l.8 2.4-.8 2.4h1.2l1.4-1.8 3.6.3-1.6 4.6h1.6l2.8-4.3z"/></g></svg>
-    </figcaption>
-   </figure>
+  <div class="hero__txt">
+   <p class="eyebrow">Agencia de viajes · Medellín · RNT&nbsp;152996</p>
+   <h1>Tú eliges el <em>destino</em>.<br>Nosotros, el&nbsp;papeleo.</h1>
+   <p class="hero__lead">Especialistas en destinos internacionales: vuelos, hoteles, tours, traslados, seguros y visas.</p>
+   <div class="hero__btns"><a class="btn btn--pri" id="hero-cta" href="#cotizar">Contactar a un asesor</a><a class="btn btn--ghost" href="#destinos">Ver destinos</a></div>
+   <p class="hero__now mono" aria-live="polite"><span id="hs-code">MAD</span> · <span id="hs-name">Europa</span></p>
   </div>
-  <p class="chips__t" id="chips-t">¿Hacia dónde quieres mirar?</p>
-  <div class="chips" role="group" aria-label="Elegir destino para la ventanilla">
-   <button class="chip" type="button" data-scene="mde" aria-pressed="true">Despegue <small>MDE</small></button>
-   <button class="chip" type="button" data-scene="europa" aria-pressed="false">Europa <small>MAD</small></button>
-   <button class="chip" type="button" data-scene="puntacana" aria-pressed="false">Punta Cana <small>PUJ</small></button>
-   <button class="chip" type="button" data-scene="panama" aria-pressed="false">Panamá <small>PTY</small></button>
-   <button class="chip" type="button" data-scene="brasil" aria-pressed="false">Brasil <small>GIG</small></button>
-   <button class="chip" type="button" data-scene="peru" aria-pressed="false">Perú <small>CUZ</small></button>
-   <button class="chip" type="button" data-scene="eeuu" aria-pressed="false">EE.&nbsp;UU. <small>JFK</small></button>
-  </div>
-  <div class="hero__btns">
-   <a class="btn btn--pri" id="hero-cta" href="#cotizar">Contactar a un asesor</a>
-   <a class="btn btn--sec hero__vis" href="/" data-visas>¿Vienes por la visa? Ver precios →</a>
-  </div>
-  <p class="hero__lead">Especialistas en destinos internacionales: Europa, el Caribe, Sudamérica y Estados Unidos. Vuelos, hoteles, tours, traslados, seguros y visas, en nuestra oficina de Laureles o por WhatsApp.</p>
+  <a class="xp" href="#experiencias">
+   <p class="xp__t mono">Las experiencias de nuestros viajeros</p>
+   <div class="xp__pics"><img src="/assets/media/caso1.webp" width="540" height="960" alt="Cliente de Capital Travel con su visa aprobada" decoding="async"><img src="/assets/media/caso2.webp" width="540" height="960" alt="Cliente de Capital Travel" decoding="async"><img src="/assets/media/caso3.webp" width="540" height="960" alt="Clientes de Capital Travel" decoding="async"></div>
+   <p class="xp__b"><span class="xp__n"><b>+500</b> viajeros felices</span> <span>Ver experiencias →</span></p>
+  </a>
  </div>
- <noscript><style>.chips,.chips__t{display:none}</style></noscript>
 </section>
 
-<section class="sec" id="servicios">
+<section class="vban-w">
  <div class="wrap">
-  <div class="sec-head"><p class="eyebrow"><b>01</b> · Servicios</p><h2>Lo que hacemos <em>por tu viaje</em></h2><p class="sub">Especialistas en destinos internacionales. Y si tu viaje necesita visa, te acompañamos en todo el trámite.</p></div>
-  <div class="svc">
-   <article class="card svc__trip" id="servicio-viajes">
-    <div class="svc__trip-img"><img src="/assets/foto/viajes-s.webp" srcset="/assets/foto/viajes-s.webp 760w, /assets/foto/viajes-l.webp 1500w" sizes="(min-width:1024px) 600px, 100vw" width="760" height="507" alt="" loading="lazy" decoding="async"></div>
-    <div class="svc__trip-body">
-     <p class="tag">Especialistas en destinos internacionales</p>
-     <h3>Viajes internacionales a tu medida</h3>
-     <p class="mut">Europa, el Caribe, Sudamérica y Estados Unidos. Dinos a dónde quieres ir y te armamos el viaje completo.</p>
-     <ul class="ticks">
-      <li><svg class="ico" aria-hidden="true"><use href="#i-ticket"/></svg>Vuelos</li>
-      <li><svg class="ico" aria-hidden="true"><use href="#i-bed"/></svg>Hoteles y todo incluido</li>
-      <li><svg class="ico" aria-hidden="true"><use href="#i-map"/></svg>Tours</li>
-      <li><svg class="ico" aria-hidden="true"><use href="#i-bus"/></svg>Transporte y traslados</li>
-      <li><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>Seguros de viaje</li>
-      <li><svg class="ico" aria-hidden="true"><use href="#i-bag"/></svg>Paquetes completos</li>
-     </ul>
-     <a class="btn btn--pri" href="#cotizar" data-go="hotel">Contactar a un asesor</a>
-    </div>
-   </article>
-   <article class="card svc__visa" id="servicio-visas">
-    <div class="svc__strip"><img src="/assets/foto/visas-s.webp" srcset="/assets/foto/visas-s.webp 760w, /assets/foto/visas-l.webp 1500w" sizes="(min-width:1024px) 780px, 100vw" width="760" height="507" alt="" loading="lazy" decoding="async"></div>
-    <div class="svc__body">
-     <p class="tag">+500 casos de éxito</p>
-     <h3>Asesoría de visas</h3>
-     <p class="mut">Perfilamiento, formulario, pago consular, cita y preparación de entrevista. EE.&nbsp;UU., Canadá y Reino Unido.</p>
-     <!-- PRECIOS: cambiar aquí, en el objeto T del script y en la página de visas -->
-     <table class="prices">
-      <caption class="sr">Precios de asesoría de visas, por persona, en pesos colombianos</caption>
-      <thead><tr><th scope="col">Trámite</th><th scope="col">1 persona</th><th scope="col">Grupo, desde</th></tr></thead>
-      <tbody>
-       <tr><th scope="row">Visa americana, primera vez <small>(3 asesorías)</small></th><td data-l="1 persona">$390.000</td><td data-l="Grupo desde">$360.000</td></tr>
-       <tr><th scope="row">Visa Flash, con adelanto de cita</th><td data-l="1 persona">$650.000</td><td data-l="Grupo desde">$500.000</td></tr>
-       <tr><th scope="row">Renovación visa americana, trámite completo</th><td data-l="1 persona">$380.000</td><td data-l="Grupo desde">$320.000</td></tr>
-       <tr><th scope="row">Renovación visa americana, solo asesoría</th><td data-l="1 persona">$290.000</td><td data-l="Grupo desde">$260.000</td></tr>
-       <tr><th scope="row">Visa de turismo Canadá</th><td data-l="1 persona">$450.000</td><td class="nil" data-l="Grupo">—</td></tr>
-       <tr><th scope="row">Visa Reino Unido</th><td data-l="1 persona">$450.000</td><td class="nil" data-l="Grupo">—</td></tr>
-      </tbody>
-     </table>
-     <p class="note">Precios por persona en pesos colombianos. El valor «desde» aplica a grupos: 5 o más personas en visa americana y renovación, 4 o más en Visa Flash. El valor consular se paga aparte: 185&nbsp;USD (EE.&nbsp;UU.), 185&nbsp;CAD (Canadá), 115&nbsp;GBP (Reino Unido). La aprobación la decide el consulado.</p>
-     <div class="svc__btns"><a class="btn btn--pri" href="#cotizar" data-go="visa">Contactar a un asesor</a><a class="btn btn--sec" href="/" data-visas>Ver visas y precios ↗</a></div>
-    </div>
-   </article>
-   <article class="card svc__card">
-    <svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>
-    <h3>Adelanto de cita</h3>
-    <p>Buscamos una fecha más cercana para tu cita consular. Nuestro récord: 1&nbsp;semana. Depende de la disponibilidad del consulado.</p>
-    <a class="btn btn--sec" href="#cotizar" data-go="adelanto">Contactar a un asesor</a>
-   </article>
-   <article class="card svc__card">
-    <svg class="ico" aria-hidden="true"><use href="#i-pass"/></svg>
-    <h3>Pasaporte colombiano</h3>
-    <p>Te ayudamos con la expedición o con el adelanto de la cita.</p>
-    <a class="btn btn--sec" href="#cotizar" data-go="pasaporte">Contactar a un asesor</a>
-   </article>
-  </div>
+  <a class="vban" href="/" data-visas>
+   <img src="/assets/foto/visas-s.webp" srcset="/assets/foto/visas-s.webp 760w, /assets/foto/visas-l.webp 1500w" sizes="(min-width:1200px) 1136px, 100vw" width="760" height="507" alt="" loading="lazy" decoding="async">
+   <div class="vban__txt"><p class="mono">Asesoría de visas · +500 casos de éxito</p><h2>¿Necesitas <em>visa</em>?</h2><p>EE.&nbsp;UU., Canadá y Reino Unido. Adelanto de citas y Visa Flash.</p></div>
+   <span class="btn btn--pri">Ver visas y precios →</span>
+  </a>
  </div>
 </section>
+
+
 
 <section class="sec" id="destinos">
  <div class="wrap">
-  <div class="sec-head dest__head"><div><p class="eyebrow"><b>02</b> · Destinos</p><h2>Postales desde <em>la ventanilla</em></h2><p class="sub">Los favoritos de nuestros viajeros. ¿Tienes otro destino en mente? Un asesor te ayuda a planearlo.</p></div><p class="dest__count mono" aria-hidden="true">01 / 05</p></div>
+  <div class="sec-head dest__head"><div><p class="eyebrow"><b>01</b> · Destinos</p><h2>Postales desde <em>la ventanilla</em></h2><p class="sub">Los favoritos de nuestros viajeros. ¿Tienes otro destino en mente? Un asesor te ayuda a planearlo.</p></div><p class="dest__count mono" aria-hidden="true">01 / 05</p></div>
   <div class="posts" tabindex="0" aria-label="Destinos, desliza para ver más">
    <article class="post">
     <div class="post__img"><img src="/assets/foto/europa-s.webp" srcset="/assets/foto/europa-s.webp 760w, /assets/foto/europa-l.webp 1500w" sizes="(min-width:1024px) 280px, (min-width:600px) 44vw, 80vw" width="760" height="507" alt="Foto de París con la torre Eiffel" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
@@ -713,7 +689,7 @@ details.col[open] summary::after{content:"−"}
  <div class="wrap">
   <div class="about">
    <div class="about__txt">
-    <p class="eyebrow"><b>03</b> · Nosotros</p>
+    <p class="eyebrow"><b>02</b> · Nosotros</p>
     <h2>Una agencia de Medellín <em>con pasaporte al mundo</em></h2>
     <p class="about__lead">Somos Capital Travel, agencia de viajes en Laureles inscrita en el Registro Nacional de Turismo. Nos especializamos en destinos internacionales y en acompañarte con la visa: ya son más de 500 casos de éxito.</p>
     <p class="mut">Te atendemos en persona en nuestra oficina o por WhatsApp, desde la primera pregunta hasta que te subes al avión.</p>
@@ -722,9 +698,41 @@ details.col[open] summary::after{content:"−"}
      <p>Aquí va la historia de Capital Travel: cómo empezó, quién está detrás y qué la hace distinta. El texto lo envía la agencia.</p>
     </div>
    </div>
-   <figure class="about__img" data-confirmar="pendiente"><div class="about__ph"><svg class="ico" aria-hidden="true"><use href="#i-cam"/></svg><span>Foto real del equipo o de la oficina</span></div></figure>
+   <figure class="about__img" data-confirmar="pendiente"><div class="about__ph"><svg class="ico" aria-hidden="true"><use href="#i-play"/></svg><span>Video de presentación de Verónica (pendiente)</span></div></figure>
   </div>
-  <div class="pp-head"><h3>Los sellos de <em>nuestro pasaporte</em></h3><p class="mut">Datos, no promesas.</p></div>
+  <div class="pp-head"><h3>Lo que hacemos <em>por tu viaje</em></h3></div>
+  <div class="svc">
+   <article class="card svc__trip" id="servicio-viajes">
+    <div class="svc__trip-img"><img src="/assets/foto/viajes-s.webp" srcset="/assets/foto/viajes-s.webp 760w, /assets/foto/viajes-l.webp 1500w" sizes="(min-width:1024px) 600px, 100vw" width="760" height="507" alt="" loading="lazy" decoding="async"></div>
+    <div class="svc__trip-body">
+     <p class="tag">Especialistas en destinos internacionales</p>
+     <h3>Viajes internacionales a tu medida</h3>
+     <p class="mut">Europa, el Caribe, Sudamérica y Estados Unidos. Dinos a dónde quieres ir y te armamos el viaje completo.</p>
+     <ul class="ticks">
+      <li><svg class="ico" aria-hidden="true"><use href="#i-ticket"/></svg>Vuelos</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-bed"/></svg>Hoteles y todo incluido</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-map"/></svg>Tours</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-bus"/></svg>Transporte y traslados</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-shield"/></svg>Seguros de viaje</li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-bag"/></svg>Paquetes completos</li>
+     </ul>
+     <a class="btn btn--pri" href="#cotizar" data-go="hotel">Contactar a un asesor</a>
+    </div>
+   </article>
+   <article class="card svc__card">
+    <svg class="ico" aria-hidden="true"><use href="#i-clock"/></svg>
+    <h3>Adelanto de cita</h3>
+    <p>Buscamos una fecha más cercana para tu cita consular. Nuestro récord: 1&nbsp;semana. Depende de la disponibilidad del consulado.</p>
+    <a class="btn btn--sec" href="#cotizar" data-go="adelanto">Contactar a un asesor</a>
+   </article>
+   <article class="card svc__card">
+    <svg class="ico" aria-hidden="true"><use href="#i-pass"/></svg>
+    <h3>Pasaporte colombiano</h3>
+    <p>Te ayudamos con la expedición o con el adelanto de la cita.</p>
+    <a class="btn btn--sec" href="#cotizar" data-go="pasaporte">Contactar a un asesor</a>
+   </article>
+  
+  <div class="pp-head" style="margin-top:56px"><h3>Los sellos de <em>nuestro pasaporte</em></h3><p class="mut">Datos, no promesas.</p></div>
   <div class="pp">
    <div class="pp__data">
     <p class="pp__t mono"><span>Página de datos</span><span>CO</span></p>
@@ -768,21 +776,24 @@ details.col[open] summary::after{content:"−"}
  </div>
 </section>
 
-<section class="sec" id="casos">
+<section class="sec" id="experiencias">
  <div class="wrap casos">
-  <div><p class="eyebrow"><b>04</b> · Casos reales</p><h2 style="margin-top:14px">Lo cuentan <em>ellos</em></h2><p class="sub">Videos de clientes de Capital Travel. Cada caso es distinto y cada visa la decide el consulado.</p><a class="lnk casos__more" href="/#casos" data-visas>Ver más sobre visas ↗</a></div>
+  <div><p class="eyebrow"><b>03</b> · Experiencias</p><h2 style="margin-top:14px">Lo cuentan <em>nuestros viajeros</em></h2><p class="sub">Videos de clientes de Capital Travel. Cada caso es distinto y cada visa la decide el consulado.</p><a class="lnk casos__more" href="/#casos" data-visas>Ver más casos de visas ↗</a></div>
   <div class="screens" tabindex="0" aria-label="Videos de casos reales, desliza para ver más">
    <div class="screen"><p class="screen__lbl">Capital Travel · A bordo</p><div class="screen__vid"><img src="/assets/media/caso1.webp" width="540" height="960" alt="" loading="lazy" decoding="async"><p class="screen__tag"><small>Caso 01</small>Visa aprobada</p><button class="play" type="button" data-src="/assets/media/caso1.mp4" aria-label="Ver video: Visa aprobada"><svg aria-hidden="true"><use href="#i-play"/></svg></button></div></div>
    <div class="screen"><p class="screen__lbl">Capital Travel · A bordo</p><div class="screen__vid"><img src="/assets/media/caso2.webp" width="540" height="960" alt="" loading="lazy" decoding="async"><p class="screen__tag"><small>Caso 02</small>Pasaporte</p><button class="play" type="button" data-src="/assets/media/caso2.mp4" aria-label="Ver video: Pasaporte"><svg aria-hidden="true"><use href="#i-play"/></svg></button></div></div>
    <div class="screen"><p class="screen__lbl">Capital Travel · A bordo</p><div class="screen__vid"><img src="/assets/media/caso3.webp" width="540" height="960" alt="" loading="lazy" decoding="async"><p class="screen__tag"><small>Caso 03</small>Proceso de visa</p><button class="play" type="button" data-src="/assets/media/caso3.mp4" aria-label="Ver video: Proceso de visa"><svg aria-hidden="true"><use href="#i-play"/></svg></button></div></div>
   </div>
  </div>
+ <div class="wrap">
+  <div class="chats" data-confirmar="pendiente"><p class="mono chats__t">Chats de clientes · visa aprobada</p><div class="chats__g"><div class="chat-ph">Captura 1</div><div class="chat-ph">Captura 2</div><div class="chat-ph">Captura 3</div><div class="chat-ph">Captura 4</div></div></div>
+ </div>
 </section>
 
 <section class="sec" id="cotizar">
  <div class="wrap plan">
   <div class="plan__side">
-   <p class="eyebrow"><b>05</b> · Asesoría</p>
+   <p class="eyebrow"><b>04</b> · Asesoría</p>
    <h2 id="plan-h" tabindex="-1" style="margin-top:14px">Arma tu <em>plan de vuelo</em></h2>
    <p class="sub">Llenas esto, se abre WhatsApp con tu mensaje escrito y solo le das enviar.</p>
    <ol class="steps">
@@ -881,6 +892,8 @@ details.col[open] summary::after{content:"−"}
     <li><a href="#cotizar">Contactar a un asesor</a></li>
    </ul></details>
    <details class="col" data-desk><summary class="col__t mono">Legal</summary><ul>
+    <li><a href="/agencia/terminos/">Términos y condiciones</a></li>
+    <li data-confirmar="pendiente"><a href="/agencia/terminos/#contrato-visas">Contrato de servicios de visas</a></li>
     <li><a href="/agencia/politica-de-datos/">Política de tratamiento de datos</a></li>
     <li>NIT 1007241221-1</li>
     <li>RNT 152996</li>
@@ -936,44 +949,16 @@ const D={
  otro:{l:"Otro destino",c:"???"}
 };
 
-/* ventanilla */
-const win=$(".win"),imgs=$$(".win__img"),cap=$(".win__cap"),chips=$$(".chip[data-scene]");
-const h=(new Date().getUTCHours()+19)%24;
-win.dataset.time=h>=5&&h<10?"amanecer":h>=10&&h<18?"tarde":"noche";
-const src=d=>"/assets/foto/"+d.i+(DESK.matches?"-l":"-s")+".webp";
-let cur=-1,req=0;
-const rp=$(".route__plane"),rc=$(".route__code");
-function route(code){
- rc.textContent=code||"···";
- const x=code?230:32;
- if(RM||!code){rp.style.transition="none";rp.style.transform="translate("+x+"px,0)";return}
- rp.style.transition="none";rp.style.transform="translate(32px,0)";
- requestAnimationFrame(()=>requestAnimationFrame(()=>{rp.style.transition="transform .7s cubic-bezier(.2,.7,.2,1)";rp.style.transform="translate("+x+"px,0)"}));
-}
 const FOTOS=["brasil", "despegue", "eeuu", "europa", "peru", "puntacana", "sudamerica", "viajes", "visas"];
-function scene(k){
- const dd=D[k]&&D[k].cap?D[k]:null,d=dd&&FOTOS.includes(dd.i)?dd:null,id=++req;
- chips.forEach(c=>c.setAttribute("aria-pressed",c.dataset.scene===(dd?k:"mde")));
- cap.textContent=dd?dd.cap:"MDE\u00a0· Despegando desde Medellín";
- route(dd&&(dd.r||dd.c));
- if(!d){imgs.forEach(i=>i.classList.remove("is-on"));win.classList.remove("has-img");cur=-1;return}
- const s=src(d),pre=new Image();pre.src=s;
- (pre.decode?pre.decode():Promise.resolve()).catch(()=>{}).then(()=>{
-  if(id!==req)return;
-  const old=imgs[cur],nx=imgs[cur===0?1:0];
-  nx.style.objectPosition=d.p;nx.src=s;
-  imgs.forEach(i=>i.classList.remove("is-top"));nx.classList.add("is-top","is-on");
-  win.classList.add("has-img");cur=imgs.indexOf(nx);
-  if(old)setTimeout(()=>{if(old!==imgs[cur])old.classList.remove("is-on")},480);
- });
-}
-chips.forEach(c=>c.addEventListener("click",()=>{const k=c.dataset.scene;scene(k);if(!destTouched)setDest(k==="mde"?"":k)}));
-const pull=$(".win__pull");
-pull.addEventListener("click",()=>{const cl=!win.classList.contains("is-closed");win.classList.toggle("is-closed",cl);win.classList.toggle("is-open",!cl);pull.setAttribute("aria-pressed",cl)});
-
+/* portada: fotos de destinos que rotan */
+const hs=$$(".hs");let hi=0,ht;
+const hsShow=n=>{hs[hi].classList.remove("is-on");hi=(n+hs.length)%hs.length;const im=hs[hi];im.loading="eager";im.classList.add("is-on");$("#hs-name").textContent=im.dataset.name;$("#hs-code").textContent=im.dataset.code};
+const hsRun=()=>{clearInterval(ht);if(!RM)ht=setInterval(()=>hsShow(hi+1),5500)};
+const SCN={europa:0,puntacana:1,brasil:2,peru:3,eeuu:4};
+function scene(k){if(k in SCN){hsShow(SCN[k]);hsRun()}}
 /* observadores */
 IO([$(".sentinel")],e=>$("#bar").classList.toggle("is-solid",!e.isIntersecting));
-IO([win],e=>win.classList.toggle("is-paused",!e.isIntersecting));
+IO([$(".hero")],e=>{if(e.isIntersecting)hsRun();else clearInterval(ht)});
 IO([$(".stamps")],(e,o)=>{if(e.isIntersecting){e.target.classList.add("is-in");o.disconnect()}},{threshold:.25});
 /* el dock aparece cuando el botón del hero no está en pantalla y tampoco el formulario */
 const dock=$("#dock"),vis={"hero-cta":false,cotizar:false};
@@ -1114,7 +1099,6 @@ cp.addEventListener("click",async()=>{
 function goPlan(){$("#cotizar").scrollIntoView({behavior:RM?"auto":"smooth"});$("#plan-h").focus({preventScroll:true})}
 $$("[data-go]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();needsTouched=true;setNeed(a.dataset.go,true);goPlan()}));
 $$(".post [data-dest]").forEach(a=>a.addEventListener("click",e=>{e.preventDefault();const k=a.dataset.dest;setDest(k);if(D[k]&&D[k].i)scene(k);goPlan()}));
-$("#hero-cta").addEventListener("click",()=>{if(!destTouched){const c=chips.find(x=>x.getAttribute("aria-pressed")==="true");if(c&&c.dataset.scene!=="mde")setDest(c.dataset.scene)}});
 
 /* parámetros ?d y ?n */
 const qd=Q.get("d");
