@@ -571,6 +571,14 @@ details.col[open] summary::after{content:"−"}
  .js .stamps:not(.is-in) .st svg{opacity:1;transform:rotate(var(--r))}
  *,*::before,*::after{transition-duration:0s!important;transition-delay:0s!important}
 }
+
+/* Sello NOVA Creative: el script inserta <nova-sello> justo después de sí mismo; si no carga, queda el texto de respaldo */
+.nova-pie{display:block;width:100%;margin:22px 0 0;text-align:center}
+.nova-pie nova-sello{display:flex;justify-content:center}
+@media (min-width:700px){.nova-pie nova-sello{zoom:1.2}}
+.nova-pie .nova{margin:14px 0;font-size:16px;line-height:1.5;font-weight:400;letter-spacing:0;text-transform:none;color:var(--mut)}
+.nova-pie .nova b{font-weight:700;color:var(--cy2)}
+.nova-pie nova-sello+.nova{display:none}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"TravelAgency","name":"Capital Travel","telephone":"+57 300 860 3114","email":"capitaltravelagencia@gmail.com","image":"/assets/og.jpg","address":{"@type":"PostalAddress","streetAddress":"Calle 40A #81A-115, Simón Bolívar, Laureles","addressLocality":"Medellín","addressRegion":"Antioquia","addressCountry":"CO"},"sameAs":["https://www.instagram.com/capital.travel1/"]}</script>
 </head>
@@ -915,7 +923,7 @@ details.col[open] summary::after{content:"−"}
   <p class="legal">En Colombia la explotación y el abuso sexual de niñas, niños y adolescentes son sancionados penal y administrativamente, conforme a las Leyes 679 de 2001 y 1336 de 2009.</p>
   <p class="legal">La aprobación de visas es decisión exclusiva de cada consulado. Los valores consulares no están incluidos en nuestras tarifas.</p>
   <p class="strip mono">Capital Travel · Agencia de viajes · Medellín · NIT 1007241221-1 · RNT 152996 · © 2026</p>
-  <p class="nova" style="display:block;width:100%;margin:22px 0 0;text-align:center;font-size:16px;line-height:1.5;font-weight:400;letter-spacing:0;text-transform:none;color:var(--mut)">Powered by <b style="font-weight:700;color:var(--cy2)">NOVA Creative</b></p>
+  <div class="nova-pie"><script src="https://novacreative.online/sello.js" defer></script><p class="nova">Powered by <b>NOVA Creative</b></p></div>
  </div>
 </footer>
 

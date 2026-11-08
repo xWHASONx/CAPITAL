@@ -29,6 +29,14 @@ li{margin:6px 0}
 html[data-modo="publicar"] [data-confirmar="pendiente"]{display:none!important}
 html[data-modo="revision"] [data-confirmar="pendiente"]{outline:1.5px dashed #d9a300;outline-offset:4px;position:relative}
 html[data-modo="revision"] [data-confirmar="pendiente"]::before{content:"Por confirmar";position:absolute;top:-10px;left:8px;font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;background:var(--gold);color:var(--ink);padding:3px 6px;border-radius:4px;white-space:nowrap}
+
+/* Sello NOVA Creative: el script inserta <nova-sello> justo después de sí mismo; si no carga, queda el texto de respaldo */
+.nova-pie{display:block;width:100%;margin:56px 0 0;padding-top:6px;border-top:1px solid var(--line);text-align:center}
+.nova-pie nova-sello{display:flex;justify-content:center}
+@media (min-width:700px){.nova-pie nova-sello{zoom:1.2}}
+.nova-pie .nova{margin:14px 0;font-size:16px;line-height:1.5;font-weight:400;letter-spacing:0;text-transform:none;color:var(--mut)}
+.nova-pie .nova b{font-weight:700;color:var(--cy2)}
+.nova-pie nova-sello+.nova{display:none}
 </style>
 </head>
 <body>
@@ -70,7 +78,7 @@ html[data-modo="revision"] [data-confirmar="pendiente"]::before{content:"Por con
  <p>Cualquier modificación al presente Contrato deberá ser acordada por escrito y firmada por ambas partes.</p>
  <h3>Jurisdicción y ley aplicable</h3>
  <p>Para la interpretación y cumplimiento de este Contrato, las partes se someten a las leyes de Colombia y a la jurisdicción de los tribunales de Medellín, Antioquia.</p>
-<p class="nova" style="display:block;width:100%;margin:56px 0 0;padding-top:20px;border-top:1px solid var(--line);text-align:center;font-size:16px;line-height:1.5;font-weight:400;letter-spacing:0;text-transform:none;color:var(--mut)">Powered by <b style="font-weight:700;color:var(--cy2)">NOVA Creative</b></p>
+<div class="nova-pie"><script src="https://novacreative.online/sello.js" defer></script><p class="nova">Powered by <b>NOVA Creative</b></p></div>
 </main>
 </body>
 </html>
