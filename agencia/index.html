@@ -666,7 +666,7 @@ details.col[open] summary::after{content:"−"}
     <div class="post__body"><h3>Punta Cana</h3><p>Playas de arena blanca y planes todo incluido.</p><span class="ptag">Playa · todo incluido</span><a class="btn btn--sec" href="#cotizar" data-dest="puntacana" aria-label="Quiero ir a Punta Cana">Quiero ir</a></div>
    </article>
    <article class="post">
-    <div class="post__img"><div class="cover" style="--g1:#0b5f8a;--g2:#3fb6d9" role="img" aria-label="Panamá"><b>Panamá</b><span>Ciudad · playa</span></div></div>
+    <div class="post__img"><img src="/assets/foto/panama-s.webp" srcset="/assets/foto/panama-s.webp 760w, /assets/foto/panama-l.webp 1500w" sizes="(min-width:1024px) 280px, (min-width:600px) 44vw, 80vw" width="760" height="507" alt="Foto de los rascacielos de Ciudad de Panamá al atardecer con una palmera" loading="lazy" decoding="async" style="object-position:50% 50%"></div>
     <span class="post__stamp" aria-hidden="true"><span>PTY</span></span>
     <div class="post__body"><h3>Panamá</h3><p>Ciudad, compras y playas, a un vuelo corto.</p><span class="ptag">Ciudad · playa</span><a class="btn btn--sec" href="#cotizar" data-dest="panama" aria-label="Quiero ir a Panamá">Quiero ir</a></div>
    </article>
@@ -968,7 +968,7 @@ const D={
  otro:{l:"Otro destino",c:"???"}
 };
 
-const FOTOS=["brasil", "despegue", "eeuu", "europa", "peru", "puntacana", "sudamerica", "viajes", "visas"];
+const FOTOS=["brasil", "despegue", "eeuu", "europa", "panama", "peru", "puntacana", "sudamerica", "viajes", "visas"];
 /* portada: fotos de destinos que rotan */
 const hs=$$(".hs");let hi=0,ht;
 const hsShow=n=>{hs[hi].classList.remove("is-on");hi=(n+hs.length)%hs.length;const im=hs[hi];im.loading="eager";im.classList.add("is-on");$("#hs-name").textContent=im.dataset.name;$("#hs-code").textContent=im.dataset.code};
